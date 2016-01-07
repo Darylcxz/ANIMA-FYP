@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 3d7e65faec4fc3848881f5b461e3cc44
+timeCreated: 1440486108
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Braid1
+    100002: Braid2
+    100004: Braid3
+    100006: Braid4
+    100008: CollarBone
+    100010: Finger1
+    100012: Frontbip
+    100014: Group
+    100016: GulnazBody
+    100018: //RootNode
+    100020: Head
+    100022: Hip_Root4
+    100024: joint22
+    100026: joint22 1
+    100028: joint7
+    100030: L_Elboe
+    100032: L_Feet
+    100034: L_Finger2
+    100036: L_Index1
+    100038: L_Index2
+    100040: L_Leg1
+    100042: L_Leg2
+    100044: L_Shoes
+    100046: L_Solder
+    100048: L_Thumb1
+    100050: L_Thumb2
+    100052: LHand
+    100054: LowerBody
+    100056: Necklace
+    100058: Necklacetolken
+    100060: polySurface16
+    100062: polySurface36
+    100064: R_Elboe
+    100066: R_Feet
+    100068: R_Finger
+    100070: R_Finger2
+    100072: R_Hand
+    100074: R_Index1
+    100076: R_Index2
+    100078: R_Reg1
+    100080: R_Reg2
+    100082: R_Shoes
+    100084: R_Solder
+    100086: R_Thumb
+    100088: R_Thumb2
+    100090: Spine1
+    100092: Spine2
+    100094: Spine3
+    100096: UpperBody
+    400000: Braid1
+    400002: Braid2
+    400004: Braid3
+    400006: Braid4
+    400008: CollarBone
+    400010: Finger1
+    400012: Frontbip
+    400014: Group
+    400016: GulnazBody
+    400018: //RootNode
+    400020: Head
+    400022: Hip_Root4
+    400024: joint22
+    400026: joint22 1
+    400028: joint7
+    400030: L_Elboe
+    400032: L_Feet
+    400034: L_Finger2
+    400036: L_Index1
+    400038: L_Index2
+    400040: L_Leg1
+    400042: L_Leg2
+    400044: L_Shoes
+    400046: L_Solder
+    400048: L_Thumb1
+    400050: L_Thumb2
+    400052: LHand
+    400054: LowerBody
+    400056: Necklace
+    400058: Necklacetolken
+    400060: polySurface16
+    400062: polySurface36
+    400064: R_Elboe
+    400066: R_Feet
+    400068: R_Finger
+    400070: R_Finger2
+    400072: R_Hand
+    400074: R_Index1
+    400076: R_Index2
+    400078: R_Reg1
+    400080: R_Reg2
+    400082: R_Shoes
+    400084: R_Solder
+    400086: R_Thumb
+    400088: R_Thumb2
+    400090: Spine1
+    400092: Spine2
+    400094: Spine3
+    400096: UpperBody
+    4300000: GulnazBody
+    4300002: UpperBody
+    4300004: Necklace
+    4300006: Frontbip
+    4300008: Necklacetolken
+    4300010: LowerBody
+    4300012: R_Shoes
+    4300014: polySurface36
+    4300016: L_Shoes
+    4300018: polySurface16
+    7400000: Gulnaz Talk
+    9500000: //RootNode
+    13700000: Frontbip
+    13700002: GulnazBody
+    13700004: L_Shoes
+    13700006: LowerBody
+    13700008: Necklace
+    13700010: Necklacetolken
+    13700012: polySurface16
+    13700014: polySurface36
+    13700016: R_Shoes
+    13700018: UpperBody
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

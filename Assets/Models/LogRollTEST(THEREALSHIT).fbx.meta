@@ -1,0 +1,454 @@
+fileFormatVersion: 2
+guid: b9e0972f3e0e308469dac3764aca13a3
+timeCreated: 1445797233
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: gravityField1
+    100002: gravityField2
+    100004: //RootNode
+    100006: pCube60
+    100008: polySurface574
+    100010: polySurface575
+    100012: polySurface576
+    100014: polySurface577
+    100016: polySurface578
+    100018: polySurface579
+    100020: polySurface579 1
+    100022: polySurface580
+    100024: polySurface580 1
+    100026: polySurface581
+    100028: polySurface582
+    100030: polySurface583
+    100032: polySurface584
+    100034: polySurface585
+    100036: polySurface586
+    100038: polySurface587
+    100040: polySurface588
+    100042: polySurface589
+    100044: polySurface590
+    100046: polySurface591
+    100048: polySurface592
+    100050: polySurface593
+    100052: polySurface594
+    100054: polySurface595
+    100056: polySurface596
+    100058: polySurface597
+    100060: polySurface598
+    100062: polySurface599
+    100064: polySurface600
+    100066: polySurface617
+    100068: transform356
+    100070: transform357
+    100072: transform358
+    100074: transform359
+    100076: transform360
+    100078: transform361
+    100080: transform362
+    100082: transform363
+    100084: transform364
+    100086: transform365
+    100088: transform366
+    400000: gravityField1
+    400002: gravityField2
+    400004: //RootNode
+    400006: pCube60
+    400008: polySurface574
+    400010: polySurface575
+    400012: polySurface576
+    400014: polySurface577
+    400016: polySurface578
+    400018: polySurface579
+    400020: polySurface579 1
+    400022: polySurface580
+    400024: polySurface580 1
+    400026: polySurface581
+    400028: polySurface582
+    400030: polySurface583
+    400032: polySurface584
+    400034: polySurface585
+    400036: polySurface586
+    400038: polySurface587
+    400040: polySurface588
+    400042: polySurface589
+    400044: polySurface590
+    400046: polySurface591
+    400048: polySurface592
+    400050: polySurface593
+    400052: polySurface594
+    400054: polySurface595
+    400056: polySurface596
+    400058: polySurface597
+    400060: polySurface598
+    400062: polySurface599
+    400064: polySurface600
+    400066: polySurface617
+    400068: transform356
+    400070: transform357
+    400072: transform358
+    400074: transform359
+    400076: transform360
+    400078: transform361
+    400080: transform362
+    400082: transform363
+    400084: transform364
+    400086: transform365
+    400088: transform366
+    2300000: polySurface580
+    2300002: polySurface583
+    2300004: polySurface584
+    2300006: polySurface585
+    2300008: polySurface586
+    2300010: polySurface587
+    2300012: polySurface588
+    2300014: polySurface589
+    2300016: polySurface590
+    2300018: polySurface591
+    2300020: polySurface592
+    2300022: polySurface593
+    2300024: polySurface594
+    2300026: polySurface595
+    2300028: polySurface596
+    2300030: polySurface597
+    2300032: polySurface598
+    2300034: polySurface599
+    2300036: polySurface600
+    2300038: polySurface617
+    3300000: polySurface580
+    3300002: polySurface583
+    3300004: polySurface584
+    3300006: polySurface585
+    3300008: polySurface586
+    3300010: polySurface587
+    3300012: polySurface588
+    3300014: polySurface589
+    3300016: polySurface590
+    3300018: polySurface591
+    3300020: polySurface592
+    3300022: polySurface593
+    3300024: polySurface594
+    3300026: polySurface595
+    3300028: polySurface596
+    3300030: polySurface597
+    3300032: polySurface598
+    3300034: polySurface599
+    3300036: polySurface600
+    3300038: polySurface617
+    4300000: polySurface583
+    4300002: polySurface584
+    4300004: polySurface585
+    4300006: polySurface586
+    4300008: polySurface587
+    4300010: polySurface588
+    4300012: polySurface589
+    4300014: polySurface590
+    4300016: polySurface591
+    4300018: polySurface592
+    4300020: polySurface593
+    4300022: polySurface594
+    4300024: polySurface595
+    4300026: polySurface596
+    4300028: polySurface597
+    4300030: polySurface598
+    4300032: polySurface599
+    4300034: polySurface600
+    4300036: polySurface617
+    4300038: polySurface580
+    7400000: Logroll4
+    7400002: Idle
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Logroll4
+      takeName: Logroll4
+      firstFrame: 1
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: gravityField1
+        weight: 1
+      - path: gravityField2
+        weight: 1
+      - path: pCube60
+        weight: 1
+      - path: pCube60/polySurface574
+        weight: 1
+      - path: pCube60/polySurface574/transform363
+        weight: 1
+      - path: pCube60/polySurface575
+        weight: 1
+      - path: pCube60/polySurface575/transform360
+        weight: 1
+      - path: pCube60/polySurface576
+        weight: 1
+      - path: pCube60/polySurface576/transform361
+        weight: 1
+      - path: pCube60/polySurface577
+        weight: 1
+      - path: pCube60/polySurface577/transform362
+        weight: 1
+      - path: pCube60/polySurface578
+        weight: 1
+      - path: pCube60/polySurface578/transform359
+        weight: 1
+      - path: pCube60/polySurface579 1
+        weight: 1
+      - path: pCube60/polySurface579 1/transform364
+        weight: 1
+      - path: pCube60/polySurface580 1
+        weight: 1
+      - path: pCube60/polySurface580 1/transform366
+        weight: 1
+      - path: pCube60/polySurface581
+        weight: 1
+      - path: pCube60/polySurface581/transform358
+        weight: 1
+      - path: pCube60/polySurface582
+        weight: 1
+      - path: pCube60/polySurface582/transform357
+        weight: 1
+      - path: pCube60/polySurface583
+        weight: 1
+      - path: pCube60/polySurface584
+        weight: 1
+      - path: pCube60/polySurface585
+        weight: 1
+      - path: pCube60/polySurface586
+        weight: 1
+      - path: pCube60/polySurface587
+        weight: 1
+      - path: pCube60/polySurface588
+        weight: 1
+      - path: pCube60/polySurface589
+        weight: 1
+      - path: pCube60/polySurface590
+        weight: 1
+      - path: pCube60/polySurface591
+        weight: 1
+      - path: pCube60/polySurface592
+        weight: 1
+      - path: pCube60/polySurface593
+        weight: 1
+      - path: pCube60/polySurface594
+        weight: 1
+      - path: pCube60/polySurface595
+        weight: 1
+      - path: pCube60/polySurface596
+        weight: 1
+      - path: pCube60/polySurface597
+        weight: 1
+      - path: pCube60/polySurface598
+        weight: 1
+      - path: pCube60/polySurface599
+        weight: 1
+      - path: pCube60/polySurface600
+        weight: 1
+      - path: pCube60/polySurface617
+        weight: 1
+      - path: pCube60/transform356
+        weight: 1
+      - path: polySurface579
+        weight: 1
+      - path: polySurface579/transform365
+        weight: 1
+      - path: polySurface580
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Logroll4
+      firstFrame: 1
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: gravityField1
+        weight: 1
+      - path: gravityField2
+        weight: 1
+      - path: pCube60
+        weight: 1
+      - path: pCube60/polySurface574
+        weight: 1
+      - path: pCube60/polySurface574/transform363
+        weight: 1
+      - path: pCube60/polySurface575
+        weight: 1
+      - path: pCube60/polySurface575/transform360
+        weight: 1
+      - path: pCube60/polySurface576
+        weight: 1
+      - path: pCube60/polySurface576/transform361
+        weight: 1
+      - path: pCube60/polySurface577
+        weight: 1
+      - path: pCube60/polySurface577/transform362
+        weight: 1
+      - path: pCube60/polySurface578
+        weight: 1
+      - path: pCube60/polySurface578/transform359
+        weight: 1
+      - path: pCube60/polySurface579 1
+        weight: 1
+      - path: pCube60/polySurface579 1/transform364
+        weight: 1
+      - path: pCube60/polySurface580 1
+        weight: 1
+      - path: pCube60/polySurface580 1/transform366
+        weight: 1
+      - path: pCube60/polySurface581
+        weight: 1
+      - path: pCube60/polySurface581/transform358
+        weight: 1
+      - path: pCube60/polySurface582
+        weight: 1
+      - path: pCube60/polySurface582/transform357
+        weight: 1
+      - path: pCube60/polySurface583
+        weight: 1
+      - path: pCube60/polySurface584
+        weight: 1
+      - path: pCube60/polySurface585
+        weight: 1
+      - path: pCube60/polySurface586
+        weight: 1
+      - path: pCube60/polySurface587
+        weight: 1
+      - path: pCube60/polySurface588
+        weight: 1
+      - path: pCube60/polySurface589
+        weight: 1
+      - path: pCube60/polySurface590
+        weight: 1
+      - path: pCube60/polySurface591
+        weight: 1
+      - path: pCube60/polySurface592
+        weight: 1
+      - path: pCube60/polySurface593
+        weight: 1
+      - path: pCube60/polySurface594
+        weight: 1
+      - path: pCube60/polySurface595
+        weight: 1
+      - path: pCube60/polySurface596
+        weight: 1
+      - path: pCube60/polySurface597
+        weight: 1
+      - path: pCube60/polySurface598
+        weight: 1
+      - path: pCube60/polySurface599
+        weight: 1
+      - path: pCube60/polySurface600
+        weight: 1
+      - path: pCube60/polySurface617
+        weight: 1
+      - path: pCube60/transform356
+        weight: 1
+      - path: polySurface579
+        weight: 1
+      - path: polySurface579/transform365
+        weight: 1
+      - path: polySurface580
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 5
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

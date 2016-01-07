@@ -1,0 +1,357 @@
+fileFormatVersion: 2
+guid: adf135094a784e0468f7e8d340eb76f9
+timeCreated: 1436681007
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Braid1
+    100002: Braid2
+    100004: Braid3
+    100006: Braid4
+    100008: Chest
+    100010: CollarBone
+    100012: Dagger
+    100014: Finger1
+    100016: Frontbip
+    100018: Group
+    100020: //RootNode
+    100022: GulnazBody
+    100024: Head
+    100026: Head 1
+    100028: Hip_Root4
+    100030: Hips
+    100032: joint22
+    100034: joint22 1
+    100036: joint7
+    100038: L_Elboe
+    100040: L_Feet
+    100042: L_Finger2
+    100044: L_Index1
+    100046: L_Index2
+    100048: L_Leg1
+    100050: L_Leg2
+    100052: L_Shoes
+    100054: L_Solder
+    100056: L_Thumb1
+    100058: L_Thumb2
+    100060: LHand
+    100062: LowerBody
+    100064: Neck
+    100066: Necklace
+    100068: Necklacetolken
+    100070: polySurface16
+    100072: polySurface36
+    100074: R_Elboe
+    100076: R_Feet
+    100078: R_Finger
+    100080: R_Finger2
+    100082: R_Hand
+    100084: R_Hands
+    100086: R_Index1
+    100088: R_Index2
+    100090: R_Reg1
+    100092: R_Reg2
+    100094: R_Shoes
+    100096: R_Solder
+    100098: R_Thumb
+    100100: R_Thumb2
+    100102: Spine1
+    100104: Spine1 1
+    100106: Spine2
+    100108: Spine2 1
+    100110: Spine3
+    100112: UpperBody
+    400000: Braid1
+    400002: Braid2
+    400004: Braid3
+    400006: Braid4
+    400008: Chest
+    400010: CollarBone
+    400012: Dagger
+    400014: Finger1
+    400016: Frontbip
+    400018: Group
+    400020: //RootNode
+    400022: GulnazBody
+    400024: Head
+    400026: Head 1
+    400028: Hip_Root4
+    400030: Hips
+    400032: joint22
+    400034: joint22 1
+    400036: joint7
+    400038: L_Elboe
+    400040: L_Feet
+    400042: L_Finger2
+    400044: L_Index1
+    400046: L_Index2
+    400048: L_Leg1
+    400050: L_Leg2
+    400052: L_Shoes
+    400054: L_Solder
+    400056: L_Thumb1
+    400058: L_Thumb2
+    400060: LHand
+    400062: LowerBody
+    400064: Neck
+    400066: Necklace
+    400068: Necklacetolken
+    400070: polySurface16
+    400072: polySurface36
+    400074: R_Elboe
+    400076: R_Feet
+    400078: R_Finger
+    400080: R_Finger2
+    400082: R_Hand
+    400084: R_Hands
+    400086: R_Index1
+    400088: R_Index2
+    400090: R_Reg1
+    400092: R_Reg2
+    400094: R_Shoes
+    400096: R_Solder
+    400098: R_Thumb
+    400100: R_Thumb2
+    400102: Spine1
+    400104: Spine1 1
+    400106: Spine2
+    400108: Spine2 1
+    400110: Spine3
+    400112: UpperBody
+    2300000: Dagger
+    3300000: Dagger
+    4300000: GulnazBody
+    4300002: UpperBody
+    4300004: Head
+    4300006: Necklace
+    4300008: Frontbip
+    4300010: Necklacetolken
+    4300012: LowerBody
+    4300014: R_Shoes
+    4300016: polySurface36
+    4300018: L_Shoes
+    4300020: polySurface16
+    4300022: Dagger
+    7400000: Roll
+    9500000: //RootNode
+    13700000: Frontbip
+    13700002: GulnazBody
+    13700004: Head
+    13700006: L_Shoes
+    13700008: LowerBody
+    13700010: Necklace
+    13700012: Necklacetolken
+    13700014: polySurface16
+    13700016: polySurface36
+    13700018: R_Shoes
+    13700020: UpperBody
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Roll
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: .94092828
+        functionName: rollEnd
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Group
+        weight: 1
+      - path: Group/Hip_Root4
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1/L_Leg2
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1/L_Leg2/L_Feet
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1/L_Leg2/L_Feet/joint22
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1/R_Reg2
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1/R_Reg2/R_Feet
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1/R_Reg2/R_Feet/joint22 1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1/Braid1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1/Braid1/Braid2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1/Braid1/Braid2/Braid3
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1/Braid1/Braid2/Braid3/Braid4
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1/joint7
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1/L_Finger2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1/L_Index2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Finger
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Finger/R_Finger2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Index1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Index1/R_Index2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Thumb
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Thumb/R_Thumb2
+        weight: 1
+      - path: Group/Hips
+        weight: 1
+      - path: Group/Hips/Spine1 1
+        weight: 1
+      - path: Group/Hips/Spine1 1/Spine2 1
+        weight: 1
+      - path: Group/Hips/Spine1 1/Spine2 1/Chest
+        weight: 1
+      - path: Group/Hips/Spine1 1/Spine2 1/Chest/Neck
+        weight: 1
+      - path: Group/Hips/Spine1 1/Spine2 1/Chest/Neck/R_Hands
+        weight: 1
+      - path: Group/Hips/Spine1 1/Spine2 1/Chest/Neck/R_Hands/Dagger
+        weight: 1
+      - path: GulnazBody
+        weight: 1
+      - path: GulnazBody/LowerBody
+        weight: 1
+      - path: GulnazBody/LowerBody/L_Shoes
+        weight: 1
+      - path: GulnazBody/LowerBody/L_Shoes/polySurface16
+        weight: 1
+      - path: GulnazBody/LowerBody/R_Shoes
+        weight: 1
+      - path: GulnazBody/LowerBody/R_Shoes/polySurface36
+        weight: 1
+      - path: GulnazBody/UpperBody
+        weight: 1
+      - path: GulnazBody/UpperBody/Frontbip
+        weight: 1
+      - path: GulnazBody/UpperBody/Head
+        weight: 1
+      - path: GulnazBody/UpperBody/Necklace
+        weight: 1
+      - path: GulnazBody/UpperBody/Necklacetolken
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: GulnazBody
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

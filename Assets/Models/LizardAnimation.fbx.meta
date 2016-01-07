@@ -1,0 +1,660 @@
+fileFormatVersion: 2
+guid: 9f4ad51cef001da4ba38297d75f158e3
+timeCreated: 1449131610
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: b_Fin1
+    100002: B_Fin2
+    100004: B_Fin3
+    100006: B_Fin4
+    100008: B_Fin5
+    100010: B_Fin6
+    100012: B_FIn7
+    100014: B_FIn8
+    100016: F_fin1
+    100018: F_fin2
+    100020: Head
+    100022: Hip
+    100024: Jaw
+    100026: joint13
+    100028: joint18
+    100030: joint34
+    100032: joint36
+    100034: joint37
+    100036: L_Feet1
+    100038: L_Feet2
+    100040: L_Finger2
+    100042: L_Finger3
+    100044: L_Leg1
+    100046: L_Leg2
+    100048: L_Leg3
+    100050: L_Leg4
+    100052: LArm1
+    100054: LArm2
+    100056: LArm3
+    100058: LArm4
+    100060: LFeet2
+    100062: LFeet3
+    100064: LFeetTip1
+    100066: LFeetTip2
+    100068: LHand
+    100070: LHand1
+    100072: //RootNode
+    100074: Neck
+    100076: Object006
+    100078: snout
+    100080: Spine1
+    100082: Spine2
+    100084: Spine3
+    100086: Tail1
+    100088: Tail2
+    100090: tail3
+    100092: tail3 1
+    100094: Tail4
+    400000: b_Fin1
+    400002: B_Fin2
+    400004: B_Fin3
+    400006: B_Fin4
+    400008: B_Fin5
+    400010: B_Fin6
+    400012: B_FIn7
+    400014: B_FIn8
+    400016: F_fin1
+    400018: F_fin2
+    400020: Head
+    400022: Hip
+    400024: Jaw
+    400026: joint13
+    400028: joint18
+    400030: joint34
+    400032: joint36
+    400034: joint37
+    400036: L_Feet1
+    400038: L_Feet2
+    400040: L_Finger2
+    400042: L_Finger3
+    400044: L_Leg1
+    400046: L_Leg2
+    400048: L_Leg3
+    400050: L_Leg4
+    400052: LArm1
+    400054: LArm2
+    400056: LArm3
+    400058: LArm4
+    400060: LFeet2
+    400062: LFeet3
+    400064: LFeetTip1
+    400066: LFeetTip2
+    400068: LHand
+    400070: LHand1
+    400072: //RootNode
+    400074: Neck
+    400076: Object006
+    400078: snout
+    400080: Spine1
+    400082: Spine2
+    400084: Spine3
+    400086: Tail1
+    400088: Tail2
+    400090: tail3
+    400092: tail3 1
+    400094: Tail4
+    4300000: Object006
+    7400000: LizardIdle
+    7400002: LizardWalk
+    7400004: LizardLick
+    7400006: LizardIdleBreaker
+    9500000: //RootNode
+    13700000: Object006
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: LizardIdle
+      takeName: LizardAnimation3
+      firstFrame: 10
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hip
+        weight: 1
+      - path: Hip/b_Fin1
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6/B_FIn7
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6/B_FIn7/B_FIn8
+        weight: 1
+      - path: Hip/L_Leg1
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1/LFeet2
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1/LFeetTip1
+        weight: 1
+      - path: Hip/L_Leg3
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2/LFeet3
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2/LFeetTip2
+        weight: 1
+      - path: Hip/Spine3
+        weight: 1
+      - path: Hip/Spine3/Spine2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand/joint18
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand/L_Finger2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1/joint37
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1/L_Finger3
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1/F_fin2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1/F_fin2/joint34
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/Jaw
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/Jaw/joint36
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/snout
+        weight: 1
+      - path: Hip/Tail1
+        weight: 1
+      - path: Hip/Tail1/Tail2
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1/Tail4
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1/Tail4/joint13
+        weight: 1
+      - path: Object006
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: LizardWalk
+      takeName: LizardAnimation3
+      firstFrame: 128
+      lastFrame: 158
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hip
+        weight: 1
+      - path: Hip/b_Fin1
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6/B_FIn7
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6/B_FIn7/B_FIn8
+        weight: 1
+      - path: Hip/L_Leg1
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1/LFeet2
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1/LFeetTip1
+        weight: 1
+      - path: Hip/L_Leg3
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2/LFeet3
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2/LFeetTip2
+        weight: 1
+      - path: Hip/Spine3
+        weight: 1
+      - path: Hip/Spine3/Spine2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand/joint18
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand/L_Finger2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1/joint37
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1/L_Finger3
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1/F_fin2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1/F_fin2/joint34
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/Jaw
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/Jaw/joint36
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/snout
+        weight: 1
+      - path: Hip/Tail1
+        weight: 1
+      - path: Hip/Tail1/Tail2
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1/Tail4
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1/Tail4/joint13
+        weight: 1
+      - path: Object006
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: LizardLick
+      takeName: LizardAnimation3
+      firstFrame: 160
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hip
+        weight: 1
+      - path: Hip/b_Fin1
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6/B_FIn7
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6/B_FIn7/B_FIn8
+        weight: 1
+      - path: Hip/L_Leg1
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1/LFeet2
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1/LFeetTip1
+        weight: 1
+      - path: Hip/L_Leg3
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2/LFeet3
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2/LFeetTip2
+        weight: 1
+      - path: Hip/Spine3
+        weight: 1
+      - path: Hip/Spine3/Spine2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand/joint18
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand/L_Finger2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1/joint37
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1/L_Finger3
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1/F_fin2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1/F_fin2/joint34
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/Jaw
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/Jaw/joint36
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/snout
+        weight: 1
+      - path: Hip/Tail1
+        weight: 1
+      - path: Hip/Tail1/Tail2
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1/Tail4
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1/Tail4/joint13
+        weight: 1
+      - path: Object006
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: LizardIdleBreaker
+      takeName: LizardAnimation3
+      firstFrame: 210
+      lastFrame: 360
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hip
+        weight: 1
+      - path: Hip/b_Fin1
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6/B_FIn7
+        weight: 1
+      - path: Hip/b_Fin1/B_Fin2/B_Fin3/B_Fin4/B_Fin5/B_Fin6/B_FIn7/B_FIn8
+        weight: 1
+      - path: Hip/L_Leg1
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1/LFeet2
+        weight: 1
+      - path: Hip/L_Leg1/L_Leg2/L_Feet1/LFeetTip1
+        weight: 1
+      - path: Hip/L_Leg3
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2/LFeet3
+        weight: 1
+      - path: Hip/L_Leg3/L_Leg4/L_Feet2/LFeetTip2
+        weight: 1
+      - path: Hip/Spine3
+        weight: 1
+      - path: Hip/Spine3/Spine2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand/joint18
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm1/LArm2/LHand/L_Finger2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1/joint37
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/LArm3/LArm4/LHand1/L_Finger3
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1/F_fin2
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/F_fin1/F_fin2/joint34
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/Jaw
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/Jaw/joint36
+        weight: 1
+      - path: Hip/Spine3/Spine2/Spine1/Neck/Head/snout
+        weight: 1
+      - path: Hip/Tail1
+        weight: 1
+      - path: Hip/Tail1/Tail2
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1/Tail4
+        weight: 1
+      - path: Hip/Tail1/Tail2/tail3/tail3 1/Tail4/joint13
+        weight: 1
+      - path: Object006
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

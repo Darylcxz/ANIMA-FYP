@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Destructible
+  - Reflecting
+  - movable
+  - floor
+  - switch
+  - Wall
+  - red
+  - blue
+  - yellow
+  - purple
+  - SpawnPoint
+  - Torch
+  - destroy
+  - goo
+  - dagger
+  - Prop
+  - talking
+  - Camera
+  - GulnazBody
+  - desh
+  - SerikGhost
+  - monstaa
+  - lever
+  - log
+  - WaterWheel
+  - Saw
+  - DeshWall
+  - stick
+  - pile
+  - Ball
+  - Climable
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - DetectPossess
+  - Flammable
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - ground
+  - Player
+  - vines
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
