@@ -1,0 +1,229 @@
+fileFormatVersion: 2
+guid: b751b3ed3dfff00419b79237a4e7f47b
+timeCreated: 1440233913
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: CollarBone
+    100002: Finger1
+    100004: Finger1 1
+    100006: Ghostbutt1
+    100008: GhostButt2
+    100010: Ghostbutt3
+    100012: Ghostbutt4
+    100014: Head
+    100016: Hip_Root5
+    100018: joint7
+    100020: L_Elboe
+    100022: L_Finger2
+    100024: L_Index1
+    100026: L_Index2
+    100028: L_Solder
+    100030: L_Thumb1
+    100032: L_Thumb2
+    100034: LHand
+    100036: nurbsCircle3
+    100038: polySurface118
+    100040: R_Elboe
+    100042: R_Finger2
+    100044: R_Index1
+    100046: R_Index2
+    100048: R_Solder
+    100050: R_Thumb1
+    100052: R_Thumb2
+    100054: RHand
+    100056: //RootNode
+    100058: Spine1
+    100060: Spine2
+    100062: Spine3
+    400000: CollarBone
+    400002: Finger1
+    400004: Finger1 1
+    400006: Ghostbutt1
+    400008: GhostButt2
+    400010: Ghostbutt3
+    400012: Ghostbutt4
+    400014: Head
+    400016: Hip_Root5
+    400018: joint7
+    400020: L_Elboe
+    400022: L_Finger2
+    400024: L_Index1
+    400026: L_Index2
+    400028: L_Solder
+    400030: L_Thumb1
+    400032: L_Thumb2
+    400034: LHand
+    400036: nurbsCircle3
+    400038: polySurface118
+    400040: R_Elboe
+    400042: R_Finger2
+    400044: R_Index1
+    400046: R_Index2
+    400048: R_Solder
+    400050: R_Thumb1
+    400052: R_Thumb2
+    400054: RHand
+    400056: //RootNode
+    400058: Spine1
+    400060: Spine2
+    400062: Spine3
+    4300000: polySurface118
+    7400000: SheirkGIdle
+    9500000: //RootNode
+    13700000: polySurface118
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: SheirkGIdle
+      takeName: SheirkGIdle
+      firstFrame: 1
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Ghostbutt1
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Ghostbutt1/GhostButt2
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Ghostbutt1/GhostButt2/Ghostbutt3
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Ghostbutt1/GhostButt2/Ghostbutt3/Ghostbutt4
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/CollarBone
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/CollarBone/Head
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/CollarBone/Head/joint7
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/L_Solder
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1/L_Finger2
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1/L_Index2
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/R_Solder
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/Finger1
+          1
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/Finger1
+          1/R_Finger2
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Index1
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Index1/R_Index2
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Thumb1
+        weight: 1
+      - path: nurbsCircle3/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Thumb1/R_Thumb2
+        weight: 1
+      - path: polySurface118
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
