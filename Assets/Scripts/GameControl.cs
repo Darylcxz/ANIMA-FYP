@@ -21,7 +21,7 @@ public class GameControl : MonoBehaviour {
 
         //possesionmode.enabled = false;
         character = GameObject.Find("Character");
-        flame = GameObject.Find("Serik Idle Fire");
+        flame = GameObject.Find("TargetSerik");
         Seriksplace = GameObject.Find("Seriksplace").transform;
         enemylayer = 1 << LayerMask.NameToLayer("DetectPossess");
 	}
