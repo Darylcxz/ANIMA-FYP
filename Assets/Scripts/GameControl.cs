@@ -64,6 +64,7 @@ public class GameControl : MonoBehaviour {
 
             Camerafollow.targetUnit = character;
             Invoke("Firecallback", 0.3f);
+            ordernum = 0;
             spiritmode = false;
             if(freeze)
             {
