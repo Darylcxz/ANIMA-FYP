@@ -4,14 +4,12 @@ using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour {
 
-    [SerializeField]private GameObject flame;
-    [SerializeField]private Transform Seriksplace;
+    private GameObject flame;
+    private Transform Seriksplace;
 	private GameObject character;
 	public static bool spiritmode = false;
     public static bool freeze = false;
-	public Texture bolangu;
-	public Texture spiritjotai;
-    public Image possesionmode;
+    [SerializeField]private Image possesionmode;
     private Collider[] hitcolliders;
     private int ordernum = 0;
     private Vector3 heightplus = new Vector3(0, 1, 0);
@@ -23,6 +21,8 @@ public class GameControl : MonoBehaviour {
 
         //possesionmode.enabled = false;
         character = GameObject.Find("Character");
+        flame = GameObject.Find("Serik Idle Fire");
+        Seriksplace = GameObject.Find("Seriksplace").transform;
         enemylayer = 1 << LayerMask.NameToLayer("DetectPossess");
 	}
 	
