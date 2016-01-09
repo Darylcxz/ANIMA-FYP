@@ -130,7 +130,7 @@ public class MovementController : MonoBehaviour {
                 {
                     charStates = States.jump;
                 }
-                if (attack && GameControl.spiritmode == false)
+                if (attack && !GameControl.spiritmode)
                 {
                     charStates = States.stab;
 					attackMode = 1;
@@ -149,7 +149,6 @@ public class MovementController : MonoBehaviour {
 				//MovementLogic(GamepadManager.h1, GamepadManager.v1);
                 attackMode = 0;
                 if (vMove == 0 && hMove ==0)
-				//if (GamepadManager.v1 == 0 && GamepadManager.h1 ==0)
                 {
                     charStates = States.idle;
                 }
@@ -157,6 +156,10 @@ public class MovementController : MonoBehaviour {
                 {
                     charStates = States.jump;
                 }
+				if (roll != 0)
+				{
+					charStates = States.roll;
+				}
                 CheckClimb();
                 break;
             case States.jump:
@@ -188,7 +191,7 @@ public class MovementController : MonoBehaviour {
                // _rigidBody.AddRelativeForce(transform.forward / 0.9f, ForceMode.Impulse);
                // _rigidBody.AddForceAtPosition(transform.forward *5, transform.localPosition);
                 //_rigidBody.velocity += transform.forward/3f;
-                gameObject.transform.localPosition +=( transform.forward*2*Time.deltaTime);
+                gameObject.transform.localPosition +=( transform.forward*5*Time.deltaTime);
                 if (!isRolling)
                 {
                     charStates = States.idle;
@@ -357,7 +360,6 @@ public class MovementController : MonoBehaviour {
 			GameControl.spiritmode = false;
 			currMana = 0;
 			charStates = States.idle;
-			Debug.Log("qweoeo");
 			//_mana = true;
 		}
 		 if (currMana > maxMana && _mana == true) // check if mana is maxed

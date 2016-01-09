@@ -11,6 +11,8 @@ public abstract class AIbase : MonoBehaviour {
 	protected bool autoFire = false;
 //	bool isPossessed = false;
     public bool canPosses = true;
+    [SerializeField]private ParticleSystem fire;
+    [SerializeField]private ParticleSystem possessedexplode;
 
     protected Transform player;
     protected NavMeshAgent agent;
@@ -71,6 +73,7 @@ public abstract class AIbase : MonoBehaviour {
 		waitTimer = 0.0f;
 		circleCenter = transform.position + new Vector3(0, 0, offset);
 		currentTargetPosition = transform.position;
+        possessedexplode = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 	// Update is called once per frame
 	protected void Update () {
@@ -159,7 +162,7 @@ public abstract class AIbase : MonoBehaviour {
 				playerMana.currMana -= Time.deltaTime;
                 //agent.ResetPath();
                 ready = false;
-                Camerafollow.targetUnit = gameObject;
+                
                 CheckInput();
                 AIMove();
                 if (GameControl.spiritmode == false)
@@ -167,6 +170,8 @@ public abstract class AIbase : MonoBehaviour {
                     AIState = States.idle;
                     //agent.ResetPath();
                     ready = false;
+                    fire.Play();
+
                     Camerafollow.targetUnit = GameObject.Find("Character");
                     CancelInvoke();
                 }
@@ -279,13 +284,15 @@ public abstract class AIbase : MonoBehaviour {
             Debug.DrawRay(transform.position, Vector3.up * 2);
             if(Physics.Raycast(transform.position, Vector3.up, out hit, 2))
             {
-                Debug.Log("hit!!!!!!");
-                print(hit.collider.name);
-
-                if (GamepadManager.buttonA && hit.collider.name == "arrow" || Input.GetKeyDown("i") && hit.collider.name == "arrow")
+                if (GamepadManager.buttonA && hit.collider.name == "TargetSerik" || Input.GetKeyDown("i") && hit.collider.name == "TargetSerik")
                 {
+                    Camerafollow.targetUnit = gameObject;
                     AIState = States.possessed;
-                    hit.collider.gameObject.SetActive(false);
+                    hit.collider.gameObject.transform.position = transform.position;
+                    hit.collider.gameObject.transform.SetParent(gameObject.transform);
+                    
+                    fire.Stop();
+                    possessedexplode.Play();
                     GameControl.freeze = false;
                     print("hithithit");
                 }

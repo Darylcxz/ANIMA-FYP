@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a365dd65c1eb31848b4b467a4b17780b
-timeCreated: 1452252140
+guid: 3a8e8f137db7eb34980c53fa63c4cc9e
+timeCreated: 1449060328
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCylinder9
+    4300000: Plane001
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -20,6 +20,10 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
