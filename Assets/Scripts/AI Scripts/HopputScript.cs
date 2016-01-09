@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HopputScript : AIbase {
 
-	float AggroDist = 1000f;
+	float AggroDist = 20f;
 	float jumpRange = 15f;
 	float timerThing = 0.0f;
 	float playerDist;

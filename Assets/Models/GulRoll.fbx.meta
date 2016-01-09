@@ -194,7 +194,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .978902936
+      - time: .895976126
         functionName: rollEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
