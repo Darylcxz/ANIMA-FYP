@@ -170,6 +170,8 @@ public abstract class AIbase : MonoBehaviour {
                     AIState = States.idle;
                     //agent.ResetPath();
                     ready = false;
+                    fire.Play();
+
                     Camerafollow.targetUnit = GameObject.Find("Character");
                     CancelInvoke();
                 }
@@ -288,9 +290,9 @@ public abstract class AIbase : MonoBehaviour {
                     AIState = States.possessed;
                     hit.collider.gameObject.transform.position = transform.position;
                     hit.collider.gameObject.transform.SetParent(gameObject.transform);
-                    possessedexplode.Play();
-                    fire.Stop();
                     
+                    fire.Stop();
+                    possessedexplode.Play();
                     GameControl.freeze = false;
                     print("hithithit");
                 }

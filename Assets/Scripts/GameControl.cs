@@ -50,7 +50,7 @@ public class GameControl : MonoBehaviour {
 	
 	}
 
-	void possessModeToggle() {
+	public void possessModeToggle() {
 
 		if (!spiritmode && !freeze) {
 
@@ -63,8 +63,7 @@ public class GameControl : MonoBehaviour {
 		} else if (spiritmode) {
 
             Camerafollow.targetUnit = character;
-            flame.transform.position = Seriksplace.position;
-            flame.transform.SetParent(character.transform);
+            Invoke("Firecallback", 0.3f);
             spiritmode = false;
             if(freeze)
             {
@@ -101,6 +100,12 @@ public class GameControl : MonoBehaviour {
             ordernum = hitcolliders.Length - 1;
             flame.transform.position = hitcolliders[ordernum].transform.position + heightplus;
         }
+    }
+
+    void Firecallback()
+    {
+        flame.transform.position = Seriksplace.position;
+        flame.transform.SetParent(character.transform);
     }
 	
 }
