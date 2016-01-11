@@ -4,14 +4,12 @@ using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour {
 
-    [SerializeField]private GameObject flame;
-    [SerializeField]private Transform Seriksplace;
+    private GameObject flame;
+    private Transform Seriksplace;
 	private GameObject character;
 	public static bool spiritmode = false;
     public static bool freeze = false;
-	public Texture bolangu;
-	public Texture spiritjotai;
-    public Image possesionmode;
+    [SerializeField]private Image possesionmode;
     private Collider[] hitcolliders;
     private int ordernum = 0;
     private Vector3 heightplus = new Vector3(0, 1, 0);
@@ -23,6 +21,8 @@ public class GameControl : MonoBehaviour {
 
         //possesionmode.enabled = false;
         character = GameObject.Find("Character");
+        flame = GameObject.Find("TargetSerik");
+        Seriksplace = GameObject.Find("Seriksplace").transform;
         enemylayer = 1 << LayerMask.NameToLayer("DetectPossess");
 	}
 	
@@ -50,7 +50,7 @@ public class GameControl : MonoBehaviour {
 	
 	}
 
-	void possessModeToggle() {
+	public void possessModeToggle() {
 
 		if (!spiritmode && !freeze) {
 
@@ -63,8 +63,8 @@ public class GameControl : MonoBehaviour {
 		} else if (spiritmode) {
 
             Camerafollow.targetUnit = character;
-            flame.transform.position = Seriksplace.position;
-            flame.transform.SetParent(character.transform);
+            Invoke("Firecallback", 0.3f);
+            ordernum = 0;
             spiritmode = false;
             if(freeze)
             {
@@ -101,6 +101,12 @@ public class GameControl : MonoBehaviour {
             ordernum = hitcolliders.Length - 1;
             flame.transform.position = hitcolliders[ordernum].transform.position + heightplus;
         }
+    }
+
+    void Firecallback()
+    {
+        flame.transform.position = Seriksplace.position;
+        flame.transform.SetParent(character.transform);
     }
 	
 }
