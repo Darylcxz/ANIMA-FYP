@@ -189,7 +189,7 @@ public class MovementController : MonoBehaviour {
                 CheckClimb();
                 break;
             case States.possess:
-				_mana = false;
+				_mana = true;
                 //MovementLogic(hMoveRight, vMoveRight);
                // RotatingLogic(hMoveRight, vMoveRight);
 				Debug.Log("possss");
@@ -199,7 +199,7 @@ public class MovementController : MonoBehaviour {
                 if (GameControl.spiritmode == false)
                 {
                     charStates = States.idle;
-					_mana = true;
+                    _mana = false;
                     Debug.Log("possass");
                 }
 				
