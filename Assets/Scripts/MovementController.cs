@@ -4,74 +4,81 @@ using System.Collections;
 
 public class MovementController : MonoBehaviour {
 
-	
+	//States for Movement
 	public enum States
     {
-        idle,
-        move,
-        stab,
-        swing,
-        jump,
-        roll,
-        possess,
-        climb,
+        idle,			//idle state obviously, this state checks all your inputs and stuff
+        move,			//move state - controls movements, and what states can transition from hre
+        attack,			//Attack state - controls attack logic 
+        jump,			//jumping state - needs to check if player is grounded or not for animation
+        roll,			//rolling state - needs to allow player Invincibility frames and rolling speed
+        possess,		//possess state - possession logic where player can control creature
+        climb,			//climb state - state for climbing up shenanigans
     };
 
    public States charStates = States.idle;
    Animator _anim;
 
     //input stuff
-   public bool bKeyboard = false;
-   public bool bTutorial = true;
-   public bool bForcedMove = false;
+   public bool bKeyboard = false;     //if this is true, it means you're using keyboard movement
+   public bool bTutorial = true;		//if true, disables jump and roll
+   public bool bForcedMove = false;		//if true, disables ALL movement
 
     //bool roll;
-    float roll;
-    bool attack;
-    bool jump;
-    bool possess;
-    float hMove;
-    float vMove;
+    float roll;						//Roll input is a float from 0-1
+    bool attack;					//Attack boolean 
+    bool jump;						//jump boolean
+    bool possess;					//possession boolean
+    float hMove;					//horizontal movement axis (left stick)
+    float vMove;					//vertical movement axis (left stick)
 
 
-    float vMoveRight;
-    float hMoveRight;
+    float vMoveRight;				//right stick vertical movements
+    float hMoveRight;				//right stick horizontal movements
 
     int attackMode = 0; //1: Stab, 2: swing
 	float attackSpeed = 1;
+	bool isAttacking;				//bool for attacking
+	float timeButtonPressed;		//time when you press the button
+	//float timeSinceButtonPressed;	//time since you pressed the button
+	float buttonPressAllowance = 0.5f;		//time allowed before state changes
 
 //    float groundDist;
 //    float waitTime = 0.5f;
-    bool ready = false;
-    bool isRolling = false;
+    bool ready = false;				//bool to trigger next state
+    bool isRolling = false;			//bool to check if in rolling state
     
 
-    public float speed = 15.0f;
-    public float jumpForce = 5.0f;
-    public float smoothDamp = 1.0f;
+    public float speed = 15.0f;		//speed of player moving
+    public float jumpForce = 5.0f;	//amount of force added to lift player up when jumping
+    public float smoothDamp = 1.0f;	//smooth damping for rotation
 
-    Rigidbody _rigidBody;
-	Collider _dagger;
+    Rigidbody _rigidBody;			//player's rigidbody
+	Collider _dagger;				//collider for dagger
 //    Collider _collider;
 
-    Vector3 groundPos;
-    Vector3 playerPos;
-    RaycastHit hit;
+    Vector3 groundPos;				//position of the ground
+    Vector3 playerPos;				//position of the player
+    RaycastHit hit;					//raycasthit component of the raycast for the player
 
 	// Mana Stuff;
 
-	public Image _manaBarUI;
-	public float currMana;
-	float maxMana;
-	bool _mana;
+	public Image _manaBarUI;		//Mana bar UI component
+	public float currMana;			//current mana player has
+	float maxMana;					//max mana player is allowed to have
+	bool _mana;						//if false, player regenerates mana
 	
 
 	// Use this for initialization
 	void Start () {
+		
+		//Dagger stuff, disables and hides the dagger collider and trail renderer so that it doesn't show
 		_dagger = GameObject.FindGameObjectWithTag("dagger").GetComponent<Collider>();
 		_dagger.enabled = false;
 		_dagger.GetComponent<TrailRenderer>().enabled = false;
-        _rigidBody = gameObject.GetComponent<Rigidbody>();
+      
+
+		_rigidBody = gameObject.GetComponent<Rigidbody>();
      //   groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
      //   _collider = gameObject.GetComponent<Collider>();
         _anim = gameObject.GetComponent<Animator>();
@@ -85,23 +92,32 @@ public class MovementController : MonoBehaviour {
 	}
     void Update()
     {
-        CheckInput();
-		CheckMana();
+        CheckInput();     //Checks input in the update so it's faster
+		CheckMana();	  //Checks mana to update the slider bar
         //        Debug.Log(_rigidBody.velocity.magnitude);
         _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
-        _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
+       // _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
         _anim.SetBool("isRolling", isRolling);//change param to be the same as bool isRolling
-		//Debug.Log(attackMode);
-		_anim.speed = attackSpeed;
+
+		if (charStates == States.idle)
+		{
+			if (attack && !GameControl.spiritmode)
+			{
+				_anim.SetTrigger("tAttack");
+				charStates = States.attack;
+			}
+		}
+		if (charStates == States.move)
+		{
+			if (attack)
+			{
+				_anim.SetTrigger("tAttack");
+				_rigidBody.velocity = Vector3.zero;
+				charStates = States.attack;
+			}
+		}
+
 		
-		if (attackSpeed > 3)
-		{
-			attackSpeed = 3;
-		}
-		if (attackSpeed < 1)
-		{
-			attackSpeed = 1;
-		}
     }
 	
 	// Update is called once per frame
@@ -128,13 +144,10 @@ public class MovementController : MonoBehaviour {
                 }
                 if (jump && isGrounded())
                 {
-                    charStates = States.jump;
+					_anim.SetTrigger("tJump");
+					charStates = States.jump;
                 }
-                if (attack && !GameControl.spiritmode)
-                {
-                    charStates = States.stab;
-					attackMode = 1;
-                }
+                
                 if (roll!=0)
                 {
                     charStates = States.roll;
@@ -143,18 +156,21 @@ public class MovementController : MonoBehaviour {
                 CheckClimb();
                 break;
             case States.move:
+	
                 RotatingLogic(hMove, vMove);
                 MovementLogic(hMove,vMove);
 				//RotatingLogic(GamepadManager.h1, GamepadManager.v1);
 				//MovementLogic(GamepadManager.h1, GamepadManager.v1);
-                attackMode = 0;
+                
                 if (vMove == 0 && hMove ==0)
                 {
-                    charStates = States.idle;
+					charStates = States.idle;
                 }
                 if (jump && isGrounded())
                 {
-                    charStates = States.jump;
+					_anim.SetTrigger("tJump");
+				//	_rigidBody.velocity = Vector3.zero;
+					charStates = States.jump;
                 }
 				if (roll != 0)
 				{
@@ -163,10 +179,12 @@ public class MovementController : MonoBehaviour {
                 CheckClimb();
                 break;
             case States.jump:
+				
                 _rigidBody.AddForce(Vector3.up*jumpForce,ForceMode.Impulse);
                 if (!isGrounded())
                 {
-                    charStates = States.idle;
+					_rigidBody.velocity = Vector3.zero;
+					charStates = States.idle;
                 }
                 CheckClimb();
                 break;
@@ -197,42 +215,44 @@ public class MovementController : MonoBehaviour {
                     charStates = States.idle;
                 }
                 break;
-            case States.stab:
+            case States.attack:
 				_dagger.GetComponent<TrailRenderer>().enabled = true;
 				_dagger.enabled = true;
-				attackSpeed+=Time.deltaTime;
-             //   attackMode = 1;
-                if(attack && attackMode == 1 && !ready)
-                {                  
-                    charStates = States.swing;
-                 //   ready = false;
-					attackMode = 2;
-                }
-                else if (ready)
+				AttackLogic();
+				//attackSpeed+=Time.deltaTime;
+			 ////   attackMode = 1;
+			 //   if(attack && attackMode == 1 && !ready)
+			 //   {                  
+			 //	   charStates = States.swing;
+			 //	//   ready = false;
+			 //	   attackMode = 2;
+			 //   }
+				if (ready)
                 {
                     charStates = States.idle;
 					_dagger.GetComponent<TrailRenderer>().enabled = false;
 					_dagger.enabled = false;
+					ready = false;
                 }
                 break;
-            case States.swing:
-				_dagger.GetComponent<TrailRenderer>().enabled = true;
-				_dagger.enabled = true;
-				attackSpeed+=Time.deltaTime;
-               // attackMode = 2;
-				if (attack && attackMode == 2 && !ready)
-				{
-					charStates = States.stab;
-					//ready = false;
-					attackMode = 1;
-				}
-                else if (ready)
-                {
-                    charStates = States.idle;
-					_dagger.GetComponent<TrailRenderer>().enabled = false;
-					_dagger.enabled = false;
-                }          
-                break;
+			//case States.swing:
+			//	_dagger.GetComponent<TrailRenderer>().enabled = true;
+			//	_dagger.enabled = true;
+			//	attackSpeed+=Time.deltaTime;
+			//   // attackMode = 2;
+			//	if (attack && attackMode == 2 && !ready)
+			//	{
+			//		charStates = States.stab;
+			//		//ready = false;
+			//		attackMode = 1;
+			//	}
+			//	else if (ready)
+			//	{
+			//		charStates = States.idle;
+			//		_dagger.GetComponent<TrailRenderer>().enabled = false;
+			//		_dagger.enabled = false;
+			//	}          
+			//	break;
 
             case States.climb:
                 
@@ -284,7 +304,7 @@ public class MovementController : MonoBehaviour {
 			hMove = GamepadManager.h1;
 			vMove = GamepadManager.v1;
 			
-			attack = GamepadManager.buttonX;
+			attack = GamepadManager.buttonXDown;
 			possess = GamepadManager.buttonY;
 			if (!bTutorial)
 			{
@@ -335,7 +355,7 @@ public class MovementController : MonoBehaviour {
     public void attackEnd()
     {
         ready = true;
-		attackMode = 0;
+		//attackMode = 0;
       //  Debug.Log("Attack ended");
     }
     public void attackStart()
@@ -396,4 +416,20 @@ public class MovementController : MonoBehaviour {
         ClimbForce.Normalize();
         _rigidBody.AddForce(ClimbForce * 0.3f, ForceMode.VelocityChange);
     }
+
+	void AttackLogic()
+	{
+		if (attack)
+		{
+			timeButtonPressed = Time.time;
+			_anim.SetBool("isAttacking", true);
+			Debug.Log(timeButtonPressed);
+			gameObject.transform.localPosition += (transform.forward * 3 * Time.deltaTime);
+		} 
+		if (Time.time > timeButtonPressed + buttonPressAllowance)
+		{
+			_anim.SetBool("isAttacking", false);
+			ready = true;
+		}
+	}
 }
