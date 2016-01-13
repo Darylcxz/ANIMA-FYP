@@ -40,6 +40,6 @@ public class GolemAI : AIbase {
 		{
 			deflect = false;
 		}
-		Debug.Log(moveSpeed);
+		//Debug.Log(moveSpeed);
 	}
 }
