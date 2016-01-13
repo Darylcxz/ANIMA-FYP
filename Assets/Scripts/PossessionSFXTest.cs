@@ -16,7 +16,7 @@ public class PossessionSFXTest : MonoBehaviour {
 	float vignetteIntensity;
 	bool bVignette;
 	float minV = -3.5f;
-	float maxV = 3.5f;
+	float maxV = 0;
 
 
 	// Use this for initialization

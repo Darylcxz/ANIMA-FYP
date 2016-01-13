@@ -1,0 +1,792 @@
+fileFormatVersion: 2
+guid: 704639af4eb8a6040be8fac8f4c6be33
+timeCreated: 1452669609
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Body
+    100002: Head
+    100004: HighJaw1
+    100006: HighJaw2
+    100008: joint10
+    100010: joint14
+    100012: joint18
+    100014: joint21
+    100016: joint22
+    100018: joint23
+    100020: L_Ear1
+    100022: L_Ear2
+    100024: L_Ear3
+    100026: L_Ear4
+    100028: L_Wing1
+    100030: L_Wing2
+    100032: L_Wing_2
+    100034: L_Wing_3
+    100036: LowJaw1
+    100038: LowJaw2
+    100040: LowJaw3
+    100042: polySurface68
+    100044: //RootNode
+    100046: Tail1
+    100048: Tail2
+    100050: Tounge1
+    100052: Tounge2
+    100054: Tounge3
+    400000: Body
+    400002: Head
+    400004: HighJaw1
+    400006: HighJaw2
+    400008: joint10
+    400010: joint14
+    400012: joint18
+    400014: joint21
+    400016: joint22
+    400018: joint23
+    400020: L_Ear1
+    400022: L_Ear2
+    400024: L_Ear3
+    400026: L_Ear4
+    400028: L_Wing1
+    400030: L_Wing2
+    400032: L_Wing_2
+    400034: L_Wing_3
+    400036: LowJaw1
+    400038: LowJaw2
+    400040: LowJaw3
+    400042: polySurface68
+    400044: //RootNode
+    400046: Tail1
+    400048: Tail2
+    400050: Tounge1
+    400052: Tounge2
+    400054: Tounge3
+    4300000: polySurface68
+    7400000: S_Idle
+    7400002: S_Yawn
+    7400004: S_Fly
+    7400006: S_Attack
+    7400008: S_HitByLight
+    7400010: S_Death
+    7400012: S_HitByLight2
+    7400014: S_IdleFly
+    9500000: //RootNode
+    13700000: polySurface68
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: S_Idle
+      takeName: Slog5
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/HighJaw1
+        weight: 1
+      - path: Body/Head/HighJaw1/HighJaw2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2/joint21
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4/joint22
+        weight: 1
+      - path: Body/L_Wing1
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2/joint18
+        weight: 1
+      - path: Body/L_Wing2
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3/joint23
+        weight: 1
+      - path: Body/LowJaw1
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2/LowJaw3
+        weight: 1
+      - path: Body/Tail1
+        weight: 1
+      - path: Body/Tail1/Tail2
+        weight: 1
+      - path: Body/Tail1/Tail2/joint10
+        weight: 1
+      - path: Body/Tounge1
+        weight: 1
+      - path: Body/Tounge1/Tounge2
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3/joint14
+        weight: 1
+      - path: polySurface68
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Yawn
+      takeName: Slog5
+      firstFrame: 120
+      lastFrame: 270
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/HighJaw1
+        weight: 1
+      - path: Body/Head/HighJaw1/HighJaw2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2/joint21
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4/joint22
+        weight: 1
+      - path: Body/L_Wing1
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2/joint18
+        weight: 1
+      - path: Body/L_Wing2
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3/joint23
+        weight: 1
+      - path: Body/LowJaw1
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2/LowJaw3
+        weight: 1
+      - path: Body/Tail1
+        weight: 1
+      - path: Body/Tail1/Tail2
+        weight: 1
+      - path: Body/Tail1/Tail2/joint10
+        weight: 1
+      - path: Body/Tounge1
+        weight: 1
+      - path: Body/Tounge1/Tounge2
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3/joint14
+        weight: 1
+      - path: polySurface68
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Fly
+      takeName: Slog5
+      firstFrame: 300
+      lastFrame: 343
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/HighJaw1
+        weight: 1
+      - path: Body/Head/HighJaw1/HighJaw2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2/joint21
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4/joint22
+        weight: 1
+      - path: Body/L_Wing1
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2/joint18
+        weight: 1
+      - path: Body/L_Wing2
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3/joint23
+        weight: 1
+      - path: Body/LowJaw1
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2/LowJaw3
+        weight: 1
+      - path: Body/Tail1
+        weight: 1
+      - path: Body/Tail1/Tail2
+        weight: 1
+      - path: Body/Tail1/Tail2/joint10
+        weight: 1
+      - path: Body/Tounge1
+        weight: 1
+      - path: Body/Tounge1/Tounge2
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3/joint14
+        weight: 1
+      - path: polySurface68
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Attack
+      takeName: Slog5
+      firstFrame: 345
+      lastFrame: 390
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/HighJaw1
+        weight: 1
+      - path: Body/Head/HighJaw1/HighJaw2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2/joint21
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4/joint22
+        weight: 1
+      - path: Body/L_Wing1
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2/joint18
+        weight: 1
+      - path: Body/L_Wing2
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3/joint23
+        weight: 1
+      - path: Body/LowJaw1
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2/LowJaw3
+        weight: 1
+      - path: Body/Tail1
+        weight: 1
+      - path: Body/Tail1/Tail2
+        weight: 1
+      - path: Body/Tail1/Tail2/joint10
+        weight: 1
+      - path: Body/Tounge1
+        weight: 1
+      - path: Body/Tounge1/Tounge2
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3/joint14
+        weight: 1
+      - path: polySurface68
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_HitByLight
+      takeName: Slog5
+      firstFrame: 410
+      lastFrame: 430
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/HighJaw1
+        weight: 1
+      - path: Body/Head/HighJaw1/HighJaw2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2/joint21
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4/joint22
+        weight: 1
+      - path: Body/L_Wing1
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2/joint18
+        weight: 1
+      - path: Body/L_Wing2
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3/joint23
+        weight: 1
+      - path: Body/LowJaw1
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2/LowJaw3
+        weight: 1
+      - path: Body/Tail1
+        weight: 1
+      - path: Body/Tail1/Tail2
+        weight: 1
+      - path: Body/Tail1/Tail2/joint10
+        weight: 1
+      - path: Body/Tounge1
+        weight: 1
+      - path: Body/Tounge1/Tounge2
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3/joint14
+        weight: 1
+      - path: polySurface68
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Death
+      takeName: Slog5
+      firstFrame: 430
+      lastFrame: 470
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/HighJaw1
+        weight: 1
+      - path: Body/Head/HighJaw1/HighJaw2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2/joint21
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4/joint22
+        weight: 1
+      - path: Body/L_Wing1
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2/joint18
+        weight: 1
+      - path: Body/L_Wing2
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3/joint23
+        weight: 1
+      - path: Body/LowJaw1
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2/LowJaw3
+        weight: 1
+      - path: Body/Tail1
+        weight: 1
+      - path: Body/Tail1/Tail2
+        weight: 1
+      - path: Body/Tail1/Tail2/joint10
+        weight: 1
+      - path: Body/Tounge1
+        weight: 1
+      - path: Body/Tounge1/Tounge2
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3/joint14
+        weight: 1
+      - path: polySurface68
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_HitByLight2
+      takeName: Slog5
+      firstFrame: 475
+      lastFrame: 540
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/HighJaw1
+        weight: 1
+      - path: Body/Head/HighJaw1/HighJaw2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2/joint21
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4/joint22
+        weight: 1
+      - path: Body/L_Wing1
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2/joint18
+        weight: 1
+      - path: Body/L_Wing2
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3/joint23
+        weight: 1
+      - path: Body/LowJaw1
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2/LowJaw3
+        weight: 1
+      - path: Body/Tail1
+        weight: 1
+      - path: Body/Tail1/Tail2
+        weight: 1
+      - path: Body/Tail1/Tail2/joint10
+        weight: 1
+      - path: Body/Tounge1
+        weight: 1
+      - path: Body/Tounge1/Tounge2
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3/joint14
+        weight: 1
+      - path: polySurface68
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_IdleFly
+      takeName: Slog5
+      firstFrame: 540
+      lastFrame: 660
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/HighJaw1
+        weight: 1
+      - path: Body/Head/HighJaw1/HighJaw2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2/joint21
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4/joint22
+        weight: 1
+      - path: Body/L_Wing1
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2/joint18
+        weight: 1
+      - path: Body/L_Wing2
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3/joint23
+        weight: 1
+      - path: Body/LowJaw1
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2/LowJaw3
+        weight: 1
+      - path: Body/Tail1
+        weight: 1
+      - path: Body/Tail1/Tail2
+        weight: 1
+      - path: Body/Tail1/Tail2/joint10
+        weight: 1
+      - path: Body/Tounge1
+        weight: 1
+      - path: Body/Tounge1/Tounge2
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3/joint14
+        weight: 1
+      - path: polySurface68
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
