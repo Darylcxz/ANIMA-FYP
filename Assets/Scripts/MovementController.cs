@@ -67,7 +67,11 @@ public class MovementController : MonoBehaviour {
 	public float currMana;			//current mana player has
 	float maxMana;					//max mana player is allowed to have
 	bool _mana;						//if false, player regenerates mana
-	
+
+	//Slow effect stuff;
+	float slowTime;
+	bool _slow;
+	float originalSpeed;
 
 	// Use this for initialization
 	void Start () {
@@ -84,7 +88,7 @@ public class MovementController : MonoBehaviour {
         _anim = gameObject.GetComponent<Animator>();
 		maxMana = 50f;
 		currMana = maxMana;
-
+		originalSpeed = speed;
         
         
         
@@ -116,7 +120,12 @@ public class MovementController : MonoBehaviour {
 				charStates = States.attack;
 			}
 		}
-
+		slowTime += Time.deltaTime;
+		if(_slow && slowTime > 3f)
+		{
+			_slow = false;
+			speed = originalSpeed;
+		}
 		
     }
 	
@@ -423,7 +432,7 @@ public class MovementController : MonoBehaviour {
 		{
 			timeButtonPressed = Time.time;
 			_anim.SetBool("isAttacking", true);
-			Debug.Log(timeButtonPressed);
+	
 			gameObject.transform.localPosition += (transform.forward * 3 * Time.deltaTime);
 		} 
 		if (Time.time > timeButtonPressed + buttonPressAllowance)
@@ -431,5 +440,13 @@ public class MovementController : MonoBehaviour {
 			_anim.SetBool("isAttacking", false);
 			ready = true;
 		}
+	}
+	public void Slow() //slows the player down
+	{
+		float tempSpeed = speed / 2;
+		slowTime = 0;
+		_slow = true;
+		speed = tempSpeed;
+
 	}
 }
