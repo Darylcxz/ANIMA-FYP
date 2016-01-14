@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: c0adf54db991a4046904e3c95cda3d3e
+timeCreated: 1452744568
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Ancient_vase005_Part_1
+    100002: Ancient_vase005_Part_10
+    100004: Ancient_vase005_Part_11
+    100006: Ancient_vase005_Part_12
+    100008: Ancient_vase005_Part_13
+    100010: Ancient_vase005_Part_14
+    100012: Ancient_vase005_Part_15
+    100014: Ancient_vase005_Part_2
+    100016: Ancient_vase005_Part_3
+    100018: Ancient_vase005_Part_4
+    100020: Ancient_vase005_Part_5
+    100022: Ancient_vase005_Part_6
+    100024: Ancient_vase005_Part_7
+    100026: Ancient_vase005_Part_8
+    100028: Ancient_vase005_Part_9
+    100030: //RootNode
+    400000: Ancient_vase005_Part_1
+    400002: Ancient_vase005_Part_10
+    400004: Ancient_vase005_Part_11
+    400006: Ancient_vase005_Part_12
+    400008: Ancient_vase005_Part_13
+    400010: Ancient_vase005_Part_14
+    400012: Ancient_vase005_Part_15
+    400014: Ancient_vase005_Part_2
+    400016: Ancient_vase005_Part_3
+    400018: Ancient_vase005_Part_4
+    400020: Ancient_vase005_Part_5
+    400022: Ancient_vase005_Part_6
+    400024: Ancient_vase005_Part_7
+    400026: Ancient_vase005_Part_8
+    400028: Ancient_vase005_Part_9
+    400030: //RootNode
+    2300000: Ancient_vase005_Part_1
+    2300002: Ancient_vase005_Part_10
+    2300004: Ancient_vase005_Part_11
+    2300006: Ancient_vase005_Part_12
+    2300008: Ancient_vase005_Part_13
+    2300010: Ancient_vase005_Part_14
+    2300012: Ancient_vase005_Part_15
+    2300014: Ancient_vase005_Part_2
+    2300016: Ancient_vase005_Part_3
+    2300018: Ancient_vase005_Part_4
+    2300020: Ancient_vase005_Part_5
+    2300022: Ancient_vase005_Part_6
+    2300024: Ancient_vase005_Part_7
+    2300026: Ancient_vase005_Part_8
+    2300028: Ancient_vase005_Part_9
+    3300000: Ancient_vase005_Part_1
+    3300002: Ancient_vase005_Part_10
+    3300004: Ancient_vase005_Part_11
+    3300006: Ancient_vase005_Part_12
+    3300008: Ancient_vase005_Part_13
+    3300010: Ancient_vase005_Part_14
+    3300012: Ancient_vase005_Part_15
+    3300014: Ancient_vase005_Part_2
+    3300016: Ancient_vase005_Part_3
+    3300018: Ancient_vase005_Part_4
+    3300020: Ancient_vase005_Part_5
+    3300022: Ancient_vase005_Part_6
+    3300024: Ancient_vase005_Part_7
+    3300026: Ancient_vase005_Part_8
+    3300028: Ancient_vase005_Part_9
+    4300000: Ancient_vase005_Part_1
+    4300002: Ancient_vase005_Part_2
+    4300004: Ancient_vase005_Part_3
+    4300006: Ancient_vase005_Part_4
+    4300008: Ancient_vase005_Part_5
+    4300010: Ancient_vase005_Part_6
+    4300012: Ancient_vase005_Part_7
+    4300014: Ancient_vase005_Part_8
+    4300016: Ancient_vase005_Part_9
+    4300018: Ancient_vase005_Part_10
+    4300020: Ancient_vase005_Part_11
+    4300022: Ancient_vase005_Part_12
+    4300024: Ancient_vase005_Part_13
+    4300026: Ancient_vase005_Part_14
+    4300028: Ancient_vase005_Part_15
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
