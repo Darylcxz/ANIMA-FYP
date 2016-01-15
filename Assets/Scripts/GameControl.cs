@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.ImageEffects;
 
 public class GameControl : MonoBehaviour {
 
@@ -10,11 +11,24 @@ public class GameControl : MonoBehaviour {
 	public static bool spiritmode = false;
     public static bool freeze = false;
     [SerializeField]private Image possesionmode;
+	[SerializeField]private Image flashImage;
     private Collider[] hitcolliders;
     private int ordernum = 0;
     private Vector3 heightplus = new Vector3(0, 1, 0);
     private int enemylayer;
     
+	//Screen Flash stuff
+	float flashTimer;
+	float flashAlpha = 0;
+	bool bFlash;
+
+	//Possession Vignette
+	float vignetteTimer;
+	float minV = 1f;
+	float maxV = 1.8f;
+	Vector3 currScale = new Vector3(1,1,1);
+	bool bVignette;
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +38,7 @@ public class GameControl : MonoBehaviour {
         flame = GameObject.Find("TargetSerik");
         Seriksplace = GameObject.Find("Seriksplace").transform;
         enemylayer = 1 << LayerMask.NameToLayer("DetectPossess");
+		flashAlpha = 0;
 	}
 	
 	// Update is called once per frame
@@ -35,7 +50,11 @@ public class GameControl : MonoBehaviour {
 		{
 			possessModeToggle();
 		}
-
+		if (GamepadManager.buttonYUp)
+		{
+			
+		}
+		
         if(GamepadManager.dpadRightDown && spiritmode || Input.GetKeyDown("k") && spiritmode)
         {
             NextPossessTarget();
@@ -47,6 +66,24 @@ public class GameControl : MonoBehaviour {
         }
 
         possesionmode.enabled = freeze;
+
+		if (bFlash)
+		{
+			flashTimer += Time.deltaTime;
+			flashImage.color = new Color(1, 1, 1, flashAlpha);
+			//lerp damping ranges that are okay are between 3-8
+			flashAlpha = Mathf.Lerp(flashAlpha, 0, flashTimer/3);
+			if (flashAlpha == 0)
+			{
+				bFlash = false;
+			}
+		}
+		if (bVignette)
+		{
+			vignetteTimer += Time.deltaTime;
+			possesionmode.rectTransform.localScale = currScale*(Mathf.PingPong(Time.time, maxV - minV) + minV);
+
+		}
 	
 	}
 
@@ -59,6 +96,7 @@ public class GameControl : MonoBehaviour {
             hitcolliders = Physics.OverlapSphere(character.transform.position, 5, enemylayer);
             flame.transform.SetParent(null);
             flame.transform.localPosition = hitcolliders[ordernum].transform.position + heightplus;
+			ScreenFlash();
 
 		} else if (spiritmode) {
 
@@ -108,5 +146,13 @@ public class GameControl : MonoBehaviour {
         flame.transform.position = Seriksplace.position;
         flame.transform.SetParent(character.transform);
     }
+	void ScreenFlash()
+	{
+		flashAlpha = 1;
+		flashTimer = 0;
+		bFlash = true;
+		bVignette = true;
+	}
+
 	
 }

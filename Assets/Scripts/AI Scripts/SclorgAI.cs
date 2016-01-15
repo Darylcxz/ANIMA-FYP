@@ -36,6 +36,7 @@ public class SclorgAI : AIbase {
 		base.Start();
 		canPosses = false;
 		health = 999;
+		AISpeed = 15f;
 		_rb = gameObject.GetComponent<Rigidbody>();
 		SclorgAnim = gameObject.GetComponent<Animator>();
 	}
@@ -43,15 +44,15 @@ public class SclorgAI : AIbase {
 	{
 		base.Roam();
 		_distance = Vector3.Distance(gameObject.transform.position, player.transform.position);
-		Debug.Log(_distance);
-		if (distance < 35)
+	
+		if (_distance < 35)
 		{
 			AIState = States.pursue;
 		}
 	}
 	protected override void ActivateAbility()
 	{
-		//throw new System.NotImplementedException();
+	
 		currentTargetPosition = player.transform.position;
 		switch (sclorgStates)
 		{ 
@@ -59,7 +60,7 @@ public class SclorgAI : AIbase {
 				SclorgAnim.SetBool("isAttacking", false);
 				SclorgAnim.SetBool("isMoving",true);
 				MoveTowardsTarget();
-				if (distance < 15)
+				if (_distance < 10)
 				{
 					_timer = 0;
 					SclorgAnim.SetBool("isAttacking", true);
@@ -76,7 +77,7 @@ public class SclorgAI : AIbase {
 				{
 					Fire();
 				}
-				if ((_timer >= 3.75f || distance > 15) && SclorgAnim.GetBool("isAttacking"))
+				if ((_timer >= 3.75f || _distance > 15) && SclorgAnim.GetBool("isAttacking"))
 				{
 					SclorgAnim.SetBool("isAttacking", false);
 					SclorgAnim.SetBool("isMoving", true);
@@ -107,7 +108,7 @@ public class SclorgAI : AIbase {
 	{
 		Debug.Log("fire");
 		Rigidbody projectileClone = Instantiate(projectile, shootPos.position, transform.rotation) as Rigidbody;
-		projectileClone.velocity = transform.forward * 20;
+		projectileClone.velocity = transform.forward * 30;
 		shoot = true;
 
 	}
