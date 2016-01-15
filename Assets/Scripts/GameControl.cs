@@ -16,6 +16,12 @@ public class GameControl : MonoBehaviour {
     private int ordernum = 0;
     private Vector3 heightplus = new Vector3(0, 1, 0);
     private int enemylayer;
+
+    //Collectibles
+    [SerializeField]private Image card;
+    [SerializeField]private Sprite[] cards;
+    [SerializeField]private Image cardpanel;
+    private bool cardshowing;
     
 	//Screen Flash stuff
 	float flashTimer;
@@ -39,6 +45,8 @@ public class GameControl : MonoBehaviour {
         Seriksplace = GameObject.Find("Seriksplace").transform;
         enemylayer = 1 << LayerMask.NameToLayer("DetectPossess");
 		flashAlpha = 0;
+        card.enabled = false;
+        cardpanel.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -84,6 +92,16 @@ public class GameControl : MonoBehaviour {
 			possesionmode.rectTransform.localScale = currScale*(Mathf.PingPong(Time.time, maxV - minV) + minV);
 
 		}
+
+        if(cardshowing)
+        {
+            if(GamepadManager.buttonBDown)
+            {
+                card.enabled = false;
+                cardpanel.enabled = false;
+                cardshowing = false;
+            }
+        }
 	
 	}
 
@@ -153,6 +171,14 @@ public class GameControl : MonoBehaviour {
 		bFlash = true;
 		bVignette = true;
 	}
+
+    public void ShowCard(int cardnumber)
+    {
+        cardshowing = true;
+        card.enabled = true;
+        cardpanel.enabled = true;
+        card.sprite = cards[cardnumber];
+    }
 
 	
 }
