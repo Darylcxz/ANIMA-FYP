@@ -286,7 +286,12 @@ public class MovementController : MonoBehaviour {
 				if(guideJump.jump== false)
 				{
 					RotatingLogic(GamepadManager.h1, GamepadManager.v1);
+					if (((guideJump.wayPoints.Count - 1) > guideJump.jumpIndex || guideJump.jumpIndex == 0) && !guideJump.starting)
+					{
+						charStates = States.idle;
+					}
 				}
+				
                 break;
         }
 	}

@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 public class GuidedJump : MonoBehaviour {
 
-	[SerializeField]List<Transform> wayPoints = new List<Transform>();
+	public List<Transform> wayPoints = new List<Transform>();
 	public bool jump;
 	[SerializeField]Vector3 startPos;
 	[SerializeField]Vector3 endPos;
 	[SerializeField]float _jumpTime;
-	[SerializeField]int jumpIndex; //jump index
+	public int jumpIndex; //jump index
 	[SerializeField]Vector3 jumpLerp;
-	[SerializeField]bool starting; // first ever jump 
+	public bool starting; // first ever jump 
 	GameObject player;
 	float dotProduct;
 	[SerializeField]
