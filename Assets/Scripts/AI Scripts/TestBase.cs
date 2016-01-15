@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TestBase : AIbase {
 
-    public ParticleSystem explosion;
+    [SerializeField] ParticleSystem explosion;
 
     protected Vector3 asd;
 	// Use this for initialization
@@ -18,7 +18,11 @@ public class TestBase : AIbase {
 	
     protected override void ActivateAbility()
     {
-        explosion.Play();
+		if (!explosion.isPlaying)
+		{
+			explosion.Play();
+		}
+		
     }
     protected override void PassiveAbility()
     {
