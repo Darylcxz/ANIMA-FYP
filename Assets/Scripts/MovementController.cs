@@ -74,9 +74,11 @@ public class MovementController : MonoBehaviour {
 	bool _slow;
 	float originalSpeed;
 
+	[SerializeField]GuidedJump guideJump;
+
 	// Use this for initialization
 	void Start () {
-		
+		//guideJump = gameObject.GetComponent<GuidedJump>();
 		//Dagger stuff, disables and hides the dagger collider and trail renderer so that it doesn't show
 		_dagger = GameObject.FindGameObjectWithTag("dagger").GetComponent<Collider>();
 		_dagger.enabled = false;
@@ -168,7 +170,7 @@ public class MovementController : MonoBehaviour {
             case States.move:
 	
                 RotatingLogic(hMove, vMove);
-                MovementLogic(hMove,vMove);
+				MovementLogic(hMove, vMove);
 				//RotatingLogic(GamepadManager.h1, GamepadManager.v1);
 				//MovementLogic(GamepadManager.h1, GamepadManager.v1);
                 
@@ -182,6 +184,7 @@ public class MovementController : MonoBehaviour {
 				//	_rigidBody.velocity = Vector3.zero;
 					charStates = States.jump;
                 }
+				
 				if (roll != 0)
 				{
 					charStates = States.roll;
@@ -280,7 +283,15 @@ public class MovementController : MonoBehaviour {
                 break;
 
             case States.sequencedjump:
-                
+				if(guideJump.jump== false)
+				{
+					RotatingLogic(GamepadManager.h1, GamepadManager.v1);
+					if (((guideJump.wayPoints.Count - 1) > guideJump.jumpIndex || guideJump.jumpIndex == 0) && !guideJump.starting)
+					{
+						charStates = States.idle;
+					}
+				}
+				
                 break;
         }
 	}
@@ -322,7 +333,7 @@ public class MovementController : MonoBehaviour {
 			possess = GamepadManager.buttonY;
 			if (!bTutorial)
 			{
-				jump = GamepadManager.buttonA;
+				jump = GamepadManager.buttonADown;
 				roll = GamepadManager.triggerR;
 			}
 		}
