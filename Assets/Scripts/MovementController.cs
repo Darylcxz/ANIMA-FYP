@@ -14,6 +14,7 @@ public class MovementController : MonoBehaviour {
         roll,			//rolling state - needs to allow player Invincibility frames and rolling speed
         possess,		//possess state - possession logic where player can control creature
         climb,			//climb state - state for climbing up shenanigans
+        sequencedjump   //jumping sequence state - state for jumping event thingy
     };
 
    public States charStates = States.idle;
@@ -276,6 +277,10 @@ public class MovementController : MonoBehaviour {
                     _rigidBody.AddForce(transform.forward * 2, ForceMode.Impulse);
                     charStates = States.idle;
                 }
+                break;
+
+            case States.sequencedjump:
+                
                 break;
         }
 	}

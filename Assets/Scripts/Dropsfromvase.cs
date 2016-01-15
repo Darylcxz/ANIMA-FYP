@@ -4,7 +4,7 @@ using System.Collections;
 public class Dropsfromvase : MonoBehaviour {
     [SerializeField]private int typeofdrop;
     [SerializeField]private int typeofcard;
-    
+    [SerializeField]private GameControl controlstation;
 	// Use this for initialization
 	void Start () {
 	
@@ -14,6 +14,7 @@ public class Dropsfromvase : MonoBehaviour {
     {
         if(other.CompareTag("Player"))
         {
+            Debug.Log("collect");
             switch(typeofdrop)
             {
                 case 1:
@@ -21,9 +22,11 @@ public class Dropsfromvase : MonoBehaviour {
                     break;
 
                 case 2:
-                    
+                    controlstation.SendMessage("ShowCard", typeofcard);
                     break;
             }
+
+            Destroy(gameObject);
         }
     }
 }
