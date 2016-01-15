@@ -414,7 +414,6 @@ public class MovementController : MonoBehaviour {
                 _rigidBody.rotation = targetRot;
                 transform.position = new Vector3(hit.transform.position.x - 0.8f, transform.position.y, transform.position.z);
                 _rigidBody.constraints = RigidbodyConstraints.FreezeRotation & RigidbodyConstraints.FreezePositionZ & RigidbodyConstraints.FreezePositionX;
-                //charStates = States.climb;
             }
         }
     }
@@ -447,6 +446,10 @@ public class MovementController : MonoBehaviour {
 		slowTime = 0;
 		_slow = true;
 		speed = tempSpeed;
-
 	}
+
+    public void AddMana(float manatoadd)
+    {
+        currMana += manatoadd;
+    }
 }
