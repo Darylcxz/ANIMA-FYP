@@ -294,7 +294,7 @@ public abstract class AIbase : MonoBehaviour {
                     fire.Stop();
                     possessedexplode.Play();
                     GameControl.freeze = false;
-//                    print("hithithit");
+                    print("hithithit");
                 }
             }
         }
