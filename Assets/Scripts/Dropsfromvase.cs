@@ -4,9 +4,11 @@ using System.Collections;
 public class Dropsfromvase : MonoBehaviour {
     [SerializeField]private int typeofdrop;
     [SerializeField]private int typeofcard;
-    [SerializeField]private GameControl controlstation;
+    private GameControl controlstation;
 	// Use this for initialization
 	void Start () {
+
+        controlstation = GameObject.Find("Directional Light").GetComponent<GameControl>();
 	
 	}
 

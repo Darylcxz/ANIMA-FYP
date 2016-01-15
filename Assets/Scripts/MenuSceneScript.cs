@@ -94,6 +94,6 @@ public class MenuSceneScript : MonoBehaviour {
 
     public void loadLevel()
     {
-        Application.LoadLevel("1-2 Exterior");
+        Application.LoadLevel("2-1");
     }
 }
