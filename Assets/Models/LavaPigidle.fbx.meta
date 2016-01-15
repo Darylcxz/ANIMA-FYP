@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dcfa2b18fd63a5049ba311119f9035be
-timeCreated: 1440063309
+guid: 2f6a9aaefb29fd54c8ab79081cbf805a
+timeCreated: 1452845893
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -68,7 +68,7 @@ ModelImporter:
     400058: transform1
     400060: Tummy1
     4300000: polySurface3
-    7400000: lapigsneze
+    7400000: LaPig Idle
     9500000: //RootNode
     13700000: polySurface3
   materials:
@@ -92,16 +92,16 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: lapigsneze
-      takeName: Take 001
+      name: LaPig Idle
+      takeName: LaPig Idle
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

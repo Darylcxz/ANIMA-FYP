@@ -117,7 +117,6 @@ public class GameControl : MonoBehaviour {
 			ScreenFlash();
 
 		} else if (spiritmode) {
-
             Camerafollow.targetUnit = character;
             Invoke("Firecallback", 0.3f);
             ordernum = 0;

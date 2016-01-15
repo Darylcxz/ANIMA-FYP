@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dcfa2b18fd63a5049ba311119f9035be
-timeCreated: 1440063309
+guid: 5b80672c5ac186049be5d38ddc4386fe
+timeCreated: 1452845893
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -68,7 +68,7 @@ ModelImporter:
     400058: transform1
     400060: Tummy1
     4300000: polySurface3
-    7400000: lapigsneze
+    7400000: LaPigWalk2
     9500000: //RootNode
     13700000: polySurface3
   materials:
@@ -90,95 +90,7 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: lapigsneze
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 30
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Box003
-        weight: 1
-      - path: Box003/polySurface3
-        weight: 1
-      - path: Box003/transform1
-        weight: 1
-      - path: Tummy1
-        weight: 1
-      - path: Tummy1/Hips
-        weight: 1
-      - path: Tummy1/Hips/BLLeg
-        weight: 1
-      - path: Tummy1/Hips/BLLeg/BLKnee
-        weight: 1
-      - path: Tummy1/Hips/BLLeg/BLKnee/BL
-        weight: 1
-      - path: Tummy1/Hips/BRReg
-        weight: 1
-      - path: Tummy1/Hips/BRReg/BRKnee
-        weight: 1
-      - path: Tummy1/Hips/BRReg/BRKnee/BR_Foot
-        weight: 1
-      - path: Tummy1/Hips/Butt
-        weight: 1
-      - path: Tummy1/Hips/Butt/Tail
-        weight: 1
-      - path: Tummy1/joint10
-        weight: 1
-      - path: Tummy1/joint11
-        weight: 1
-      - path: Tummy1/Neck
-        weight: 1
-      - path: Tummy1/Neck/Face
-        weight: 1
-      - path: Tummy1/Neck/Face/Nose
-        weight: 1
-      - path: Tummy1/Neck/FLLeg
-        weight: 1
-      - path: Tummy1/Neck/FLLeg/FLKnee
-        weight: 1
-      - path: Tummy1/Neck/FLLeg/FLKnee/FLFoot
-        weight: 1
-      - path: Tummy1/Neck/FRReg
-        weight: 1
-      - path: Tummy1/Neck/FRReg/FRKnee
-        weight: 1
-      - path: Tummy1/Neck/FRReg/FRKnee/FRFoot
-        weight: 1
-      - path: Tummy1/Neck/L_Ear
-        weight: 1
-      - path: Tummy1/Neck/L_Ear/L_Ear2
-        weight: 1
-      - path: Tummy1/Neck/L_Ear/L_Ear2/L_Ear3
-        weight: 1
-      - path: Tummy1/Neck/R_Ear
-        weight: 1
-      - path: Tummy1/Neck/R_Ear/R_Ear2
-        weight: 1
-      - path: Tummy1/Neck/R_Ear/R_Ear2/R_Ear3
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
