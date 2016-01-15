@@ -4,23 +4,18 @@ using UnityEngine.UI;
 
 public class Foreground : MonoBehaviour {
     private RectTransform foreground;
-    private float horizontal;
-    private float vertical;
+    [SerializeField]private Camera maincam;
+    [SerializeField]private Transform foregroundpos;
 	// Use this for initialization
 	void Start () {
 
         foreground = gameObject.GetComponent<RectTransform>();
-	
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-        vertical *= -1;
-        horizontal *= -1;
-        Vector2 movedirection = new Vector2(horizontal, vertical);
-        foreground.anchoredPosition += movedirection * 5;
+        foreground.anchoredPosition = maincam.WorldToScreenPoint(foregroundpos.position);
 	
 	}
 }

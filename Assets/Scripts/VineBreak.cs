@@ -7,11 +7,6 @@ public class VineBreak : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 	void OnCollisionEnter(Collision col)
 	{
 		if (col.collider.tag == "dagger" && gameObject.transform.GetChild(0)!= null)

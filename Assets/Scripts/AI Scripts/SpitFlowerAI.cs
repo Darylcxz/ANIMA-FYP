@@ -4,8 +4,10 @@ using System.Collections;
 public class SpitFlowerAI : MonoBehaviour {
 	GameObject player;
 	GameObject target;
-	public Rigidbody projectile;
-	public Transform shootPoint;
+	[SerializeField]
+	Rigidbody projectile;
+	[SerializeField]
+	Transform shootPoint;
 	public float range = 5f;
 	Rigidbody _rb;
 	float timer;
