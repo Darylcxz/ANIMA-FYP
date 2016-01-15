@@ -13,6 +13,7 @@ public class MenuSceneScript : MonoBehaviour {
 	bool clicked;
 
 	public GameObject fadeTablet;
+	[SerializeField]GameObject fadeBanner;
 
 
 	// Use this for initialization
@@ -62,6 +63,7 @@ public class MenuSceneScript : MonoBehaviour {
 		
 		FadeObj.alpha = Mathf.Lerp(0,1,_t2);
 		fadeTablet.GetComponent<MeshRenderer> ().material.SetColor ("_Color",(new Color (1, 1, 1, Mathf.Lerp (0, 1, _t2))));
+		fadeBanner.GetComponent<MeshRenderer>().material.SetColor("_Color", (new Color(1, 1, 1, Mathf.Lerp(0, 1, _t2))));
 
 
 	
