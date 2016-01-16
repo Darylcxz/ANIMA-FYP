@@ -16,6 +16,7 @@ public class GuidedJump : MonoBehaviour {
 	float dotProduct;
 	[SerializeField]
 	bool isFacing;
+	float distance; //distance between player and waypoint;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -24,20 +25,21 @@ public class GuidedJump : MonoBehaviour {
 
 	void Update()
 	{
+		distance = Vector3.Distance(player.transform.position, wayPoints[jumpIndex].position);
 		_jumpTime += Time.deltaTime;
-		if (GamepadManager.buttonADown && CheckFacing(jumpIndex + 1))
+		if (GamepadManager.buttonADown && CheckFacing(jumpIndex + 1) && distance <5)
 		{
 			jumpIndex++;
-			NextJump();
+			NextJump(); //jump = true and timer set to 0;
 		}
-		if (GamepadManager.buttonADown && CheckFacing(jumpIndex - 1))
+		if (GamepadManager.buttonADown && CheckFacing(jumpIndex - 1) && distance < 5)
 		{
 			jumpIndex--;
 			NextJump();
 		}
 		if (jump && !starting)
 		{
-			startPos = player.transform.position;
+			startPos = wayPoints[jumpIndex-1].position;
 			endPos = wayPoints[jumpIndex].position;
 			jumpLerp = Vector3.Lerp(startPos, endPos, _jumpTime);
 			player.transform.position = jumpLerp;
