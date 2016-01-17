@@ -14,7 +14,7 @@ public class GameControl : MonoBehaviour {
 	[SerializeField]private Image flashImage;
     private Collider[] hitcolliders;
     private int ordernum = 0;
-    private Vector3 heightplus = new Vector3(0, 1, 0);
+    private Vector3 heightplus = new Vector3(0, 1.5f, 0);
     private int enemylayer;
 
     //Collectibles
@@ -27,6 +27,10 @@ public class GameControl : MonoBehaviour {
 	float flashTimer;
 	float flashAlpha = 0;
 	bool bFlash;
+
+	//Fireball
+	[SerializeField]
+	GameObject fireBall;
 
 	//Possession Vignette
 	float vignetteTimer;
@@ -47,6 +51,8 @@ public class GameControl : MonoBehaviour {
 		flashAlpha = 0;
         card.enabled = false;
         cardpanel.enabled = false;
+		fireBall.SetActive(false);
+		possesionmode.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -73,7 +79,6 @@ public class GameControl : MonoBehaviour {
             PrevPossessTarget();
         }
 
-        possesionmode.enabled = freeze;
 
 		if (bFlash)
 		{
@@ -88,7 +93,7 @@ public class GameControl : MonoBehaviour {
 		}
 		if (bVignette)
 		{
-			vignetteTimer += Time.deltaTime;
+		//	vignetteTimer += Time.deltaTime;
 			possesionmode.rectTransform.localScale = currScale*(Mathf.PingPong(Time.time, maxV - minV) + minV);
 
 		}
@@ -115,12 +120,18 @@ public class GameControl : MonoBehaviour {
             flame.transform.SetParent(null);
             flame.transform.localPosition = hitcolliders[ordernum].transform.position + heightplus;
 			ScreenFlash();
+			fireBall.SetActive(true);
+			bVignette = true;
+			possesionmode.enabled = true;
 
 		} else if (spiritmode) {
             Camerafollow.targetUnit = character;
             Invoke("Firecallback", 0.3f);
             ordernum = 0;
             spiritmode = false;
+			fireBall.SetActive(false);
+			bVignette = false;
+			possesionmode.enabled = false;
             if(freeze)
             {
                 freeze = false;
@@ -168,7 +179,6 @@ public class GameControl : MonoBehaviour {
 		flashAlpha = 1;
 		flashTimer = 0;
 		bFlash = true;
-		bVignette = true;
 	}
 
     public void ShowCard(int cardnumber)

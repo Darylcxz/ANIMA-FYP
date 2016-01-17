@@ -4,6 +4,7 @@ using System.Collections;
 public class TestBase : AIbase {
 
     [SerializeField] ParticleSystem explosion;
+	Animator pigAnim;
 
     protected Vector3 asd;
 	// Use this for initialization
@@ -11,6 +12,7 @@ public class TestBase : AIbase {
         agent = GetComponent<NavMeshAgent>();
         _rigidBody = GetComponent<Rigidbody>();
         origin = gameObject.transform.position;
+		pigAnim = GetComponent<Animator>();
         
 	}
 	
@@ -21,12 +23,29 @@ public class TestBase : AIbase {
 		if (!explosion.isPlaying)
 		{
 			explosion.Play();
+			pigAnim.SetTrigger("tSneeze");
 		}
 		
     }
     protected override void PassiveAbility()
     {
       //Plays Pig Anims
+		switch (AIState)
+		{
+ 			case States.walk:
+				pigAnim.SetBool("isMoving", true);
+				break;
+			case States.idle:
+				pigAnim.SetBool("isMoving", false);
+				break;
+			case States.possessed:
+				pigAnim.SetBool("isMoving", false);
+				break;
+			case States.doNothing:
+				pigAnim.SetBool("isMoving", false);
+				break;
+
+		}
        
     }
    

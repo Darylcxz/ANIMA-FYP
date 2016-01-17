@@ -45,7 +45,7 @@ public class SclorgAI : AIbase {
 		base.Roam();
 		_distance = Vector3.Distance(gameObject.transform.position, player.transform.position);
 	
-		if (_distance < 35)
+		if (_distance < 20)
 		{
 			AIState = States.pursue;
 		}

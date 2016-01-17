@@ -205,7 +205,7 @@ public class MovementController : MonoBehaviour {
 				_mana = true;
                 //MovementLogic(hMoveRight, vMoveRight);
                // RotatingLogic(hMoveRight, vMoveRight);
-				Debug.Log("possss");
+			//	Debug.Log("possss");
 				MovementLogic(GamepadManager.h2, GamepadManager.v2);
 				RotatingLogic(GamepadManager.h2, GamepadManager.v2);
 			
@@ -213,7 +213,7 @@ public class MovementController : MonoBehaviour {
                 {
                     charStates = States.idle;
                     _mana = false;
-                    Debug.Log("possass");
+                  //  Debug.Log("possass");
                 }
 				
                 break;
