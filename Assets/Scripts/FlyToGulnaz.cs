@@ -38,7 +38,7 @@ public class FlyToGulnaz : MonoBehaviour {
 		Vector3 direction = player.transform.position - transform.position;
 		direction.y = 0;
 		transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 5 * Time.deltaTime);
-		if (direction.magnitude > 1)
+		if (direction.magnitude > 0.1f)
 		{
 			Vector3 moveVector = direction.normalized * 7 * Time.deltaTime;
 			transform.position += moveVector;
