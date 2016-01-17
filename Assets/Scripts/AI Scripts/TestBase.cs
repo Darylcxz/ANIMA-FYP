@@ -26,7 +26,7 @@ public class TestBase : AIbase {
     }
     protected override void PassiveAbility()
     {
-      //  throw new System.NotImplementedException();
+      //Plays Pig Anims
        
     }
    

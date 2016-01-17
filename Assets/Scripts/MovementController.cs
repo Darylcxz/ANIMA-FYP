@@ -458,7 +458,7 @@ public class MovementController : MonoBehaviour {
 	}
 	public void Slow() //slows the player down
 	{
-		float tempSpeed = speed / 2;
+		float tempSpeed = originalSpeed / 2;
 		slowTime = 0;
 		_slow = true;
 		speed = tempSpeed;

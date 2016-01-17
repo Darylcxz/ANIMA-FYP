@@ -34,7 +34,7 @@ public abstract class AIbase : MonoBehaviour {
     //states related stuff
     public States AIState = States.walk;
     bool ready = false;
-    protected float waitTime = 3.0f;
+    protected float waitTime = 10.0f;
     protected Vector3 origin;
     protected float distance;
     public float retreatDist;
@@ -43,7 +43,7 @@ public abstract class AIbase : MonoBehaviour {
     float vMove;
     float hMove;
     protected float speed = 5f; //player movement speed;
-    protected float AISpeed = 1f; // AI selfmove speed;
+    [SerializeField]protected float AISpeed = 1f; // AI selfmove speed;
 
 	//AI Stats and stuff
 	protected float health;
@@ -217,11 +217,6 @@ public abstract class AIbase : MonoBehaviour {
 		}
 
 
-
-        //if(Input.GetMouseButtonDown(1))
-        //{
-        //    isPossessed = false;
-        //}
 
 	}
 	protected void MoveTowardsTarget()

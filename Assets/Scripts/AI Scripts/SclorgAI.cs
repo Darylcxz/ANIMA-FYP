@@ -5,7 +5,7 @@ public class SclorgAI : AIbase {
 
 	//GameObject player;
 	GameObject target;
-	float _timer;
+	[SerializeField]float _timer;
 	Rigidbody _rb;
 
 	float _distance;
@@ -36,7 +36,7 @@ public class SclorgAI : AIbase {
 		base.Start();
 		canPosses = false;
 		health = 999;
-		AISpeed = 15f;
+		AISpeed = 1f;
 		_rb = gameObject.GetComponent<Rigidbody>();
 		SclorgAnim = gameObject.GetComponent<Animator>();
 	}
@@ -60,7 +60,7 @@ public class SclorgAI : AIbase {
 				SclorgAnim.SetBool("isAttacking", false);
 				SclorgAnim.SetBool("isMoving",true);
 				MoveTowardsTarget();
-				if (_distance < 10)
+				if (_distance < 10 && _timer > 0.1f && !SclorgAnim.GetBool("isAttacking"))
 				{
 					_timer = 0;
 					SclorgAnim.SetBool("isAttacking", true);
@@ -73,11 +73,11 @@ public class SclorgAI : AIbase {
 				SclorgAnim.SetBool("isAttacking", true);
 				SclorgAnim.SetBool("isMoving", false);
 				LookAtPlayer();
-				if (_timer > 2.4f && !shoot && SclorgAnim.GetBool("isAttacking"))
+				if (_timer > 2f && !shoot && SclorgAnim.GetBool("isAttacking"))
 				{
 					Fire();
 				}
-				if ((_timer >= 3.75f || _distance > 15) && SclorgAnim.GetBool("isAttacking"))
+				if ((_timer >= 2.24f || _distance > 10) && SclorgAnim.GetBool("isAttacking"))
 				{
 					SclorgAnim.SetBool("isAttacking", false);
 					SclorgAnim.SetBool("isMoving", true);
