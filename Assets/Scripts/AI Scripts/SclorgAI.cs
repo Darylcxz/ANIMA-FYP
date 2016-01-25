@@ -6,7 +6,7 @@ public class SclorgAI : AIbase {
 	//GameObject player;
 	GameObject target;
 	[SerializeField]float _timer;
-	Rigidbody _rb;
+	//Rigidbody _rb;
 
 	float _distance;
 	bool shoot;
@@ -37,7 +37,7 @@ public class SclorgAI : AIbase {
 		canPosses = false;
 		health = 999;
 		AISpeed = 1f;
-		_rb = gameObject.GetComponent<Rigidbody>();
+		_rigidBody = gameObject.GetComponent<Rigidbody>();
 		SclorgAnim = gameObject.GetComponent<Animator>();
 	}
 	protected override void Roam()
@@ -101,7 +101,7 @@ public class SclorgAI : AIbase {
 		_direction = futurePos - transform.position;
 		_direction.y = 0;
 		Quaternion lookRot = Quaternion.LookRotation(_direction);
-		_rb.MoveRotation(lookRot);
+		_rigidBody.MoveRotation(lookRot);
 		//transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 2f * Time.deltaTime);
 	}
 	void Fire()
