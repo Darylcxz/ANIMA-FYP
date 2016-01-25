@@ -187,6 +187,7 @@ public class TutorialController : MonoBehaviour {
 				if (_dTutScript.deshDead == true)
 				{
 					_xText.enabled = false;
+					//HERREE
 					DialogueScript.NPCname = "defeated1-1";
 					string textData = _dScript.dialogue.text;
 					_dScript.ParseDialogue(textData);
