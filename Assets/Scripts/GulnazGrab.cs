@@ -5,6 +5,10 @@ using System.Collections;
 public class GulnazGrab : MonoBehaviour {
     //private bool touching = false;
     public static bool holding = false;
+
+	[SerializeField]
+	AudioSource gateSound;
+
 	bool bLog;
     private Vector3 center;
     private Vector3 side1;
@@ -20,7 +24,7 @@ public class GulnazGrab : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		//gateSound = GetComponent<AudioSource>();
 	}
 	// Update is called once per frame
 	void Update () {
@@ -65,6 +69,7 @@ public class GulnazGrab : MonoBehaviour {
 			{
  				hit.collider.gameObject.GetComponent<Animator>().SetBool("bLever",true);
 				GameObject.Find("gate").GetComponent<Animator>().SetBool("bLever", true);
+				gateSound.Play();
 				hit.collider.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
 			}
 			if (hit.collider.tag == "log")

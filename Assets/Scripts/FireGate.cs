@@ -4,7 +4,10 @@ using System.Collections;
 public class FireGate : MonoBehaviour {
 
 	bool fireTrigger;
+	[SerializeField]AudioSource fireSound;
 
+	[SerializeField]
+	AudioSource stoneSound;
 	public GameObject LeftFire;
 	public GameObject RightFire;
 	public GameObject GateFire;
@@ -20,6 +23,8 @@ public class FireGate : MonoBehaviour {
 		{
 			GateFire.GetComponent<Animator>().SetBool("bFire", true);
 			GameObject.FindGameObjectWithTag("stick").SetActive(false);
+			stoneSound.Play();
+			
 		}
 	
 	}
@@ -29,6 +34,7 @@ public class FireGate : MonoBehaviour {
 		if (col.collider.tag == "dagger")
 		{
 			gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+			fireSound.Play();
 		}
 	}
 }
