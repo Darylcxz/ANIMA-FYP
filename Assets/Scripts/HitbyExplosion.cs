@@ -3,6 +3,8 @@ using System.Collections;
 
 public class HitbyExplosion : MonoBehaviour {
 
+	[SerializeField]
+	AudioSource fireSound;
 	
     void OnParticleCollision(GameObject other)
     {
