@@ -8,6 +8,7 @@ public class PressurePlateScript : MonoBehaviour {
 	[SerializeField]
 	Animator gateAnim;
 	bool bSteppedOn;
+    AudioSource stoneslide;
 
 	void Update()
 	{
@@ -24,4 +25,10 @@ public class PressurePlateScript : MonoBehaviour {
 		bSteppedOn = false;
 		
 	}
+
+    void OnTriggerEnter()
+    {
+        stoneslide = gameObject.GetComponent<AudioSource>();
+        stoneslide.Play();
+    }
 }
