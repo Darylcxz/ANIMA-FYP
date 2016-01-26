@@ -41,7 +41,7 @@ public class TootScript : AIbase {
         if(other.gameObject.name == "Character")
         {
             Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
-            rb.AddForce(Vector3.up * 25, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * 50, ForceMode.Impulse);
             anim.SetTrigger("Flip");
             bounce.Play();
             print("go up");
