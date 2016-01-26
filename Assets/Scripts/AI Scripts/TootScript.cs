@@ -3,12 +3,14 @@ using System.Collections;
 
 public class TootScript : AIbase {
     Animator anim;
+    AudioSource bounce;
 	// Use this for initialization
 	protected override void Start () {
 
         _rigidBody = gameObject.GetComponent<Rigidbody>();
         origin = gameObject.transform.position;
         anim = gameObject.GetComponent<Animator>();
+        bounce = gameObject.GetComponent<AudioSource>();
 	
 	}
 
@@ -41,6 +43,7 @@ public class TootScript : AIbase {
             Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
             rb.AddForce(Vector3.up * 25, ForceMode.Impulse);
             anim.SetTrigger("Flip");
+            bounce.Play();
             print("go up");
         }
     }
