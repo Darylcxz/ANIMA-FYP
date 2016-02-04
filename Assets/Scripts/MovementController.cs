@@ -37,7 +37,9 @@ public class MovementController : MonoBehaviour {
     float vMoveRight;				//right stick vertical movements
     float hMoveRight;				//right stick horizontal movements
     [SerializeField] ParticleSystem grounddust;
+    [SerializeField] ParticleSystem jumpdust;
     [SerializeField] AudioClip footsteps;
+    [SerializeField] AudioClip jumpsound;
     AudioSource maincam;
 
 
@@ -476,9 +478,14 @@ public class MovementController : MonoBehaviour {
 
     public void Footsteps()
     {
-        Debug.Log("Steps");
         grounddust.transform.position = transform.position;
         grounddust.Play();
         //maincam.PlayOneShot(footsteps, 0.5f);
+    }
+
+    public void Jumpimpact()
+    {
+        jumpdust.transform.position = transform.position;
+        jumpdust.Play();
     }
 }
