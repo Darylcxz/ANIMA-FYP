@@ -36,6 +36,12 @@ public class MovementController : MonoBehaviour {
 
     float vMoveRight;				//right stick vertical movements
     float hMoveRight;				//right stick horizontal movements
+    [SerializeField] ParticleSystem grounddust;
+    [SerializeField] ParticleSystem jumpdust;
+    [SerializeField] AudioClip footsteps;
+    [SerializeField] AudioClip jumpsound;
+    AudioSource maincam;
+
 
     int attackMode = 0; //1: Stab, 2: swing
 	float attackSpeed = 1;
@@ -83,6 +89,7 @@ public class MovementController : MonoBehaviour {
 		_dagger = GameObject.FindGameObjectWithTag("dagger").GetComponent<Collider>();
 		_dagger.enabled = false;
 		_dagger.GetComponent<TrailRenderer>().enabled = false;
+        maincam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
       
 
 		_rigidBody = gameObject.GetComponent<Rigidbody>();
@@ -467,5 +474,18 @@ public class MovementController : MonoBehaviour {
     public void AddMana(float manatoadd)
     {
         currMana += manatoadd;
+    }
+
+    public void Footsteps()
+    {
+        grounddust.transform.position = transform.position;
+        grounddust.Play();
+        //maincam.PlayOneShot(footsteps, 0.5f);
+    }
+
+    public void Jumpimpact()
+    {
+        jumpdust.transform.position = transform.position;
+        jumpdust.Play();
     }
 }

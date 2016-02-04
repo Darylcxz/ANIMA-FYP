@@ -124,7 +124,7 @@ public class VillageDialogue : DialogueScript {
             serik.transform.position = newpos.position;
             serik.name = "Serik4";
             cockblock1 = true;
-            serikcalls.transform.position += new Vector3(0, -12, 0);
+            serikcalls.transform.position += new Vector3(0, -2.8f, 0);
         }
 
         else if(NPCname == "Inzhu")
@@ -205,9 +205,9 @@ public class VillageDialogue : DialogueScript {
 
     void helpserikOn()
     {
-        helpserik1.transform.position += new Vector3(0, -12, 0);
-        helpserik2.transform.position += new Vector3(0, -12, 0);
-        helpserik3.transform.position += new Vector3(0, -12, 0);
+        helpserik1.transform.position += new Vector3(0, -2.8f, 0);
+        helpserik2.transform.position += new Vector3(0, -2.8f, 0);
+        helpserik3.transform.position += new Vector3(0, -2.8f, 0);
     }
 
 
