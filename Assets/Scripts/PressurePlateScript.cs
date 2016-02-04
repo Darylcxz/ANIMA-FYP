@@ -20,11 +20,11 @@ public class PressurePlateScript : MonoBehaviour {
 	{
 		bSteppedOn = true;
 	}
-	void OnTriggerExit(Collider col)
-	{
-		bSteppedOn = false;
+	//void OnTriggerExit(Collider col)
+	//{
+	//	bSteppedOn = false;
 		
-	}
+	//}
 
     void OnTriggerEnter()
     {
