@@ -34,8 +34,8 @@ public abstract class NewAIBA : MonoBehaviour {
 	float healthAI;				//AI Health
 	float vMoveAI;				//Horizontal Axis for AI
 	float hMoveAI;				//Vertical Axis for AI
-	protected float speedAI = 8f;				//Speed for AI
-	float speedPlayer;			//Speed for when player possesses
+	[SerializeField]protected float speedAI = 8f;				//Speed for AI
+	[SerializeField]protected float speedPlayer;			//Speed for when player possesses
 
 	//AI Components
 	[SerializeField]ParticleSystem possessFire;		//particle for when you possess I think
@@ -86,6 +86,7 @@ public abstract class NewAIBA : MonoBehaviour {
 			}
 		}
 		AIStateMachine();
+		CheckPossession();
 		
 	}
 	protected virtual void AIStateMachine()//State machine for the AI
@@ -95,7 +96,7 @@ public abstract class NewAIBA : MonoBehaviour {
 		{
 			case StateMachine.IDLE:
 				//Dizzy animation or whatever
-				ChangeState(0, StateMachine.WALK);
+				ChangeState(10f, StateMachine.WALK);
 				break;
 			case StateMachine.WALK:
 				//Walk or patrolling behaviur. 
@@ -117,10 +118,10 @@ public abstract class NewAIBA : MonoBehaviour {
 				}
 				break;
 			case StateMachine.WAIT:
-				Debug.Log(GameControl.freeze);
+			//	Debug.Log(GameControl.freeze);
 				if(!GameControl.freeze)
 				{
-					ChangeState(5f, StateMachine.IDLE);
+					ChangeState(1f, StateMachine.IDLE);
 				}
 				break;
 			case StateMachine.RETREAT:
@@ -151,7 +152,7 @@ public abstract class NewAIBA : MonoBehaviour {
 			if (DistanceBetween(A,B) < minDistance)
 			{
 				FindNewTargetPosition();
-				AIState = StateMachine.WAIT;
+				//ChangeState(0, StateMachine.IDLE);
 			}
 		}
 		transform.rotation = Quaternion.Slerp(transform.rotation, endRotation, Time.deltaTime * rotationSpeed);
@@ -188,7 +189,7 @@ public abstract class NewAIBA : MonoBehaviour {
 	{
 		if (GameControl.freeze && AIState !=StateMachine.POSSESSED)
 		{
-			AIState = StateMachine.WAIT;
+			ChangeState(0f, StateMachine.WAIT);
 			Debug.DrawRay(transform.position, Vector3.up * 2);
 			if (Physics.Raycast(transform.position, Vector3.up, out possessionRaycastHit, 2))
 			{
@@ -196,6 +197,7 @@ public abstract class NewAIBA : MonoBehaviour {
 				{
 					Camerafollow.targetUnit = gameObject;
 					AIState = StateMachine.POSSESSED;
+					stateTimer = 0;
 					possessionRaycastHit.collider.gameObject.transform.position = transform.position;
 					possessionRaycastHit.collider.gameObject.transform.SetParent(gameObject.transform);
 

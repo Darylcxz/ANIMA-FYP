@@ -10,6 +10,7 @@ public class DialogueScript : MonoBehaviour
     private XmlNode texttoshow;
     public Text dialogs;
     public Image characterpic;
+    public GameObject dialarrow;
     public Sprite[] chara1;
     public Sprite[] chara2;
     public Sprite chara3;
@@ -86,6 +87,7 @@ public class DialogueScript : MonoBehaviour
             {
                 CheckNames();
                 //faceme = false;
+                dialarrow.SetActive(false);
                 textbox.enabled = false;
                 dialogs.enabled = false;
                 characterpic.enabled = false;
@@ -103,6 +105,12 @@ public class DialogueScript : MonoBehaviour
         {
             textcomplete = true;
         }
+
+        if (textcomplete)
+            dialarrow.SetActive(true);
+
+        else if (!textcomplete)
+            dialarrow.SetActive(false);
     }
 
     public void ParseDialogue(string xmlData)
