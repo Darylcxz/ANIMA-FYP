@@ -19,12 +19,12 @@ public class CameraPanning : MonoBehaviour {
 		if (_bool)
 		{
 			_t = 0;
-			_t += Time.deltaTime*1.5f;
-			_bool = false;
+			_t += Time.deltaTime*speed;
 		}
 		if (_t > 1)
 		{
 			_t = 1;
+			_bool = false;
 		}
 
 		transform.position = Vector3.Lerp(transform.position, currentMount.position, _t);
