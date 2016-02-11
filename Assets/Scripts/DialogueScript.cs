@@ -87,6 +87,7 @@ public class DialogueScript : MonoBehaviour
             {
                 CheckNames();
                 //faceme = false;
+                dialarrow.SetActive(false);
                 textbox.enabled = false;
                 dialogs.enabled = false;
                 characterpic.enabled = false;
