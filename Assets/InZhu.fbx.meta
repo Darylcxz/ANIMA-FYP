@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: cff6ffe0c6bc7f54095a6a8014729f1b
+timeCreated: 1454671061
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: CollarBone
+    100002: Finger1
+    100004: Finger1 1
+    100006: Head
+    100008: Hip_Root5
+    100010: Hips
+    100012: //RootNode
+    100014: joint22
+    100016: joint22 1
+    100018: joint23
+    100020: joint24
+    100022: joint25
+    100024: joint26
+    100026: joint27
+    100028: joint28
+    100030: joint7
+    100032: L_Elboe
+    100034: L_Feet
+    100036: L_Finger2
+    100038: L_Index1
+    100040: L_Index2
+    100042: L_Leg1
+    100044: L_Leg2
+    100046: L_Solder
+    100048: L_Thumb1
+    100050: L_Thumb2
+    100052: LHand
+    100054: polySurface284
+    100056: R_Elboe
+    100058: R_Feet
+    100060: R_Finger2
+    100062: R_Index1
+    100064: R_Index2
+    100066: R_Reg1
+    100068: R_Reg2
+    100070: R_Solder
+    100072: R_Thumb1
+    100074: R_Thumb2
+    100076: RHand
+    100078: Sherik
+    100080: Spine1
+    100082: Spine2
+    100084: Spine3
+    400000: CollarBone
+    400002: Finger1
+    400004: Finger1 1
+    400006: Head
+    400008: Hip_Root5
+    400010: Hips
+    400012: //RootNode
+    400014: joint22
+    400016: joint22 1
+    400018: joint23
+    400020: joint24
+    400022: joint25
+    400024: joint26
+    400026: joint27
+    400028: joint28
+    400030: joint7
+    400032: L_Elboe
+    400034: L_Feet
+    400036: L_Finger2
+    400038: L_Index1
+    400040: L_Index2
+    400042: L_Leg1
+    400044: L_Leg2
+    400046: L_Solder
+    400048: L_Thumb1
+    400050: L_Thumb2
+    400052: LHand
+    400054: polySurface284
+    400056: R_Elboe
+    400058: R_Feet
+    400060: R_Finger2
+    400062: R_Index1
+    400064: R_Index2
+    400066: R_Reg1
+    400068: R_Reg2
+    400070: R_Solder
+    400072: R_Thumb1
+    400074: R_Thumb2
+    400076: RHand
+    400078: Sherik
+    400080: Spine1
+    400082: Spine2
+    400084: Spine3
+    4300000: polySurface284
+    7400000: InZhu2
+    9500000: //RootNode
+    13700000: polySurface284
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
