@@ -1,43 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DialogueTrigger : DialogueScript {
-	//bool _triggered = false;
+public class DialogueTrigger : MonoBehaviour {
 
-//	public MovementController _mScript2;
+    [SerializeField]
+    NewTutorialController _tutControl;
 
-	//public override void Start()
-	//{
-	//	base.Start();
-	//	//_mScript2 = GetComponent<MovementController>();
-	//}
+    void Start()
+    {
+        _tutControl = _tutControl.GetComponent<NewTutorialController>();
+    }
 
-	// Use this for initialization
-	//public override void Start () {
-	//	base.Start();
-	
-	//}
-	
-	// Update is called once per frame
-	//public override void Update () {
-	//	base.Update();
-	//}
 	void OnTriggerEnter(Collider _col)
 	{
-		if (_col.tag == "Player" )
-		{
-			NPCname = gameObject.name;
-			string textData = dialogue.text;
-			ParseDialogue(textData);
-			//_triggered = true;
-		//	Destroy(gameObject, 5.0f);
-		}
+       if(_col.gameObject.CompareTag("Player"))
+        {
+            _tutControl.DialogueEnd();
+            TurnOff();
+        }
 	}
-	void OnTriggerExit(Collider _c)
-	{
-		if (_c.tag == "Player")
-		{
-			Destroy(gameObject, 0.1f);
-		}
-	}
+
+   void TurnOff()
+    {
+        gameObject.SetActive(false);
+    }
+	//void OnTriggerExit(Collider _c)
+	//{
+	//	if (_c.tag == "Player")
+	//	{
+	//		Destroy(gameObject, 0.1f);
+	//	}
+	//}
 }
