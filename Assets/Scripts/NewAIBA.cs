@@ -19,7 +19,7 @@ public abstract class NewAIBA : MonoBehaviour {
 	};
 	
 	//GameObject Debugger;
-	[SerializeField]protected bool canPossess;		//checks if the AI can be possessed
+	[SerializeField]protected bool canPossess;		//checks if the AI can be possessed 
 
 	RaycastHit possessionRaycastHit;		//Raycast hit info for possession checker
 	[SerializeField]protected StateMachine AIState = StateMachine.IDLE;  //sets the default state to IDLE
@@ -39,7 +39,8 @@ public abstract class NewAIBA : MonoBehaviour {
 
 	//AI Components
 	[SerializeField]ParticleSystem possessFire;		//particle for when you possess I think
-	[SerializeField]ParticleSystem possessExplode;	//Particle when something blows up???
+    GameObject possessExplode;
+    Animator possanim;
 
 	//AI Pathfinding variables
 	sbyte rotationSpeed = 5;	//how fast the AI should rotate
@@ -71,6 +72,8 @@ public abstract class NewAIBA : MonoBehaviour {
 		_waypoint = areaCenter + (OnUnitRect(rectSize.x,rectSize.z)) * rectMagnitude;
 		playerMana = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
 		spawnPoint = transform;
+        possessExplode = GameObject.Find("SpiritBomb");
+        possanim = possessExplode.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -202,7 +205,8 @@ public abstract class NewAIBA : MonoBehaviour {
 					possessionRaycastHit.collider.gameObject.transform.SetParent(gameObject.transform);
 
 					possessFire.Stop();
-					possessExplode.Play();
+                    possessExplode.transform.position = transform.position;
+                    possanim.SetTrigger("Explode");
 					GameControl.freeze = false;
 					
 				}

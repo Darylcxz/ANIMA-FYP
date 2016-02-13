@@ -12,9 +12,9 @@ public class onetwoDialogue : DialogueScript {
         base.Start();
         vines = GameObject.Find("ClimbVines");
         climbUI.enabled = false;
-        //NPCname = "one2start";
-        //string textData = dialogue.text;
-        //ParseDialogue(textData);
+        NPCname = "one2start";
+        string textData = dialogue.text;
+        ParseDialogue(textData);
     }
 	
 	// Update is called once per frame

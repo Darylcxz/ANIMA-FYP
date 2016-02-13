@@ -12,7 +12,9 @@ public abstract class AIbase : MonoBehaviour {
 //	bool isPossessed = false;
     public bool canPosses = true;
     [SerializeField]private ParticleSystem fire;
-    [SerializeField]private ParticleSystem possessedexplode;
+    GameObject possessedexplode;
+    Animator possanim;
+
 
     protected Transform player;
     protected NavMeshAgent agent;
@@ -73,7 +75,8 @@ public abstract class AIbase : MonoBehaviour {
 		waitTimer = 0.0f;
 		circleCenter = transform.position + new Vector3(0, 0, offset);
 		currentTargetPosition = transform.position;
-        possessedexplode = gameObject.GetComponentInChildren<ParticleSystem>();
+        possessedexplode = GameObject.Find("SpiritBomb");
+        possanim = possessedexplode.GetComponent<Animator>();
     }
 	// Update is called once per frame
 	protected void Update () {
@@ -287,7 +290,8 @@ public abstract class AIbase : MonoBehaviour {
                     hit.collider.gameObject.transform.SetParent(gameObject.transform);
                     
                     fire.Stop();
-                    possessedexplode.Play();
+                    //possessedexplode.transform.position = transform.position;
+                    possanim.SetTrigger("Explode");
                     GameControl.freeze = false;
                     print("hithithit");
                 }
