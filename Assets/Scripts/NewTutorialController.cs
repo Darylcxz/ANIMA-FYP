@@ -22,14 +22,17 @@ public class NewTutorialController : MonoBehaviour {
 	Part DialoguePart;
 	string _dialogueName;
 	bool textPlay;
+    bool statechange;
 	// Use this for initialization
 	void Start () {
 		_dScript = _dScript.GetComponent<DialogueScript>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		DialougeStateMachine();
+        Debug.Log(_dScript.hasDialogueEnd);
 	}
 	void DialougeStateMachine()
 	{
@@ -37,38 +40,61 @@ public class NewTutorialController : MonoBehaviour {
 		{
  			case Part.ENTER:
 				_dialogueName = "enter1-1";
+                ChangeState(Part.DESH);
 				break;
 			case Part.DESH:
 				_dialogueName = "desh1-1";
-				break;
+                ChangeState(Part.SHAKE);
+                break;
 			case Part.SHAKE:
 				_dialogueName = "Shake1-1";
-				break;
+                ChangeState(Part.DEFEAT);
+                break;
 			case Part.DEFEAT:
 				_dialogueName = "defeated1-1";
-				break;
+                ChangeState(Part.SHOES);
+                break;
 			case Part.SHOES:
 				_dialogueName = "shoes1-1";
-				break;
+                ChangeState(Part.SHOES2);
+                break;
 			case Part.SHOES2:
 				_dialogueName = "shoes21-1";
-				break;
+                ChangeState(Part.PIG);
+                break;
 			case Part.PIG:
 				_dialogueName = "pig1-1";
-				break;
+                ChangeState(Part.POSSESS);
+                break;
 			case Part.POSSESS:
 				_dialogueName = "posession1-1";
-				break;
+                ChangeState(Part.SERIKPIG);
+                break;
 			case Part.SERIKPIG:
 				_dialogueName = "seriksapig1-1";
-				break;
+         //       ChangeState(Part.DESH);
+                break;
 		}
-		if(!textPlay)
+		if(!_dScript.hasDialogueEnd && !textPlay)
 		{
 			PlayText(_dialogueName);
-			textPlay = true;
+            textPlay = true;
 		}
 	}
+   public void DialogueEnd()
+    {
+        textPlay = false;
+        _dScript.hasDialogueEnd = false;
+        statechange = true;
+    }
+    void ChangeState(Part _state)
+    {
+        if(statechange)
+        {
+            statechange = false;
+            DialoguePart = _state;
+        }
+    }
 	void PlayText(string _NPCNAME)
 	{
 		DialogueScript.NPCname = _NPCNAME;
