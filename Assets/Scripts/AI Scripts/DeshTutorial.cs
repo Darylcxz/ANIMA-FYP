@@ -5,6 +5,8 @@ public class DeshTutorial : MonoBehaviour {
 	public bool deshDead;
 	[SerializeField]
 	AudioSource dieSound;
+    [SerializeField]
+    GameObject jumpSequence;
 	// Use this for initialization
 	void Start () {
 		deshDead = false;
@@ -22,6 +24,7 @@ public class DeshTutorial : MonoBehaviour {
 			dieSound.Play();
 			deshDead = true;
 			gameObject.transform.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+            jumpSequence.GetComponent<Collider>().isTrigger = true;
 			gameObject.GetComponent<BoxCollider>().enabled = false;
 		}
 	}

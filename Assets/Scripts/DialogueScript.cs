@@ -33,6 +33,7 @@ public class DialogueScript : MonoBehaviour
     private Vector3 side2;
     public MovementController _mScript;
 	public static int _seqNum;
+    public bool hasDialogueEnd;
     //private bool faceme = false;
     public Text showname;
     public Animator charanim;
@@ -58,7 +59,7 @@ public class DialogueScript : MonoBehaviour
         Debug.DrawRay(center, transform.forward * 5);
         Debug.DrawRay(side1, transform.forward * 5);
         Debug.DrawRay(side2, transform.forward * 5);
-
+    //    Debug.Log(hasDialogueEnd);
         if (Physics.Raycast(center, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side1, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side2, transform.forward, out hit, 1) && !istalking)
         {
 
@@ -77,9 +78,10 @@ public class DialogueScript : MonoBehaviour
             if(texttoshow.NextSibling != null)
             {
                 //beepsound.PlayOneShot(beep);
+           //     hasDialogueEnd = false;
                 string tempstr = Nextnode(texttoshow);
                 StartCoroutine(Printletters(tempstr));
-				Debug.Log(_seqNum + "if");
+			//	Debug.Log(_seqNum + "if");
 				_seqNum++;
             }
 
@@ -87,6 +89,7 @@ public class DialogueScript : MonoBehaviour
             {
                 CheckNames();
                 //faceme = false;
+                hasDialogueEnd = true;
                 dialarrow.SetActive(false);
                 textbox.enabled = false;
                 dialogs.enabled = false;
@@ -95,7 +98,7 @@ public class DialogueScript : MonoBehaviour
                 istalking = false;
                 _mScript.bForcedMove = false;
 				_seqNum = 0;
-				Debug.Log(_seqNum + "else");
+			//	Debug.Log(_seqNum + "else");
                 charanim.SetBool("isTalking", false);
                 charanim.SetBool("bVictory", false);
             }
@@ -121,7 +124,6 @@ public class DialogueScript : MonoBehaviour
         characterpic.enabled = true;
         showname.enabled = true;
         istalking = true;
-
 		XmlDocument xmlDoc = new XmlDocument();
 		xmlDoc.Load(new StringReader(xmlData));
 		
@@ -237,7 +239,7 @@ public class DialogueScript : MonoBehaviour
             str += sentence[i];
             if (i == sentence.Length - 1)
             {
-                print("truuuuuueeeee");
+//                print("truuuuuueeeee");
                 textcomplete = true;
             }
 
