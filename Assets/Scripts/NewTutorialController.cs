@@ -20,11 +20,15 @@ public class NewTutorialController : MonoBehaviour {
 	};
 	[SerializeField] Part DialoguePart;
     [SerializeField] List<Transform> CamPositions = new List<Transform>();
+    [SerializeField] List<Image> TutorialImages = new List<Image>();
     
 
     string _dialogueName;
 	bool textPlay = true;
     bool statechange;
+    
+    //Kinky camera movements
+
     [SerializeField]
     Transform _camera;
     Quaternion _orignalRot;
@@ -34,6 +38,11 @@ public class NewTutorialController : MonoBehaviour {
     //Camera panning values
     float _timer;
     [SerializeField] int _speedMultiplier = 1;
+
+    //Time slow stuff
+    bool _bulletTime;
+    bool _hasSlowed;
+
 	// Use this for initialization
 	void Start () {
 		_dScript = _dScript.GetComponent<DialogueScript>();
@@ -66,6 +75,7 @@ public class NewTutorialController : MonoBehaviour {
                     _panIndex = 0;
                     _timer = 0;
                     panCam = true;
+
                 }
                 if (DialogueScript._seqNum == 4)
                 {
@@ -77,6 +87,23 @@ public class NewTutorialController : MonoBehaviour {
                 ChangeState(Part.DEFEAT);
                 break;
 			case Part.DEFEAT:
+                if(!_bulletTime && DialogueScript._seqNum == 1)
+                {
+                    StartCoroutine("SlowTime",20f);
+                    _bulletTime = true;
+                }
+                if(_hasSlowed)
+                {
+                    TutorialImages[0].enabled = true;
+                }
+                //AI moves while time is slowing.
+                //Time stops when AI reaches it's location
+                //Press RT to roll UI pops up 
+                //Time is frozen and player can only press RT to roll
+                //Once player presses the trigger, time unfreezes
+                //Desh does weird shit, maybe gets stuck or something
+                //Player then kills desh to proceed
+        
 				_dialogueName = "defeated1-1";
                 ChangeState(Part.SHOES);
                 break;
@@ -109,12 +136,11 @@ public class NewTutorialController : MonoBehaviour {
         if(panCam)
         {
             _timer += Time.deltaTime;
-            _camera.position = Vector3.Lerp(transform.localPosition, CamPositions[_panIndex].position, _timer * _speedMultiplier);
-            _camera.rotation = Quaternion.Slerp(transform.localRotation, CamPositions[_panIndex].rotation, _timer * _speedMultiplier);
+            _camera.position = Vector3.Lerp(_camera.transform.position, CamPositions[_panIndex].position, _timer * _speedMultiplier);
+            _camera.rotation = Quaternion.Slerp(_camera.transform.rotation, CamPositions[_panIndex].rotation, _timer * _speedMultiplier);
             if (_timer > 1)
             {
                 _timer = 1;
-             //   panCam = false;
             }
         }
         
@@ -139,4 +165,14 @@ public class NewTutorialController : MonoBehaviour {
 		string textData = _dScript.dialogue.text;
 		_dScript.ParseDialogue(textData);
 	}
+
+    IEnumerator SlowTime(float _timeScale)
+    {
+        for (float i = 100; i > _timeScale; i -= Time.deltaTime*35)
+        {
+            Time.timeScale = i / 100;
+            yield return null;
+        }
+        _hasSlowed = true;
+    }
 }
