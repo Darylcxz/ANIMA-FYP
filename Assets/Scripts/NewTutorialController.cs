@@ -23,27 +23,31 @@ public class NewTutorialController : MonoBehaviour {
 	string _dialogueName;
 	bool textPlay;
     bool statechange;
+    [SerializeField]
+    Transform _camera;
 	// Use this for initialization
 	void Start () {
 		_dScript = _dScript.GetComponent<DialogueScript>();
-
+        _camera = _camera.GetComponent<Transform>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		DialougeStateMachine();
-        Debug.Log(_dScript.hasDialogueEnd);
+		DialogueStateMachine();
+
 	}
-	void DialougeStateMachine()
+	void DialogueStateMachine()
 	{
 		switch (DialoguePart)
 		{
  			case Part.ENTER:
 				_dialogueName = "enter1-1";
+                _camera.GetComponent<Camerafollow>().enabled = true;
                 ChangeState(Part.DESH);
 				break;
 			case Part.DESH:
 				_dialogueName = "desh1-1";
+                //
                 ChangeState(Part.SHAKE);
                 break;
 			case Part.SHAKE:

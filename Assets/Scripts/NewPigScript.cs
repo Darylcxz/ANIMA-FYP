@@ -11,11 +11,11 @@ public class NewPigScript : NewAIBA {
 
 	protected override void Start()
 	{
-		base.Start();
 		pigAnim = GetComponent<Animator>();
 		pigAudioSource = GetComponent<AudioSource>();
+        base.Start();
 
-	}
+    }
 
 
 	protected override void ActivateAbility()
