@@ -7,6 +7,8 @@ public class NewTutorialController : MonoBehaviour {
 
 	[SerializeField] DialogueScript _dScript;
     [SerializeField] DeshTutorial _deshScript;
+    [SerializeField] GameObject jumpSequence;
+    [SerializeField] GameObject _Serik;
 	[SerializeField]enum Part
 	{
 		ENTER,
@@ -44,10 +46,15 @@ public class NewTutorialController : MonoBehaviour {
     bool _bulletTime;
     bool _hasSlowed;
 
+    bool serikFly;
+    float flyTime;
+    public bool hasJumped;
+    Vector3 serikEnd;
 	// Use this for initialization
 	void Start () {
 		_dScript = _dScript.GetComponent<DialogueScript>();
         _deshScript = _deshScript.GetComponent<DeshTutorial>();
+        jumpSequence.SetActive(false);
         _camera = _camera.GetComponent<Transform>();
         _dScript.hasDialogueEnd = true;
         _orignalRot = _camera.transform.rotation;
@@ -96,7 +103,7 @@ public class NewTutorialController : MonoBehaviour {
                     _deshScript._move = true;
                     _bulletTime = true;
                 }
-                Debug.Log("normal update");
+ 
                 if(_hasSlowed)
                 {
                     TutorialImages[0].enabled = true;
@@ -105,10 +112,12 @@ public class NewTutorialController : MonoBehaviour {
                         TutorialImages[0].enabled = false;
                         _deshScript.hasRolled = true;
                         _hasSlowed = false;
+                        TutorialImages[1].enabled = true;
                     }
                 }
                 if(_deshScript.deshDead)
                 {
+                    TutorialImages[1].enabled = false;
                     DialogueEnd();
                 }
                 //AI moves while time is slowing.
@@ -127,10 +136,33 @@ public class NewTutorialController : MonoBehaviour {
                 ChangeState(Part.SHOES2);
                 break;
 			case Part.SHOES2:
-				_dialogueName = "shoes21-1";
+                //if seq = 1 serik flies
+                if(DialogueScript._seqNum == 1)
+                {
+                    serikFly = true;
+                    serikEnd = new Vector3(43, 0, -15);
+                }
+                if(serikFly && DialogueScript._seqNum ==0 &&!hasJumped)
+                {
+                    TutorialImages[2].enabled = true;
+                    jumpSequence.SetActive(true);
+                }
+                if(GamepadManager.buttonADown)
+                {
+                    TutorialImages[2].enabled = false;
+                    hasJumped = true;
+                    serikFly = false;
+                    flyTime = 0;
+                }
+                _dialogueName = "shoes21-1";
                 ChangeState(Part.PIG);
                 break;
 			case Part.PIG:
+                if(DialogueScript._seqNum == 2)
+                {
+                    serikFly = true;
+                    serikEnd = new Vector3(38, 0, -6);
+                }
 				_dialogueName = "pig1-1";
                 ChangeState(Part.POSSESS);
                 break;
@@ -156,6 +188,18 @@ public class NewTutorialController : MonoBehaviour {
             if (_timer > 1)
             {
                 _timer = 1;
+            }
+        }
+        if (serikFly)
+        {
+            flyTime += Time.deltaTime;
+            _Serik.GetComponent<SerikFollow>().enabled = false;
+            
+            Vector3 serikLerp = Vector3.Lerp(_Serik.transform.position, serikEnd, flyTime);
+            _Serik.transform.position = serikLerp;
+            if(flyTime > 1)
+            {
+                flyTime = 1;
             }
         }
         

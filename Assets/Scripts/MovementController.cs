@@ -313,6 +313,7 @@ public class MovementController : MonoBehaviour {
             roll = 0;
             isRolling = false;
             isAttacking = false;
+            _anim.SetBool("isAttacking", false);
             attack = false;
             _rigidBody.velocity = Vector3.zero;
             charStates = States.idle;

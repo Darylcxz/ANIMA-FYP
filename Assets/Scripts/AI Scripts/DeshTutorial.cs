@@ -89,7 +89,7 @@ public class DeshTutorial : MonoBehaviour {
         Quaternion endRot = Quaternion.LookRotation(_dir);
         if(isStateMachine)
         {
-            _dir = (lastPos+transform.forward - transform.position).normalized;
+            _dir = (lastPos+transform.forward - transform.position);
      
             endRot = Quaternion.LookRotation(_dir);
            
