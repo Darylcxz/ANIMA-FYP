@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NewTutorialController : MonoBehaviour {
 
 	[SerializeField] DialogueScript _dScript;
+    [SerializeField] DeshTutorial _deshScript;
 	[SerializeField]enum Part
 	{
 		ENTER,
@@ -46,6 +47,7 @@ public class NewTutorialController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_dScript = _dScript.GetComponent<DialogueScript>();
+        _deshScript = _deshScript.GetComponent<DeshTutorial>();
         _camera = _camera.GetComponent<Transform>();
         _dScript.hasDialogueEnd = true;
         _orignalRot = _camera.transform.rotation;
@@ -56,6 +58,7 @@ public class NewTutorialController : MonoBehaviour {
 		DialogueStateMachine();
         Debug.Log(DialogueScript._seqNum);
     }
+ 
 	void DialogueStateMachine()
 	{
 		switch (DialoguePart)
@@ -90,11 +93,23 @@ public class NewTutorialController : MonoBehaviour {
                 if(!_bulletTime && DialogueScript._seqNum == 1)
                 {
                     StartCoroutine("SlowTime",20f);
+                    _deshScript._move = true;
                     _bulletTime = true;
                 }
+                Debug.Log("normal update");
                 if(_hasSlowed)
                 {
                     TutorialImages[0].enabled = true;
+                    if (GamepadManager.triggerR > 0)
+                    {
+                        TutorialImages[0].enabled = false;
+                        _deshScript.hasRolled = true;
+                        _hasSlowed = false;
+                    }
+                }
+                if(_deshScript.deshDead)
+                {
+                    DialogueEnd();
                 }
                 //AI moves while time is slowing.
                 //Time stops when AI reaches it's location
@@ -168,7 +183,7 @@ public class NewTutorialController : MonoBehaviour {
 
     IEnumerator SlowTime(float _timeScale)
     {
-        for (float i = 100; i > _timeScale; i -= Time.deltaTime*35)
+        for (float i = 100; i > _timeScale; i -= Time.deltaTime*50)
         {
             Time.timeScale = i / 100;
             yield return null;
