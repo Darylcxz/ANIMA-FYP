@@ -15,7 +15,8 @@ public abstract class NewAIBA : MonoBehaviour {
 		POSSESSED,
 		WAIT,
 		RETREAT,
-		PURSUE
+		PURSUE,
+        GOTOPOINT
 	};
 	
 	//GameObject Debugger;
@@ -26,8 +27,8 @@ public abstract class NewAIBA : MonoBehaviour {
 	float stateTimer;			//State timer that runs with the game time
 	float waitTime = 1f;				//Time the state waits before it changes
 	float distance;				//distance between AI and things
-	float retreatDistance = 20f;		//distance BEFORE AI retreats
-	Transform spawnPoint;		//place where AI spawned
+	float retreatDistance = 5f;		//distance BEFORE AI retreats
+	protected Transform spawnPoint;		//place where AI spawned
 
 
 	//AI variables//
@@ -52,9 +53,11 @@ public abstract class NewAIBA : MonoBehaviour {
 	[SerializeField]float minDistance = 0.1f;		//min distance to the WAYPOINT before AI considers it reached it
 
 
-
+    public Vector3 customWayPoint;
 	//Player's Variables (for player when possessing)
 	[SerializeField]MovementController playerMana;
+
+    public bool isPossessed; //helps tutorial mode tell if pig is possessed
 
 	
 	
@@ -71,7 +74,7 @@ public abstract class NewAIBA : MonoBehaviour {
 		_rbAI = GetComponent<Rigidbody>();
 		_waypoint = areaCenter + (OnUnitRect(rectSize.x,rectSize.z)) * rectMagnitude;
 		playerMana = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
-		spawnPoint = transform;
+	//	spawnPoint = transform;
         possessExplode = GameObject.Find("SpiritBomb");
         possanim = possessExplode.GetComponent<Animator>();
 	}
@@ -109,6 +112,7 @@ public abstract class NewAIBA : MonoBehaviour {
 			case StateMachine.PURSUE:
 				break;
 			case StateMachine.POSSESSED:
+                isPossessed = true;
 				playerMana.currMana -= Time.deltaTime;
 				CheckInput();
 				PlayerTakesControl();
@@ -116,7 +120,7 @@ public abstract class NewAIBA : MonoBehaviour {
 				{
 					ChangeState(0f, StateMachine.IDLE);
 					possessFire.Play();
-
+                    isPossessed = false;
 					Camerafollow.targetUnit = GameObject.FindGameObjectWithTag("Player");
 				}
 				break;
@@ -134,6 +138,12 @@ public abstract class NewAIBA : MonoBehaviour {
 					ChangeState(0f, StateMachine.IDLE);
 				}
 				break;
+            case StateMachine.GOTOPOINT:
+                if(customWayPoint!= null)
+                {
+                    AIMove(transform.position, customWayPoint, speedAI);
+                }
+                break;
 		}
 	}
 	void ChangeState(float timeBeforeStateChange, StateMachine nextState)//small state changer, takes in time you want to wait for before state change, and the next state
@@ -213,6 +223,19 @@ public abstract class NewAIBA : MonoBehaviour {
 			}
 		}
 	}
+    public void GoToPoint(Vector3 newWaypoint, bool isActive)
+    {
+        if(isActive)
+        {
+            customWayPoint = newWaypoint;
+            AIState = StateMachine.GOTOPOINT;
+        }
+        if(!isActive)
+        {
+            customWayPoint = _waypoint;
+            AIState = StateMachine.RETREAT;
+        }
+    }
 	
 	void PlayerTakesControl()//function for when the player is controlling the AI
 	{

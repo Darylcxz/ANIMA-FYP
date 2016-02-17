@@ -317,7 +317,8 @@ public class MovementController : MonoBehaviour {
             attack = false;
             _rigidBody.velocity = Vector3.zero;
             charStates = States.idle;
-		}
+            _dagger.GetComponent<TrailRenderer>().enabled = false;
+        }
 		if (bKeyboard && !bForcedMove)
 		{
 			hMove = Input.GetAxis("Horizontal");

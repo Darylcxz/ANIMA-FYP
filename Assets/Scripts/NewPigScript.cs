@@ -11,7 +11,8 @@ public class NewPigScript : NewAIBA {
 
 	protected override void Start()
 	{
-		pigAnim = GetComponent<Animator>();
+        spawnPoint = transform;
+        pigAnim = GetComponent<Animator>();
 		pigAudioSource = GetComponent<AudioSource>();
         base.Start();
 

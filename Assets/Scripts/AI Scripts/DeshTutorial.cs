@@ -90,13 +90,12 @@ public class DeshTutorial : MonoBehaviour {
         if(isStateMachine)
         {
             _dir = (lastPos+transform.forward - transform.position);
-     
-            endRot = Quaternion.LookRotation(_dir);
-           
             _dir.y = 0;
+            endRot = Quaternion.LookRotation(_dir);
+          
             transform.rotation = endRot;
             transform.position += transform.forward * Time.deltaTime * 15;
-            if (Vector3.Distance(transform.position,lastPos + transform.forward) < 0.5f )
+            if (Vector3.Distance(transform.position,lastPos + transform.forward) < 0.5f || Vector3.Distance(transform.position,Player.position) < 0.5f)
             {
                 States = DeshStates.SHAKE;
             }
