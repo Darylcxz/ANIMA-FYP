@@ -27,12 +27,12 @@ public class GuidedJump : MonoBehaviour {
 	{
 		distance = Vector3.Distance(player.transform.position, wayPoints[jumpIndex].position);
 		_jumpTime += Time.deltaTime;
-		if (GamepadManager.buttonADown && CheckFacing(jumpIndex + 1) && distance <5)
+		if (GamepadManager.buttonADown && CheckFacing(jumpIndex + 1) && distance <3)
 		{
 			jumpIndex++;
 			NextJump(); //jump = true and timer set to 0;
 		}
-		if (GamepadManager.buttonADown && CheckFacing(jumpIndex - 1) && distance < 5)
+		if (GamepadManager.buttonADown && CheckFacing(jumpIndex - 1) && distance < 3)
 		{
 			jumpIndex--;
 			NextJump();

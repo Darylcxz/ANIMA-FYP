@@ -230,7 +230,7 @@ public class MovementController : MonoBehaviour {
                // _rigidBody.AddForceAtPosition(transform.forward *5, transform.localPosition);
                 //_rigidBody.velocity += transform.forward/3f;
                 gameObject.transform.localPosition +=( transform.forward*5*Time.deltaTime);
-                if (!isRolling)
+                if (!isRolling || bForcedMove)
                 {
                     charStates = States.idle;
                 }
@@ -310,6 +310,13 @@ public class MovementController : MonoBehaviour {
 		{
 			hMove = 0;
 			vMove = 0;
+            roll = 0;
+            isRolling = false;
+            isAttacking = false;
+            _anim.SetBool("isAttacking", false);
+            attack = false;
+            _rigidBody.velocity = Vector3.zero;
+            charStates = States.idle;
 		}
 		if (bKeyboard && !bForcedMove)
 		{
