@@ -98,9 +98,10 @@ public class DialogueScript : MonoBehaviour
                 istalking = false;
                 _mScript.bForcedMove = false;
 				_seqNum = 0;
+                StopAnim();
 			//	Debug.Log(_seqNum + "else");
-                charanim.SetBool("isTalking", false);
-                charanim.SetBool("bVictory", false);
+                //charanim.SetBool("isTalking", false);
+                //charanim.SetBool("bVictory", false);
             }
         }
 
@@ -180,7 +181,7 @@ public class DialogueScript : MonoBehaviour
                 //beepsound.PlayOneShot(voices[voice]);
                 showname.text = character;
                 charanim.SetBool("isTalking", true);
-                Invoke("StopAnim", 0.2f);
+             //   Invoke("StopAnim", 0.2f);
                 break;
 
             case "Serik":
@@ -211,7 +212,7 @@ public class DialogueScript : MonoBehaviour
                 //beepsound.PlayOneShot(voices[voice]);
                 showname.text = "Serik";
 				serikAnim.SetBool("bSerikTalk", true);
-                Invoke("StopAnim", 0.2f);
+            //    Invoke("StopAnim", 0.2f);
                 break;
 
             case "Archura":

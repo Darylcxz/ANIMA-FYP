@@ -7,6 +7,7 @@ public class NewTutorialController : MonoBehaviour {
 
 	[SerializeField] DialogueScript _dScript;
     [SerializeField] DeshTutorial _deshScript;
+    [SerializeField] NewPigScript _pigScript;
     [SerializeField] GameObject jumpSequence;
     [SerializeField] GameObject _Serik;
 	[SerializeField]enum Part
@@ -19,7 +20,8 @@ public class NewTutorialController : MonoBehaviour {
 		SHOES2,
 		PIG,
 		POSSESS,
-		SERIKPIG
+		SERIKPIG,
+        LINEOFDESH
 	};
 	[SerializeField] Part DialoguePart;
     [SerializeField] List<Transform> CamPositions = new List<Transform>();
@@ -50,10 +52,14 @@ public class NewTutorialController : MonoBehaviour {
     float flyTime;
     public bool hasJumped;
     Vector3 serikEnd;
+
+    bool hasPigged;
+    bool hasPossessed;
 	// Use this for initialization
 	void Start () {
 		_dScript = _dScript.GetComponent<DialogueScript>();
         _deshScript = _deshScript.GetComponent<DeshTutorial>();
+        _pigScript = _pigScript.GetComponent<NewPigScript>();
         jumpSequence.SetActive(false);
         _camera = _camera.GetComponent<Transform>();
         _dScript.hasDialogueEnd = true;
@@ -147,7 +153,7 @@ public class NewTutorialController : MonoBehaviour {
                     TutorialImages[2].enabled = true;
                     jumpSequence.SetActive(true);
                 }
-                if(GamepadManager.buttonADown)
+                if(GamepadManager.buttonADown && _dScript.hasDialogueEnd)
                 {
                     TutorialImages[2].enabled = false;
                     hasJumped = true;
@@ -163,16 +169,54 @@ public class NewTutorialController : MonoBehaviour {
                     serikFly = true;
                     serikEnd = new Vector3(38, 0, -6);
                 }
+                if(flyTime ==1)
+                {
+                    _Serik.SetActive(false);
+                }
 				_dialogueName = "pig1-1";
                 ChangeState(Part.POSSESS);
                 break;
 			case Part.POSSESS:
+                //if player within X range of pig, dialogue triggers?
+                //then halfway during dialogue, press Y to possess etc.
+                //make sure other stuff are hidden & disabled as well
+                if(DialogueScript._seqNum==1 && !hasPigged)
+                {
+                    _pigScript.GoToPoint(new Vector3(40, 0, -12), true);
+                    hasPigged = true;
+                }
+                else if (DialogueScript._seqNum > 5)
+                {
+                    _pigScript.GoToPoint(Vector3.zero, false);
+                    serikFly = false;
+                    _Serik.SetActive(true);
+                    _Serik.GetComponent<SerikFollow>().enabled = true;
+                    DialogueEnd();
+                }
 				_dialogueName = "posession1-1";
                 ChangeState(Part.SERIKPIG);
                 break;
 			case Part.SERIKPIG:
-				_dialogueName = "seriksapig1-1";
-         //       ChangeState(Part.DESH);
+               if(_dScript.hasDialogueEnd && !hasPossessed)
+                {
+                    TutorialImages[3].enabled = true;
+                }
+               if(_pigScript.isPossessed)
+                {
+                    TutorialImages[3].enabled = false;
+                    hasPossessed = true;
+                }
+                if (hasPossessed && !_pigScript.isPossessed && DialogueScript._seqNum == 1)
+                {
+                    DialogueEnd();
+                }
+                _dialogueName = "seriksapig1-1";
+                ChangeState(Part.LINEOFDESH);
+                break;
+            case Part.LINEOFDESH:
+
+
+                _dialogueName = "dontidiot";
                 break;
 		}
 		if(!_dScript.hasDialogueEnd && !textPlay)

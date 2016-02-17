@@ -144,7 +144,131 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Gulnaz Talk
+      takeName: Gulnaz Talk
+      firstFrame: 1
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Group
+        weight: 1
+      - path: Group/Hip_Root4
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1/L_Leg2
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1/L_Leg2/L_Feet
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1/L_Leg2/L_Feet/joint22
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1/R_Reg2
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1/R_Reg2/R_Feet
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1/R_Reg2/R_Feet/joint22 1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head/Braid1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head/Braid1/Braid2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head/Braid1/Braid2/Braid3
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head/Braid1/Braid2/Braid3/Braid4
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head/joint7
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1/L_Finger2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1/L_Index2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Finger
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Finger/R_Finger2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Index1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Index1/R_Index2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Thumb
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Thumb/R_Thumb2
+        weight: 1
+      - path: GulnazBody
+        weight: 1
+      - path: GulnazBody/LowerBody
+        weight: 1
+      - path: GulnazBody/LowerBody/L_Shoes
+        weight: 1
+      - path: GulnazBody/LowerBody/L_Shoes/polySurface16
+        weight: 1
+      - path: GulnazBody/LowerBody/R_Shoes
+        weight: 1
+      - path: GulnazBody/LowerBody/R_Shoes/polySurface36
+        weight: 1
+      - path: GulnazBody/UpperBody
+        weight: 1
+      - path: GulnazBody/UpperBody/Frontbip
+        weight: 1
+      - path: GulnazBody/UpperBody/Necklace
+        weight: 1
+      - path: GulnazBody/UpperBody/Necklacetolken
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
