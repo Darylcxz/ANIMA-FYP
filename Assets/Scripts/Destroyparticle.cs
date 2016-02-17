@@ -6,7 +6,7 @@ public class Destroyparticle : MonoBehaviour {
 	// Use this for initialization
 	void OnEnable () {
 
-        Invoke("Destroythis", 2);
+        Invoke("Destroythis", 3.0f);
 	
 	}
 	
