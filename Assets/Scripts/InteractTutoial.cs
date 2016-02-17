@@ -2,19 +2,13 @@
 using System.Collections;
 
 public class InteractTutoial : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
+    [SerializeField]VillageDialogue village;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.name == "Character")
         {
-            VillageDialogue.interactOn = true;
+            village.InteractTrigger();
             Destroy(gameObject);
         }
     }
