@@ -486,8 +486,7 @@ public class MovementController : MonoBehaviour {
 
     public void Footsteps()
     {
-        grounddust.transform.position = transform.position;
-        grounddust.Play();
+        Instantiate(grounddust, transform.position, Quaternion.identity);
         //maincam.PlayOneShot(footsteps, 0.5f);
     }
 

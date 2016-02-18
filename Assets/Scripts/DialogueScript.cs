@@ -25,6 +25,7 @@ public class DialogueScript : MonoBehaviour
     private RaycastHit hit2;
     private bool textcomplete = false;
     private bool istalking = false;
+    private bool lookatme = false;
     public AudioSource beepsound;
     public AudioClip[] voices;
     public static string NPCname;
@@ -69,6 +70,12 @@ public class DialogueScript : MonoBehaviour
                 NPCname = hit.collider.name;
                 string textData = dialogue.text;
                 ParseDialogue(textData);
+                if (hit.collider.name != "Grave")
+                {
+                    Vector3 looktarget = transform.position;
+                    looktarget.y = hit.collider.gameObject.transform.position.y;
+                    hit.collider.gameObject.transform.LookAt(looktarget);
+                }
             }
 			
         }
