@@ -11,7 +11,7 @@ public class NewPigScript : NewAIBA {
 
 	protected override void Start()
 	{
-        spawnPoint = transform;
+       // spawnPoint.position = transform.position;
         pigAnim = GetComponent<Animator>();
 		pigAudioSource = GetComponent<AudioSource>();
         base.Start();
@@ -59,6 +59,10 @@ public class NewPigScript : NewAIBA {
 
 		}
 	}
+    public void PlaySqueal()
+    {
+        StartCoroutine(PlaySound(squealSound));
+    }
 	IEnumerator PlaySound(AudioClip _sound)
 	{
 		pigAudioSource.clip = _sound;
