@@ -8,6 +8,11 @@ public class VillageDialogue : DialogueScript {
     public GameObject temir;
     public GameObject serik;
     public GameObject inzhu;
+    [SerializeField]private GameObject exclaim;
+    [SerializeField]Transform haystacks;
+    [SerializeField]Transform haydestination;
+    [SerializeField]Transform dummies;
+    [SerializeField]GameObject gate;
     public Transform newpos;
     public Image tutImage;
     public Sprite pressb;
@@ -35,6 +40,7 @@ public class VillageDialogue : DialogueScript {
         ParseDialogue(textData);
         tutImage.enabled = false;
         itemicon.enabled = false;
+        exclaim.transform.position = ruslan.transform.position + Vector3.up * 2.0f;
     }
 
 	// Use this for initialization
@@ -46,6 +52,7 @@ public class VillageDialogue : DialogueScript {
         if(hitDummy && temir.name == "Temir2")
         {
             temir.name = "Temir3";
+            exclaim.transform.position = temir.transform.position + Vector3.up * 2.0f;
         }
 
         if(hitDummy && !finishdummy)
@@ -59,6 +66,7 @@ public class VillageDialogue : DialogueScript {
         if(Checkhay.got2hay && Input.GetButtonDown("Action") && serik.name == "Serik4")
         {
             serik.name = "Serik5";
+            exclaim.transform.position = serik.transform.position + Vector3.up * 2.0f;
         }
 
         if(NPCname == "Temir" && _seqNum == 4)
@@ -82,7 +90,7 @@ public class VillageDialogue : DialogueScript {
         base.CheckNames();
         if(NPCname == "Ruslan")
         {
-            
+            exclaim.transform.position = inzhu.transform.position + Vector3.up * 2.0f;
             ruslan.name = "Ruslan2";
             canleave1 = true;
             itemicon.enabled = true;
@@ -110,36 +118,43 @@ public class VillageDialogue : DialogueScript {
             }
         }
 
-        else if(NPCname == "Serik4")
-        {
-            tutImage.enabled = true;
-            Invoke("TutorialOff", 5);
-        }
-
         else if(NPCname == "Temir")
         {
             temir.name = "Temir2";
+            exclaim.transform.position = dummies.transform.position + Vector3.up * 2.0f;
         }
 
         else if(NPCname == "Temir3")
         {
-            serik.transform.position = newpos.position;
+            serik.transform.position = newpos.position + Vector3.up * 0.7f;
             serik.name = "Serik4";
+            exclaim.transform.position = newpos.position + Vector3.up * 2.0f;
             cockblock1 = true;
             serikcalls.transform.position += new Vector3(0, -2.8f, 0);
         }
 
         else if(NPCname == "Inzhu")
         {
+            exclaim.transform.position = temir.transform.position + Vector3.up * 2.0f;
             inzhu.name = "Inzhu2";
             itemicon.enabled = false;
         }
 
         else if(NPCname == "Serik4")
         {
+            tutImage.enabled = true;
+            Invoke("TutorialOff", 5);
             Destroy(helpserik1);
             Destroy(helpserik2);
             Destroy(helpserik3);
+            exclaim.transform.position = haystacks.transform.position + Vector3.up * 1.5f;
+        }
+
+        else if(NPCname == "Serik5")
+        {
+            exclaim.SetActive(false);
+            gate.SetActive(false);
+            inzhu.SetActive(false);
         }
     }
 
@@ -218,5 +233,8 @@ public class VillageDialogue : DialogueScript {
         interactOn = true;
     }
 
-
+    void SerikImpressed()
+    {
+        exclaim.SetActive(true);
+    }
 }
