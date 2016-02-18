@@ -10,6 +10,9 @@ public class NewTutorialController : MonoBehaviour {
     [SerializeField] NewPigScript _pigScript;
     [SerializeField] GameObject jumpSequence;
     [SerializeField] GameObject _Serik;
+    [SerializeField] Animator _waterWheel;
+    [SerializeField] Animator _sawBlade;
+
 	[SerializeField]enum Part
 	{
 		ENTER,
@@ -21,8 +24,10 @@ public class NewTutorialController : MonoBehaviour {
 		PIG,
 		POSSESS,
 		SERIKPIG,
+        FIREGATE,
         LINEOFDESH
 	};
+  
 	[SerializeField] Part DialoguePart;
     [SerializeField] List<Transform> CamPositions = new List<Transform>();
     [SerializeField] List<Image> TutorialImages = new List<Image>();
@@ -54,12 +59,21 @@ public class NewTutorialController : MonoBehaviour {
     Vector3 serikEnd;
 
     bool hasPigged;
+    bool hasSquealed;
     bool hasPossessed;
+    bool hasSneezed;
+
+    //Puzzle sequence booleans
+    bool hasVineBroke;
+    bool hasLogMoved;
+
 	// Use this for initialization
 	void Start () {
 		_dScript = _dScript.GetComponent<DialogueScript>();
         _deshScript = _deshScript.GetComponent<DeshTutorial>();
         _pigScript = _pigScript.GetComponent<NewPigScript>();
+        _waterWheel = _waterWheel.GetComponent<Animator>();
+        _sawBlade = _sawBlade.GetComponent<Animator>();
         jumpSequence.SetActive(false);
         _camera = _camera.GetComponent<Transform>();
         _dScript.hasDialogueEnd = true;
@@ -185,6 +199,11 @@ public class NewTutorialController : MonoBehaviour {
                     _pigScript.GoToPoint(new Vector3(40, 0, -12), true);
                     hasPigged = true;
                 }
+                if(DialogueScript._seqNum ==4 && !hasSquealed)
+                {
+                    _pigScript.PlaySqueal();
+                    hasSquealed = true;
+                }
                 else if (DialogueScript._seqNum > 5)
                 {
                     _pigScript.GoToPoint(Vector3.zero, false);
@@ -205,12 +224,26 @@ public class NewTutorialController : MonoBehaviour {
                 {
                     TutorialImages[3].enabled = false;
                     hasPossessed = true;
+                    if(!hasSneezed)
+                    {
+                        TutorialImages[4].enabled = true;
+                        if (GamepadManager.buttonBDown)
+                        {
+                            TutorialImages[4].enabled = false;
+                            hasSneezed = true;
+                        }
+                    }
+                   
                 }
-                if (hasPossessed && !_pigScript.isPossessed && DialogueScript._seqNum == 1)
+                if (hasPossessed && !_pigScript.isPossessed)
                 {
                     DialogueEnd();
                 }
                 _dialogueName = "seriksapig1-1";
+                ChangeState(Part.FIREGATE);
+                break;
+            case Part.FIREGATE:
+                _dialogueName = "secndgate1-1"; 
                 ChangeState(Part.LINEOFDESH);
                 break;
             case Part.LINEOFDESH:

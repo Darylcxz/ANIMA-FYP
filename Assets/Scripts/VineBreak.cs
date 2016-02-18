@@ -3,6 +3,8 @@ using System.Collections;
 
 public class VineBreak : MonoBehaviour {
 
+    [SerializeField] Rigidbody[] _rigidBodies;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -11,31 +13,36 @@ public class VineBreak : MonoBehaviour {
 	{
 		if (col.collider.tag == "dagger" && gameObject.transform.GetChild(0)!= null)
 		{
-			
+			foreach(Rigidbody _rb in _rigidBodies)
+            {
+                _rb.isKinematic = false;
+                Destroy(_rb.gameObject, 3.5f);
+            }
+            gameObject.GetComponent<Collider>().enabled = false;
 
-			gameObject.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
-			gameObject.transform.GetChild(1).GetComponent<Rigidbody>().isKinematic = false;
-			gameObject.transform.GetChild(2).GetComponent<Rigidbody>().isKinematic = false;
-			gameObject.transform.GetChild(3).GetComponent<Rigidbody>().isKinematic = false;
-			gameObject.transform.GetChild(4).GetComponent<Rigidbody>().isKinematic = false;
-			gameObject.transform.GetChild(5).GetComponent<Rigidbody>().isKinematic = false;
-			gameObject.transform.GetChild(6).GetComponent<Rigidbody>().isKinematic = false;
-			gameObject.transform.GetChild(7).GetComponent<Rigidbody>().isKinematic = false;
-			gameObject.transform.GetChild(8).GetComponent<Rigidbody>().isKinematic = false;
-			gameObject.transform.GetChild(9).GetComponent<Rigidbody>().isKinematic = false;
+			//gameObject.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
+			//gameObject.transform.GetChild(1).GetComponent<Rigidbody>().isKinematic = false;
+			//gameObject.transform.GetChild(2).GetComponent<Rigidbody>().isKinematic = false;
+			//gameObject.transform.GetChild(3).GetComponent<Rigidbody>().isKinematic = false;
+			//gameObject.transform.GetChild(4).GetComponent<Rigidbody>().isKinematic = false;
+			//gameObject.transform.GetChild(5).GetComponent<Rigidbody>().isKinematic = false;
+			//gameObject.transform.GetChild(6).GetComponent<Rigidbody>().isKinematic = false;
+			//gameObject.transform.GetChild(7).GetComponent<Rigidbody>().isKinematic = false;
+			//gameObject.transform.GetChild(8).GetComponent<Rigidbody>().isKinematic = false;
+			//gameObject.transform.GetChild(9).GetComponent<Rigidbody>().isKinematic = false;
 			
-			Destroy(gameObject.transform.GetChild(0).gameObject,3.5f);
-			Destroy(gameObject.transform.GetChild(1).gameObject, 3.5f);
-			Destroy(gameObject.transform.GetChild(2).gameObject, 3.5f);
-			Destroy(gameObject.transform.GetChild(3).gameObject, 3.5f);
-			Destroy(gameObject.transform.GetChild(4).gameObject, 3.5f);
-			Destroy(gameObject.transform.GetChild(5).gameObject, 3.5f);
-			Destroy(gameObject.transform.GetChild(6).gameObject, 3.5f);
-			Destroy(gameObject.transform.GetChild(7).gameObject, 3.5f);
-			Destroy(gameObject.transform.GetChild(8).gameObject, 3.5f);
-			Destroy(gameObject.transform.GetChild(9).gameObject, 3.5f);
+			//Destroy(gameObject.transform.GetChild(0).gameObject,3.5f);
+			//Destroy(gameObject.transform.GetChild(1).gameObject, 3.5f);
+			//Destroy(gameObject.transform.GetChild(2).gameObject, 3.5f);
+			//Destroy(gameObject.transform.GetChild(3).gameObject, 3.5f);
+			//Destroy(gameObject.transform.GetChild(4).gameObject, 3.5f);
+			//Destroy(gameObject.transform.GetChild(5).gameObject, 3.5f);
+			//Destroy(gameObject.transform.GetChild(6).gameObject, 3.5f);
+			//Destroy(gameObject.transform.GetChild(7).gameObject, 3.5f);
+			//Destroy(gameObject.transform.GetChild(8).gameObject, 3.5f);
+			//Destroy(gameObject.transform.GetChild(9).gameObject, 3.5f);
 
-			gameObject.GetComponent<Collider>().enabled = false;
+			//gameObject.GetComponent<Collider>().enabled = false;
 
 			if (gameObject.name.Contains("Wheel"))
 			{

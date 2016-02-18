@@ -27,8 +27,8 @@ public abstract class NewAIBA : MonoBehaviour {
 	float stateTimer;			//State timer that runs with the game time
 	float waitTime = 1f;				//Time the state waits before it changes
 	float distance;				//distance between AI and things
-	float retreatDistance = 5f;		//distance BEFORE AI retreats
-	protected Transform spawnPoint;		//place where AI spawned
+	float retreatDistance = 1f;		//distance before AI considers is safe to exit retreat state
+	protected Vector3 spawnPoint;		//place where AI spawned
 
 
 	//AI variables//
@@ -74,7 +74,7 @@ public abstract class NewAIBA : MonoBehaviour {
 		_rbAI = GetComponent<Rigidbody>();
 		_waypoint = areaCenter + (OnUnitRect(rectSize.x,rectSize.z)) * rectMagnitude;
 		playerMana = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
-	//	spawnPoint = transform;
+        spawnPoint = transform.position;
         possessExplode = GameObject.Find("SpiritBomb");
         possanim = possessExplode.GetComponent<Animator>();
 	}
@@ -97,8 +97,8 @@ public abstract class NewAIBA : MonoBehaviour {
 	}
 	protected virtual void AIStateMachine()//State machine for the AI
 	{
-		stateTimer += Time.deltaTime;
-		switch (AIState)
+        stateTimer += Time.deltaTime;
+        switch (AIState)
 		{
 			case StateMachine.IDLE:
 				//Dizzy animation or whatever
@@ -132,12 +132,13 @@ public abstract class NewAIBA : MonoBehaviour {
 				}
 				break;
 			case StateMachine.RETREAT:
-				AIMove(transform.position, spawnPoint.position, speedAI * 2);
-				if (DistanceBetween(transform.position, spawnPoint.position) < retreatDistance)
-				{
-					ChangeState(0f, StateMachine.IDLE);
-				}
-				break;
+				AIMove(transform.position, spawnPoint, speedAI * 2);
+            //    Debug.Log("Spawnpoint = " + spawnPoint + " ,Dist = " + DistanceBetween(transform.position, spawnPoint.position));
+                if (DistanceBetween(transform.position, spawnPoint) < retreatDistance)
+                {
+                    ChangeState(0f, StateMachine.IDLE);
+                }
+                break;
             case StateMachine.GOTOPOINT:
                 if(customWayPoint!= null)
                 {

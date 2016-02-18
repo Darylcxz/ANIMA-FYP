@@ -18,6 +18,7 @@ public class DialogueScript : MonoBehaviour
     public Sprite chara5;
     public Sprite[] chara6;
     public Sprite[] chara7;
+    public Sprite chara8;
     public Image textbox;
     private string charaname;
     private RaycastHit hit;
@@ -231,7 +232,10 @@ public class DialogueScript : MonoBehaviour
                 //Invoke("StopAnim", 0.2f);
                 break;
 
-
+            case "Pig":
+                characterpic.sprite = chara8;
+                showname.text = character;
+                break;
 
             default:
                 characterpic.sprite = null;

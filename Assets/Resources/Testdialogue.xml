@@ -73,13 +73,14 @@
     <D3 character="Inzhu">Maybe you should take up magic instead? It's surely much more effective than swinging a piece of metal around.</D3>
     <D4 character="Gulnaz" expression="5" voice="10">NO way! I'm a beast with a sword.</D4>
     <D5 character="Gulnaz" expression="0" voice="8"> Plus, I'm not on board with the magic thing. It's shady, it's direspectful, and it's too good to be true.</D5>
-    <D6 character="Inzhu">Hum, suit yourself. If you change your mind, Aibek's conducting lessons up ahead. We've got a bunch of carcasses for the instruments from the last hunt.</D6>
-    <D7 character="Gulnaz" expression="0" voice="8">Eugh.. Aibek and carcasses.</D7>
-    <D8 character="Inzhu">Say what you will about Aibek, Gulnaz, but he is the Chieftan. People trust him, as I do.</D8>
-    <D9 character="Gulnaz" expression="2">Speaking of... Ruslan wanted this letter delivered to Aibek. Here.</D9>
-    <D9 character="Inzhu">What's this, I'm a middle man now? </D9>
-    <D9 character="Inzhu">Anyway, Temir said she was looking for you. Why don't you go get your sword? She's at her hut to your right.</D9>
-    <D10 character="Gulnaz" expression="5" voice="1">Thanks. Let's debate the good of magic some other time.</D10>
+    <D6 character="Inzhu">Hum, suit yourself. If you change your mind, Aibek's conducting lessons up ahead. </D6>
+    <D7 character="Inzhu">We've got a bunch of carcasses for the instruments from the last hunt.</D7>
+    <D8 character="Gulnaz" expression="0" voice="8">Eugh.. Aibek and carcasses.</D8>
+    <D9 character="Inzhu">Say what you will about Aibek, Gulnaz, but he is the Chieftan. People trust him, as I do.</D9>
+    <D10 character="Gulnaz" expression="2">Speaking of... Ruslan wanted this letter delivered to Aibek. Here.</D10>
+    <D11 character="Inzhu">What's this, I'm a middle man now? </D11>
+    <D12 character="Inzhu">Anyway, Temir said she was looking for you. Why don't you go get your sword? She's at her hut to your right.</D12>
+    <D13 character="Gulnaz" expression="5" voice="1">Thanks. Let's debate the good of magic some other time.</D13>
   </Inzhu>
   <inzhucockblock>
     <D1 character="Inzhu">Woah! Where do you think you're going? Temirs' hut is off to the right.</D1>
@@ -193,11 +194,65 @@
     <D8 character="Gulnaz" expression="2" voice="7">I... yeah, go ahead.</D8>
   </posession1-1>
   <seriksapig1-1>
-    <D1 character="Pig">Oink!! Oink, oink!</D1>
+    <D1 character="GhostSerik">Oink oink? Oi- What the..?</D1>
     <D2 character="Gulnaz" expression="2" voice="7">Uh.. Congratulations..I guess?</D2>
-    <D3 character="Gulnaz" expression="5" voice="10">Oh my Spirits!!</D3>
-    <D4 character="Gulnaz" expression="5" voice="11">That's awesome!</D4>
-  </seriksapig1-1>
+    <D3 character="Gulnaz" expression="1" voice="3">I... I'm still trying to register this..</D3>
+    <D4 character="Gulnaz" expression="2" voice="7">But...that fiery sneeze seems very helpful.. Hehehehe.</D4>
+    <D5 character="GhostSerik" expression="1" voice="14">Uh. I don't like that look you're giving me, Gulnaz..</D5>
+    <D6 character="GhostSerik" expression="2" voice="19">I wonder what other creatures I can possess.</D6>
+
+ </seriksapig1-1>
+  <secndgate1-1>
+    <D1 character="GhostSerik" expression="5" voice="20">Huh. No lever.</D1>
+    <D2 character="Gulnaz" expression="0" voice="12">Coznac's security team is at it again.. There's probably a funny mechanism behind this.</D2>
+    <D3 character="GhostSerik" expression="4" voice="19">Something looks different about this gate. Let's take a look around.</D3>
+    <D4 character="Gulnaz" expression="1" voice="7">Uh huh..</D4>
+  </secndgate1-1>
+  <dontidiot>
+    <D1 character="Serik" expression="0" voice="14">I know you just took on 3 of these guys, but aren't you getting a little cocky?</D1>
+    <D2 character="Gulnaz" expression="1" voice="7">...</D2>
+    <D3 character="Gulnaz" expression="5" voice="8">I could totally take these losers.</D3>
+    <D4 character="GhostSerik" expression="1" voice="18">No..! There's gotta be a smarter way around this. </D4>
+    <D5 character="Gulnaz" expression="0" voice="3">Ugh, alright.</D5>
+    <D6 character="GhostSerik" expression="24">You know I'm right.</D6>
+  </dontidiot>
+  <dontidiot2>
+    <D1 character="GhostSerik" expression="7" voice="18">WHAT are you doing?!</D1>
+    <D2 character="Gulnaz" expression="1" voice="9">I.. uh.</D2>
+    <D3 character="GhostSerik" expression="0" voice="20">Uh?</D3>
+    <D4 character="Gulnaz" expression="2" voice="3">I don't know. Trying to stab them?</D4>
+    <D5 character="GhostSerik" expression="3" voice="18">No, there's surely a better solution..</D5>
+    <D6 character="Gulnaz" expression="4" voice="3">No stabbing?</D6>
+    <D7 character="GhostSerik" expression="0">...</D7>
+  </dontidiot2>
+  <dontidiot3>
+    <D1 character="GhostSerik" expression="1" voice="21">GULNAZ!</D1>
+    <D2 character="Gulnaz" expression="2" voice="8">Ahhhh... Serik you don't have to yell...</D2>
+    <D3 character="GhostSerik" expression="0" voice="22">Then stop walking towards those things!</D3>
+    <D4 character="Gulnaz" expression="0" voice="7">Okay, yeah, there's a better solution yadda yadda.</D4>
+    <D5 character="GhostSerik" expression="4" voice="17">Yadda yadda.</D5>
+    <D6 character="GhostSerik" expression="5" voice="19">Let's check out those logs. I think they're worth investigating.</D6>
+  </dontidiot3>
+  <dontidiot4>
+    <D1 character="GhostSerik" expression="7">...</D1>
+    <D2 character="Gulnaz" expression="2" voice="8">Right, right... Please stop glaring at me like that. It's weirding me out.</D2>
+    <D3 character="GhostSerik" expression="7">...</D3>
+    <D4 character="Gulnaz" expression="2" voice="7">Stop flaring your nostrils at me, I'll figure it out. The logs, right?</D4>
+    <D5 character="GhostSerik" expression="5" voice="15">Yes.</D5>
+  </dontidiot4>
+  <firstarchuraencounter>
+    <D1 character="Gulnaz" expression="0" voice="6">Hey, you- body stealer!</D1>
+    <D2 character="Archura" expression="1" voice="26" animation="0">What's this? You caught up with me?</D2>
+    <D3 character="Archura" expression="2" voice="2" animation="3">Interesting! How did you even get by all the cute little Desh?</D3>
+    <D4 character="GhostSerik" expression="5" voice="15">She stabbed them.</D4>
+    <D5 character="Archura" expression="0" animation="1">Oh. That was a little underwhelming.</D5>
+    <D6 character="Archura" expression="1" voice="25" animation="3">Well it's getting late, kids. Shouldn't you be heading back?</D6>
+    <D7 character="GhostSerik" expression="0" voice="18">Not until you give me back my body and explain your actions, you-</D7>
+    <D8 character="Archura" expression="0" animation="2">This is boring. I'm outta here.</D8>
+    <D9 character="GhostSerik" expression="1">What! You can't just lea-</D9>
+    <D10 character="Gulnaz" expression="2" voice="3">And he just left.</D10>
+    <D11 character="Gulnaz" expression="5">Stop staring and start flying, bird-boy!</D11>
+  </firstarchuraencounter>
   <one2start>
     <D1 character="Gulnaz" expression="6" voice="1">Alright, Serik. I'm done resting.</D1>
     <D2 character="Gulnaz" expression="6">You.. uh.. you doin' alright?</D2>
@@ -216,16 +271,16 @@
     <D5 character="GhostSerik" expression="0" voice="16">And...it's all dirty... and caked in mud. </D5>
     <D6 character="GhostSerik" expression="7" voice="23">Gross......</D6>
     <D7 character="Archura" expression="0" animation="0">...</D7>
-    <D8 character="Archura" expression="0" animation="1">You kids done with your talking yet?</D8>
-    <D9 character="Archura" expression="1" animation="1">You've got an interesting ability there, boy.</D9>
-    <D10 character="Archura" expression="2" animation="3">You can thank me for that!</D10>
+    <D8 character="Archura" expression="0" voice="26" animation="1">You kids done with your talking yet?</D8>
+    <D9 character="Archura" expression="1" voice="25" animation="1">You've got an interesting ability there, boy.</D9>
+    <D10 character="Archura" expression="2" voice="27" animation="3">You can thank me for that!</D10>
     <D11 character="GhostSerik" expression="7">...</D11>
     <D12 character="GhostSerik" expression="7">Ugh... </D12>
     <D13 character="Gulnaz" expression="5" voice="12">Give Serik his body back, you body-stealing thief! </D13>
-    <D14 character="Archura" expression="1" animation="2">Nope.</D14>
+    <D14 character="Archura" expression="1" voice="25" animation="2">Nope.</D14>
     <D15 character="Archura" expression="1" animation="0">It's been fun watching you guys tail after me, but...</D15>
     <D16 character="Archura" expression="3" animation="0">If you value your life, you should turn back now.</D16>
-    <D17 character="Archura" expression="1" animation="3">Also you get a neat party trick out of this!</D17>
+    <D17 character="Archura" expression="1" voice="27" animation="3">Also you get a neat party trick out of this!</D17>
     <D18 character="Archura" expression="2" animation="1">I say you go back home to your disgusting tribe and continue brandishing your devilry. </D18>
     <D19 character="Archura" expression="2" animation="0">See ya.</D19>
   </Archuraencounter>
@@ -244,4 +299,38 @@
     <D11 character="GhostSerik" expression="6">...</D11>
     <D12 character="GhostSerik" expression="6" voice="24">Thank you, Gulnaz.</D12>
   </end1-2>
+  <archura2-1>
+    <D1 character="Archura" expression="1">Weh? You did exactly what I said not to do!</D1>
+    <D2 character="Gulnaz" expression="5" voice="1">I'll take you on, right here, right now!</D2>
+    <D3 character="GhostSerik" expression="3" voice="14">Maybe we should talk it out...</D3>
+    <D4 character="Gulnaz" expression="0" voice="3">Oh Serik, you're always one for diplomacy... But some things just have to involve some stabbing.</D4>
+    <D5 character="GhostSerik" expression="0" voice="18">Shush Gulnaz!</D5>
+    <D6 character="Archura" expression="3">...</D6>
+    <D7 character="GhostSerik" expression="3">What did you mean when you said Coznac was disgusting?</D7>
+    <D8 character="GhostSerik" expression="5" voice="14">Is it the Magic?</D8>
+    <D9 character="Archura" expression="0">Ugh... No creature should be put through such despicable rituals...</D9>
+    <D10 character="Gulnaz" expression="2" voice="8">Ew, don't remind me, I might just vomit.</D10>
+    <D11 character="Archura" expression="0" voice="26">If you find it disgusting why do you practice it?</D11>
+    <D12 character="GhostSerik" expression="3" voice="18">We don't! We're totally against it!</D12>
+    <D13 character="GhostSerik" expression="5" voice="15">A good half of Coznac is...</D13>
+    <D14 character="Archura" expression="3">...</D14>
+    <D15 character="Archura" expression="2" voice="27">It doesn't matter. Suzy and Gary are gonna pulverize you anyway.</D15>
+    <D16 character="Gulnaz" expression="2" voice="9">Who now?</D16>
+    <D16 character="Serik" expression="6" voice="14">Uh. Let's just continue tailing him.</D16>
+  </archura2-1>
+  <endof2-1>
+    <D1 character="Gulnaz" expression="1" voice="7">That..that must have been the fabled Suzy and Gary.</D1>
+    <D2 character="GhostSerik" expression="1" voice="17">I'm just glad we didn't get 'pulverzied'.</D2>
+    <D3 character="GhostSerik" expression="5" voice="14">Seriously, this is starting to get really dangerous.</D3>
+    <D4 character="Gulnaz" expression="0" voice="4">Are you wussing out on me?</D4>
+    <D5 character="GhostSerik" expression="3" voice="18">No. Not anymore, Gulnaz.</D5>
+    <D6 character="Gulnaz" expression="4" voice="2">...</D6>
+    <D7 character="GhostSerik" expression="1">We're pretty unstoppable.</D7>
+    <D8 character="Gulnaz" expression="5" voice="7">Haha.. You didn't think so days ago.</D8>
+    <D9 character="Serik" expression="2">That was days ago. So much has happened since.</D9>
+    <D10 character="Serik" expression="4">My doubt in us is clearly misplaced.</D10>
+    <D11 character="Gulnaz" expression="1">Heh.</D11>
+    <D12 character="Serik" expression="4">Well, let's go after him! </D12>
+    <D13 character="Gulnaz" expression="5" voice="11">I'm right behind you!</D13>
+  </endof2-1>
 </Dialogue>
