@@ -41,6 +41,7 @@ public class DialogueScript : MonoBehaviour
     public Animator charanim;
 	public Animator serikAnim;
     public Animator achuraAnim;
+    Animator talktarget;
 	
 	public virtual void Start() {
         textbox.enabled = false;
@@ -75,6 +76,8 @@ public class DialogueScript : MonoBehaviour
                     Vector3 looktarget = transform.position;
                     looktarget.y = hit.collider.gameObject.transform.position.y;
                     hit.collider.gameObject.transform.LookAt(looktarget);
+                    talktarget = hit.collider.gameObject.GetComponent<Animator>();
+                    talktarget.SetBool("Talking", true);
                 }
             }
 			
@@ -95,8 +98,9 @@ public class DialogueScript : MonoBehaviour
 
             else
             {
+                if(talktarget != null)
+                    talktarget.SetBool("Talking", false);
                 CheckNames();
-                //faceme = false;
                 hasDialogueEnd = true;
                 dialarrow.SetActive(false);
                 textbox.enabled = false;
