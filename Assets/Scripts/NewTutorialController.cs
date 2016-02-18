@@ -10,6 +10,9 @@ public class NewTutorialController : MonoBehaviour {
     [SerializeField] NewPigScript _pigScript;
     [SerializeField] GameObject jumpSequence;
     [SerializeField] GameObject _Serik;
+    [SerializeField] Animator _waterWheel;
+    [SerializeField] Animator _sawBlade;
+
 	[SerializeField]enum Part
 	{
 		ENTER,
@@ -69,6 +72,8 @@ public class NewTutorialController : MonoBehaviour {
 		_dScript = _dScript.GetComponent<DialogueScript>();
         _deshScript = _deshScript.GetComponent<DeshTutorial>();
         _pigScript = _pigScript.GetComponent<NewPigScript>();
+        _waterWheel = _waterWheel.GetComponent<Animator>();
+        _sawBlade = _sawBlade.GetComponent<Animator>();
         jumpSequence.SetActive(false);
         _camera = _camera.GetComponent<Transform>();
         _dScript.hasDialogueEnd = true;
@@ -238,7 +243,7 @@ public class NewTutorialController : MonoBehaviour {
                 ChangeState(Part.FIREGATE);
                 break;
             case Part.FIREGATE:
-                _dialogueName = "firegate1-1"; // MIGHT NEED EDITING
+                _dialogueName = "secndgate1-1"; 
                 ChangeState(Part.LINEOFDESH);
                 break;
             case Part.LINEOFDESH:
