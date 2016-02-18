@@ -24,6 +24,7 @@ public class DialogueScript : MonoBehaviour
     private RaycastHit hit2;
     private bool textcomplete = false;
     private bool istalking = false;
+    private bool lookatme = false;
     public AudioSource beepsound;
     public AudioClip[] voices;
     public static string NPCname;
@@ -68,6 +69,12 @@ public class DialogueScript : MonoBehaviour
                 NPCname = hit.collider.name;
                 string textData = dialogue.text;
                 ParseDialogue(textData);
+                if (hit.collider.name != "Grave")
+                {
+                    Vector3 looktarget = transform.position;
+                    looktarget.y = hit.collider.gameObject.transform.position.y;
+                    hit.collider.gameObject.transform.LookAt(looktarget);
+                }
             }
 			
         }
@@ -98,9 +105,10 @@ public class DialogueScript : MonoBehaviour
                 istalking = false;
                 _mScript.bForcedMove = false;
 				_seqNum = 0;
+                StopAnim();
 			//	Debug.Log(_seqNum + "else");
-                charanim.SetBool("isTalking", false);
-                charanim.SetBool("bVictory", false);
+                //charanim.SetBool("isTalking", false);
+                //charanim.SetBool("bVictory", false);
             }
         }
 
@@ -180,7 +188,7 @@ public class DialogueScript : MonoBehaviour
                 //beepsound.PlayOneShot(voices[voice]);
                 showname.text = character;
                 charanim.SetBool("isTalking", true);
-                Invoke("StopAnim", 0.2f);
+             //   Invoke("StopAnim", 0.2f);
                 break;
 
             case "Serik":
@@ -211,7 +219,7 @@ public class DialogueScript : MonoBehaviour
                 //beepsound.PlayOneShot(voices[voice]);
                 showname.text = "Serik";
 				serikAnim.SetBool("bSerikTalk", true);
-                Invoke("StopAnim", 0.2f);
+            //    Invoke("StopAnim", 0.2f);
                 break;
 
             case "Archura":

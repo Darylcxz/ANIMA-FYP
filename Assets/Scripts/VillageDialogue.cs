@@ -61,18 +61,19 @@ public class VillageDialogue : DialogueScript {
             serik.name = "Serik5";
         }
 
-        if(interactOn)
-        {
-            tutImage.enabled = true;
-            tutImage.sprite = pressb;
-            Invoke("TutorialOff", 5);
-            interactOn = false;
-        }
-
         if(NPCname == "Temir" && _seqNum == 4)
         {
             sword.SetActive(true);
             charanim.SetBool("bVictory", true);
+        }
+
+        if(NPCname == "Ruslan")
+        {
+            if (interactOn)
+            {
+                interactOn = false;
+                tutImage.enabled = false;
+            }
         }
     }
 
@@ -81,6 +82,7 @@ public class VillageDialogue : DialogueScript {
         base.CheckNames();
         if(NPCname == "Ruslan")
         {
+            
             ruslan.name = "Ruslan2";
             canleave1 = true;
             itemicon.enabled = true;
@@ -139,8 +141,6 @@ public class VillageDialogue : DialogueScript {
             Destroy(helpserik2);
             Destroy(helpserik3);
         }
-
-
     }
 
     void OnTriggerEnter(Collider other)
@@ -208,6 +208,14 @@ public class VillageDialogue : DialogueScript {
         helpserik1.transform.position += new Vector3(0, -2.8f, 0);
         helpserik2.transform.position += new Vector3(0, -2.8f, 0);
         helpserik3.transform.position += new Vector3(0, -2.8f, 0);
+    }
+
+    public void InteractTrigger()
+    {
+        tutImage.enabled = true;
+        tutImage.sprite = pressb;
+        //Invoke("TutorialOff", 5);
+        interactOn = true;
     }
 
 

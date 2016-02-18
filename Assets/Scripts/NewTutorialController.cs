@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class NewTutorialController : MonoBehaviour {
 
 	[SerializeField] DialogueScript _dScript;
+    [SerializeField] DeshTutorial _deshScript;
+    [SerializeField] NewPigScript _pigScript;
+    [SerializeField] GameObject jumpSequence;
+    [SerializeField] GameObject _Serik;
 	[SerializeField]enum Part
 	{
 		ENTER,
@@ -16,15 +20,20 @@ public class NewTutorialController : MonoBehaviour {
 		SHOES2,
 		PIG,
 		POSSESS,
-		SERIKPIG
+		SERIKPIG,
+        LINEOFDESH
 	};
 	[SerializeField] Part DialoguePart;
     [SerializeField] List<Transform> CamPositions = new List<Transform>();
+    [SerializeField] List<Image> TutorialImages = new List<Image>();
     
 
     string _dialogueName;
 	bool textPlay = true;
     bool statechange;
+    
+    //Kinky camera movements
+
     [SerializeField]
     Transform _camera;
     Quaternion _orignalRot;
@@ -34,9 +43,24 @@ public class NewTutorialController : MonoBehaviour {
     //Camera panning values
     float _timer;
     [SerializeField] int _speedMultiplier = 1;
+
+    //Time slow stuff
+    bool _bulletTime;
+    bool _hasSlowed;
+
+    bool serikFly;
+    float flyTime;
+    public bool hasJumped;
+    Vector3 serikEnd;
+
+    bool hasPigged;
+    bool hasPossessed;
 	// Use this for initialization
 	void Start () {
 		_dScript = _dScript.GetComponent<DialogueScript>();
+        _deshScript = _deshScript.GetComponent<DeshTutorial>();
+        _pigScript = _pigScript.GetComponent<NewPigScript>();
+        jumpSequence.SetActive(false);
         _camera = _camera.GetComponent<Transform>();
         _dScript.hasDialogueEnd = true;
         _orignalRot = _camera.transform.rotation;
@@ -47,6 +71,7 @@ public class NewTutorialController : MonoBehaviour {
 		DialogueStateMachine();
         Debug.Log(DialogueScript._seqNum);
     }
+ 
 	void DialogueStateMachine()
 	{
 		switch (DialoguePart)
@@ -66,6 +91,7 @@ public class NewTutorialController : MonoBehaviour {
                     _panIndex = 0;
                     _timer = 0;
                     panCam = true;
+
                 }
                 if (DialogueScript._seqNum == 4)
                 {
@@ -77,6 +103,37 @@ public class NewTutorialController : MonoBehaviour {
                 ChangeState(Part.DEFEAT);
                 break;
 			case Part.DEFEAT:
+                if(!_bulletTime && DialogueScript._seqNum == 1)
+                {
+                    StartCoroutine("SlowTime",20f);
+                    _deshScript._move = true;
+                    _bulletTime = true;
+                }
+ 
+                if(_hasSlowed)
+                {
+                    TutorialImages[0].enabled = true;
+                    if (GamepadManager.triggerR > 0)
+                    {
+                        TutorialImages[0].enabled = false;
+                        _deshScript.hasRolled = true;
+                        _hasSlowed = false;
+                        TutorialImages[1].enabled = true;
+                    }
+                }
+                if(_deshScript.deshDead)
+                {
+                    TutorialImages[1].enabled = false;
+                    DialogueEnd();
+                }
+                //AI moves while time is slowing.
+                //Time stops when AI reaches it's location
+                //Press RT to roll UI pops up 
+                //Time is frozen and player can only press RT to roll
+                //Once player presses the trigger, time unfreezes
+                //Desh does weird shit, maybe gets stuck or something
+                //Player then kills desh to proceed
+        
 				_dialogueName = "defeated1-1";
                 ChangeState(Part.SHOES);
                 break;
@@ -85,20 +142,81 @@ public class NewTutorialController : MonoBehaviour {
                 ChangeState(Part.SHOES2);
                 break;
 			case Part.SHOES2:
-				_dialogueName = "shoes21-1";
+                //if seq = 1 serik flies
+                if(DialogueScript._seqNum == 1)
+                {
+                    serikFly = true;
+                    serikEnd = new Vector3(43, 0, -15);
+                }
+                if(serikFly && DialogueScript._seqNum ==0 &&!hasJumped)
+                {
+                    TutorialImages[2].enabled = true;
+                    jumpSequence.SetActive(true);
+                }
+                if(GamepadManager.buttonADown && _dScript.hasDialogueEnd)
+                {
+                    TutorialImages[2].enabled = false;
+                    hasJumped = true;
+                    serikFly = false;
+                    flyTime = 0;
+                }
+                _dialogueName = "shoes21-1";
                 ChangeState(Part.PIG);
                 break;
 			case Part.PIG:
+                if(DialogueScript._seqNum == 2)
+                {
+                    serikFly = true;
+                    serikEnd = new Vector3(38, 0, -6);
+                }
+                if(flyTime ==1)
+                {
+                    _Serik.SetActive(false);
+                }
 				_dialogueName = "pig1-1";
                 ChangeState(Part.POSSESS);
                 break;
 			case Part.POSSESS:
+                //if player within X range of pig, dialogue triggers?
+                //then halfway during dialogue, press Y to possess etc.
+                //make sure other stuff are hidden & disabled as well
+                if(DialogueScript._seqNum==1 && !hasPigged)
+                {
+                    _pigScript.GoToPoint(new Vector3(40, 0, -12), true);
+                    hasPigged = true;
+                }
+                else if (DialogueScript._seqNum > 5)
+                {
+                    _pigScript.GoToPoint(Vector3.zero, false);
+                    serikFly = false;
+                    _Serik.SetActive(true);
+                    _Serik.GetComponent<SerikFollow>().enabled = true;
+                    DialogueEnd();
+                }
 				_dialogueName = "posession1-1";
                 ChangeState(Part.SERIKPIG);
                 break;
 			case Part.SERIKPIG:
-				_dialogueName = "seriksapig1-1";
-         //       ChangeState(Part.DESH);
+               if(_dScript.hasDialogueEnd && !hasPossessed)
+                {
+                    TutorialImages[3].enabled = true;
+                }
+               if(_pigScript.isPossessed)
+                {
+                    TutorialImages[3].enabled = false;
+                    hasPossessed = true;
+                }
+                if (hasPossessed && !_pigScript.isPossessed && DialogueScript._seqNum == 1)
+                {
+                    DialogueEnd();
+                }
+                _dialogueName = "seriksapig1-1";
+                ChangeState(Part.LINEOFDESH);
+                break;
+            case Part.LINEOFDESH:
+
+
+                _dialogueName = "dontidiot";
                 break;
 		}
 		if(!_dScript.hasDialogueEnd && !textPlay)
@@ -109,12 +227,23 @@ public class NewTutorialController : MonoBehaviour {
         if(panCam)
         {
             _timer += Time.deltaTime;
-            _camera.position = Vector3.Lerp(transform.localPosition, CamPositions[_panIndex].position, _timer * _speedMultiplier);
-            _camera.rotation = Quaternion.Slerp(transform.localRotation, CamPositions[_panIndex].rotation, _timer * _speedMultiplier);
+            _camera.position = Vector3.Lerp(_camera.transform.position, CamPositions[_panIndex].position, _timer * _speedMultiplier);
+            _camera.rotation = Quaternion.Slerp(_camera.transform.rotation, CamPositions[_panIndex].rotation, _timer * _speedMultiplier);
             if (_timer > 1)
             {
                 _timer = 1;
-             //   panCam = false;
+            }
+        }
+        if (serikFly)
+        {
+            flyTime += Time.deltaTime;
+            _Serik.GetComponent<SerikFollow>().enabled = false;
+            
+            Vector3 serikLerp = Vector3.Lerp(_Serik.transform.position, serikEnd, flyTime);
+            _Serik.transform.position = serikLerp;
+            if(flyTime > 1)
+            {
+                flyTime = 1;
             }
         }
         
@@ -139,4 +268,14 @@ public class NewTutorialController : MonoBehaviour {
 		string textData = _dScript.dialogue.text;
 		_dScript.ParseDialogue(textData);
 	}
+
+    IEnumerator SlowTime(float _timeScale)
+    {
+        for (float i = 100; i > _timeScale; i -= Time.deltaTime*50)
+        {
+            Time.timeScale = i / 100;
+            yield return null;
+        }
+        _hasSlowed = true;
+    }
 }
