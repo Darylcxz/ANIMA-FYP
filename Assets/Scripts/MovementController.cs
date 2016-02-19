@@ -83,6 +83,12 @@ public class MovementController : MonoBehaviour {
 
 	[SerializeField]GuidedJump guideJump;
 
+    bool pushing;
+    bool pulling = false;
+    RaycastHit hitcube;
+    [SerializeField]Transform lefty;
+    [SerializeField]Transform righty;
+
 	// Use this for initialization
 	void Start () {
 		//guideJump = gameObject.GetComponent<GuidedJump>();
@@ -303,7 +309,33 @@ public class MovementController : MonoBehaviour {
                 break;
 
             case States.pushpull:
+                MovementLogic(hMove / 2, vMove /2);
+                Vector3 movementd = new Vector3(hMove, 0, vMove);
+                _anim.SetBool("isPulling", pulling);
+                _anim.SetBool("isPushing", pushing);
+                if(Physics.Raycast(transform.position, movementd, out hitcube, 1.0f)|| Physics.Raycast(lefty.position, movementd, out hitcube, 1.0f) || Physics.Raycast(righty.position, movementd, out hitcube, 1.0f))
+                {
+                    if(hit.collider.CompareTag("movable"))
+                    {
+                        pushing = true;
+                        pulling = false;
+                        _anim.speed = 1;
+                    }
+                }
 
+                else if(hMove == 0 && vMove == 0)
+                {
+                    pushing = true;
+                    pulling = false;
+                    _anim.speed = 0;
+                }
+
+                else
+                {
+                    pulling = true;
+                    pushing = false;
+                    _anim.speed = 1;
+                }
                 break;
         }
 	}
@@ -499,5 +531,18 @@ public class MovementController : MonoBehaviour {
     {
         jumpdust.transform.position = transform.position;
         jumpdust.Play();
+    }
+
+    public void PushorPull()
+    {
+        charStates = States.pushpull;
+    }
+
+    public void StopPushPull()
+    {
+        charStates = States.move;
+        _anim.SetBool("isPulling", false);
+        _anim.SetBool("isPushing", false);
+        _anim.speed = 1;
     }
 }

@@ -7,7 +7,7 @@ public class WallTrigger1 : MonoBehaviour {
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponentInChildren<VillageDialogue>().helpserikOn();
+            other.gameObject.transform.GetChild(1).GetComponent<VillageDialogue>().helpserikOn();
         }
     }
 }
