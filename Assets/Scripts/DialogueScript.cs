@@ -65,7 +65,12 @@ public class DialogueScript : MonoBehaviour
     //    Debug.Log(hasDialogueEnd);
         if (Physics.Raycast(center, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side1, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side2, transform.forward, out hit, 1) && !istalking)
         {
-
+            //Vector3 looktarget = transform.position;
+            //looktarget.y = hit.collider.gameObject.transform.position.y;
+            //Quaternion targetrot = Quaternion.LookRotation(looktarget, Vector3.up);
+            //Quaternion newrot = Quaternion.Lerp(hit.collider.gameObject.transform.rotation, targetrot, Time.deltaTime * 2);
+            //hit.collider.gameObject.transform.rotation = newrot;
+            //Debug.Log("turning");
 			if (GamepadManager.buttonBDown && hit.collider.tag == "talking")
             {
                 NPCname = hit.collider.name;

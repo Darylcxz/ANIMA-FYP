@@ -130,7 +130,7 @@ public class VillageDialogue : DialogueScript {
             serik.name = "Serik4";
             exclaim.transform.position = newpos.position + Vector3.up * 2.0f;
             cockblock1 = true;
-            serikcalls.transform.position += new Vector3(0, -2.8f, 0);
+            serikcalls.transform.position += new Vector3(0, -11.0f, 0);
         }
 
         else if(NPCname == "Inzhu")
@@ -198,7 +198,6 @@ public class VillageDialogue : DialogueScript {
             string textdata = dialogue.text;
             ParseDialogue(textdata);
             Destroy(other.gameObject);
-            Invoke("helpserikOn", 3);
         }
 
         else if (other.gameObject.name == "helpserik" || other.gameObject.name == "helpserik2" || other.gameObject.name == "helpserik3")
@@ -218,11 +217,11 @@ public class VillageDialogue : DialogueScript {
         
     }
 
-    void helpserikOn()
+    public void helpserikOn()
     {
-        helpserik1.transform.position += new Vector3(0, -2.8f, 0);
-        helpserik2.transform.position += new Vector3(0, -2.8f, 0);
-        helpserik3.transform.position += new Vector3(0, -2.8f, 0);
+        helpserik1.transform.position += new Vector3(0, -11.0f, 0);
+        helpserik2.transform.position += new Vector3(0, -11.0f, 0);
+        helpserik3.transform.position += new Vector3(0, -11.0f, 0);
     }
 
     public void InteractTrigger()
