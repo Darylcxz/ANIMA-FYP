@@ -318,6 +318,8 @@ public class MovementController : MonoBehaviour {
             _rigidBody.velocity = Vector3.zero;
             charStates = States.idle;
             _dagger.GetComponent<TrailRenderer>().enabled = false;
+            _dagger.enabled = false;
+            
         }
 		if (bKeyboard && !bForcedMove)
 		{

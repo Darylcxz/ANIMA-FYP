@@ -209,12 +209,12 @@
     <D4 character="Gulnaz" expression="1" voice="7">Uh huh..</D4>
   </secndgate1-1>
   <dontidiot>
-    <D1 character="Serik" expression="0" voice="14">I know you just took on 3 of these guys, but aren't you getting a little cocky?</D1>
+    <D1 character="GhostSerik" expression="0" voice="14">I know you just took on 3 of these guys, but aren't you getting a little cocky?</D1>
     <D2 character="Gulnaz" expression="1" voice="7">...</D2>
     <D3 character="Gulnaz" expression="5" voice="8">I could totally take these losers.</D3>
     <D4 character="GhostSerik" expression="1" voice="18">No..! There's gotta be a smarter way around this. </D4>
     <D5 character="Gulnaz" expression="0" voice="3">Ugh, alright.</D5>
-    <D6 character="GhostSerik" expression="24">You know I'm right.</D6>
+    <D6 character="GhostSerik" expression="2">You know I'm right.</D6>
   </dontidiot>
   <dontidiot2>
     <D1 character="GhostSerik" expression="7" voice="18">WHAT are you doing?!</D1>
