@@ -14,7 +14,8 @@ public class MovementController : MonoBehaviour {
         roll,			//rolling state - needs to allow player Invincibility frames and rolling speed
         possess,		//possess state - possession logic where player can control creature
         climb,			//climb state - state for climbing up shenanigans
-        sequencedjump   //jumping sequence state - state for jumping event thingy
+        sequencedjump,   //jumping sequence state - state for jumping event thingy
+        pushpull
     };
 
    public States charStates = States.idle;
@@ -299,6 +300,10 @@ public class MovementController : MonoBehaviour {
 					}
 				}
 				
+                break;
+
+            case States.pushpull:
+
                 break;
         }
 	}

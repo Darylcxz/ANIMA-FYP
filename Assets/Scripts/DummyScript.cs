@@ -11,16 +11,11 @@ public class DummyScript : MonoBehaviour {
         dummyanim = GetComponent<Animator>();
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     void OnCollisionEnter(Collision _col)
     {
-        
-        if (_col.collider.tag == "dagger")
+
+        if (_col.collider.CompareTag("dagger"))
         {
             dummyanim.SetTrigger("Gethit");
             hayeffect.Play();
