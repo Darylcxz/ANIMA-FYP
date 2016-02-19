@@ -5,7 +5,7 @@ public class DialogueTrigger : MonoBehaviour {
 
     [SerializeField]
     NewTutorialController _tutControl;
-
+    [SerializeField] bool isRecurring;
     void Start()
     {
         _tutControl = _tutControl.GetComponent<NewTutorialController>();
@@ -16,7 +16,14 @@ public class DialogueTrigger : MonoBehaviour {
        if(_col.gameObject.CompareTag("Player"))
         {
             _tutControl.DialogueEnd();
-            TurnOff();
+            if(!isRecurring)
+            {
+                TurnOff();
+            }
+            else if(isRecurring)
+            {
+                _col.gameObject.GetComponent<Transform>().position -= _col.gameObject.transform.forward * 1f;
+            }
         }
 	}
 

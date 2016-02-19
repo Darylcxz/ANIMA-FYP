@@ -8,10 +8,14 @@ public class NewTutorialController : MonoBehaviour {
 	[SerializeField] DialogueScript _dScript;
     [SerializeField] DeshTutorial _deshScript;
     [SerializeField] NewPigScript _pigScript;
+    [SerializeField] MovementController _movementScript;
     [SerializeField] GameObject jumpSequence;
     [SerializeField] GameObject _Serik;
     [SerializeField] Animator _waterWheel;
     [SerializeField] Animator _sawBlade;
+    [SerializeField] GameObject fakeLog;
+    [SerializeField] GameObject realLog;
+    [SerializeField] GameObject stickPile;
 
 	[SerializeField]enum Part
 	{
@@ -25,7 +29,11 @@ public class NewTutorialController : MonoBehaviour {
 		POSSESS,
 		SERIKPIG,
         FIREGATE,
-        LINEOFDESH
+        DONTIDIOT,
+        DONTIDIOT2,
+        DONTIDIOT3,
+        DONTIDIOT4,
+        DONTIDIOTLOOP
 	};
   
 	[SerializeField] Part DialoguePart;
@@ -67,17 +75,21 @@ public class NewTutorialController : MonoBehaviour {
     bool hasVineBroke;
     bool hasLogMoved;
 
+    int dontIdiotCounter;
+
 	// Use this for initialization
 	void Start () {
 		_dScript = _dScript.GetComponent<DialogueScript>();
         _deshScript = _deshScript.GetComponent<DeshTutorial>();
         _pigScript = _pigScript.GetComponent<NewPigScript>();
+        _movementScript = _movementScript.GetComponent<MovementController>();
         _waterWheel = _waterWheel.GetComponent<Animator>();
         _sawBlade = _sawBlade.GetComponent<Animator>();
         jumpSequence.SetActive(false);
         _camera = _camera.GetComponent<Transform>();
         _dScript.hasDialogueEnd = true;
         _orignalRot = _camera.transform.rotation;
+        
     }
 	
 	// Update is called once per frame
@@ -130,6 +142,7 @@ public class NewTutorialController : MonoBehaviour {
                     if (GamepadManager.triggerR > 0)
                     {
                         TutorialImages[0].enabled = false;
+                        _movementScript.bTutorial = false;
                         _deshScript.hasRolled = true;
                         _hasSlowed = false;
                         TutorialImages[1].enabled = true;
@@ -243,15 +256,31 @@ public class NewTutorialController : MonoBehaviour {
                 ChangeState(Part.FIREGATE);
                 break;
             case Part.FIREGATE:
+               
                 _dialogueName = "secndgate1-1"; 
-                ChangeState(Part.LINEOFDESH);
+                ChangeState(Part.DONTIDIOT);
                 break;
-            case Part.LINEOFDESH:
-
-
+            case Part.DONTIDIOT:
                 _dialogueName = "dontidiot";
+                ChangeState(Part.DONTIDIOT2);
                 break;
-		}
+            case Part.DONTIDIOT2:
+                _dialogueName = "dontidiot2";
+                ChangeState(Part.DONTIDIOT3);
+                break;
+            case Part.DONTIDIOT3:
+                _dialogueName = "dontidiot3";
+                ChangeState(Part.DONTIDIOT4);
+                break;
+            case Part.DONTIDIOT4:
+                _dialogueName = "dontidiot4";
+                ChangeState(Part.DONTIDIOTLOOP);
+                break;
+            case Part.DONTIDIOTLOOP:
+                _dialogueName = "dontidiot4";
+                ChangeState(Part.DONTIDIOT4);
+                break;
+        }
 		if(!_dScript.hasDialogueEnd && !textPlay)
 		{
 			PlayText(_dialogueName);
@@ -279,8 +308,19 @@ public class NewTutorialController : MonoBehaviour {
                 flyTime = 1;
             }
         }
-        
-	}
+        if (hasVineBroke)
+        {
+            _sawBlade.SetBool("bWheel", true);
+            _waterWheel.SetBool("bWheel", true);
+            fakeLog.SetActive(false);
+            realLog.SetActive(true);
+        }
+        if (realLog.GetComponent<Animator>().GetBool("bLog"))
+        {
+            stickPile.SetActive(true);
+        }
+
+    }
    public void DialogueEnd()
     {
         textPlay = false;
@@ -301,6 +341,10 @@ public class NewTutorialController : MonoBehaviour {
 		string textData = _dScript.dialogue.text;
 		_dScript.ParseDialogue(textData);
 	}
+    public void OnVineBreak()
+    {
+        hasVineBroke = true;
+    }
 
     IEnumerator SlowTime(float _timeScale)
     {
