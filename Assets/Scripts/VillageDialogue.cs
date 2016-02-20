@@ -22,7 +22,7 @@ public class VillageDialogue : DialogueScript {
     public static bool interactOn = false;
     public GameObject sword;
     private bool canleave1 = false;
-    private bool cockblock1 = false;
+    public static bool cockblock1 = false;
     private bool finishdummy = false;
     private bool ruslan2;
     private short serikcount = 0;

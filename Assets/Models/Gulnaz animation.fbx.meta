@@ -330,14 +330,14 @@ ModelImporter:
     - serializedVersion: 16
       name: G_Pushing
       takeName: gulnazAction(Jump,Push,pull,idle,attack)11
-      firstFrame: 40
-      lastFrame: 86
+      firstFrame: 51.0999985
+      lastFrame: 66
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -484,14 +484,14 @@ ModelImporter:
     - serializedVersion: 16
       name: G_Pulling
       takeName: gulnazAction(Jump,Push,pull,idle,attack)11
-      firstFrame: 86
-      lastFrame: 134
+      firstFrame: 106
+      lastFrame: 123.099998
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

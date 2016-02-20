@@ -14,18 +14,16 @@ public class GulnazGrab : MonoBehaviour {
     private Vector3 side1;
     private Vector3 side2;
     private RaycastHit hit;
-
-	public Canvas _imgBubble;
-	public Canvas _imgHand;
-	public Canvas _imgFire;
-
+    private GameObject currobject;
+    private MovementController goonas;
 	bool spawnUI;
 	bool spawnUI1;
     bool hasSticked;
 
 	// Use this for initialization
 	void Start () {
-		//gateSound = GetComponent<AudioSource>();
+        //gateSound = GetComponent<AudioSource>();
+        goonas = gameObject.GetComponentInParent<MovementController>();
 	}
 	// Update is called once per frame
 	void Update () {
@@ -59,12 +57,16 @@ public class GulnazGrab : MonoBehaviour {
 			if(!holding && hit.collider.tag == "movable")
             {
                 hit.collider.transform.SetParent(transform);
+                currobject = hit.collider.gameObject;
                 holding = true;
+                goonas.PushorPull();
+                
             }
             else if(holding)
             {
-                hit.collider.transform.parent = null;
+                currobject.transform.parent = null;
                 holding = false;
+                goonas.StopPushPull();
             }
 			if (hit.collider.tag == "lever")
 			{
