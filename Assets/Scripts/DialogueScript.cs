@@ -90,7 +90,7 @@ public class DialogueScript : MonoBehaviour
 			
         }
 
-        else if (Input.GetButtonDown("Action") && textcomplete && istalking)
+        else if (GamepadManager.buttonBDown && textcomplete && istalking)
         {
             textcomplete = false;
             if(texttoshow.NextSibling != null)
@@ -126,7 +126,7 @@ public class DialogueScript : MonoBehaviour
             }
         }
 
-        else if (Input.GetButtonDown("Action") && !textcomplete && istalking)
+        else if (GamepadManager.buttonBDown && !textcomplete && istalking)
         {
             textcomplete = true;
         }
