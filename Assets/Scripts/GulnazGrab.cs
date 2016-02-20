@@ -21,6 +21,7 @@ public class GulnazGrab : MonoBehaviour {
 
 	bool spawnUI;
 	bool spawnUI1;
+    bool hasSticked;
 
 	// Use this for initialization
 	void Start () {
@@ -83,12 +84,16 @@ public class GulnazGrab : MonoBehaviour {
 			if (hit.collider.tag == "pile")
 			{
 				GameObject.FindGameObjectWithTag("stick").GetComponent<MeshRenderer>().enabled = true;
+                hasSticked = true;
 				Debug.Log("STICKKK");
 			}
 			if (hit.collider.tag == "Torch")
 			{
-				GameObject.FindGameObjectWithTag("stick").gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
-			}
+               if(hasSticked)
+                {
+                    GameObject.FindGameObjectWithTag("stick").gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                }
+            }
         }
 		
 

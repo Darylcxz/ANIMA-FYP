@@ -10,6 +10,7 @@ public class NewTutorialController : MonoBehaviour {
     [SerializeField] NewPigScript _pigScript;
     [SerializeField] MovementController _movementScript;
     [SerializeField] GameObject jumpSequence;
+    [SerializeField] GameObject _Gulnaz;
     [SerializeField] GameObject _Serik;
     [SerializeField] Animator _waterWheel;
     [SerializeField] Animator _sawBlade;
@@ -143,6 +144,7 @@ public class NewTutorialController : MonoBehaviour {
                     {
                         TutorialImages[0].enabled = false;
                         _movementScript.bTutorial = false;
+                        _Gulnaz.transform.eulerAngles = new Vector3(0, 90, 0);
                         _deshScript.hasRolled = true;
                         _hasSlowed = false;
                         TutorialImages[1].enabled = true;
