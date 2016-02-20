@@ -12,6 +12,5 @@ public class BeetleClapScript : MonoBehaviour {
     public void Clap()
     {
         beetle.PlayOneShot(clap);
-        Debug.Log("Clap!");
     }
 }

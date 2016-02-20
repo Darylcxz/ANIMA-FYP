@@ -27,7 +27,9 @@ public class DialogueScript : MonoBehaviour
     private bool istalking = false;
     private bool lookatme = false;
     public AudioSource beepsound;
+    [SerializeField]AudioSource VoiceSource;
     public AudioClip[] voices;
+    [SerializeField] AudioClip Nextsound;
     public static string NPCname;
     public static bool cantalk;
     private Vector3 center;
@@ -97,6 +99,7 @@ public class DialogueScript : MonoBehaviour
            //     hasDialogueEnd = false;
                 string tempstr = Nextnode(texttoshow);
                 StartCoroutine(Printletters(tempstr));
+                beepsound.PlayOneShot(Nextsound);
 			//	Debug.Log(_seqNum + "if");
 				_seqNum++;
             }
@@ -105,6 +108,7 @@ public class DialogueScript : MonoBehaviour
             {
                 if(talktarget != null)
                     talktarget.SetBool("Talking", false);
+                beepsound.PlayOneShot(Nextsound);
                 CheckNames();
                 hasDialogueEnd = true;
                 dialarrow.SetActive(false);
@@ -195,7 +199,7 @@ public class DialogueScript : MonoBehaviour
             case "Gulnaz":
                 characterpic.sprite = chara1[expression];
                 beepsound.Stop();
-                //beepsound.PlayOneShot(voices[voice]);
+                VoiceSource.PlayOneShot(voices[voice]);
                 showname.text = character;
                 charanim.SetBool("isTalking", true);
              //   Invoke("StopAnim", 0.2f);
@@ -204,7 +208,7 @@ public class DialogueScript : MonoBehaviour
             case "Serik":
                 characterpic.sprite = chara2[expression];
                 beepsound.Stop();
-                beepsound.PlayOneShot(voices[voice]);
+                VoiceSource.PlayOneShot(voices[voice]);
                 showname.text = character;
                 break;
 
