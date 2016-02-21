@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class LogsBreak : MonoBehaviour {
+    [SerializeField] GameObject deshWallCollider;
+    [SerializeField] NewTutorialController _tutScript;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +21,8 @@ public class LogsBreak : MonoBehaviour {
 			gameObject.GetComponent<Animator>().SetBool("bFall", true);
 			GameObject.FindGameObjectWithTag("DeshWall").GetComponent<Animator>().SetBool("bDie", true);
 			Destroy(GameObject.FindGameObjectWithTag("DeshWall").gameObject, 10f);
+            Destroy(deshWallCollider);
+            _tutScript.SendMessage("OnLogsFall", SendMessageOptions.DontRequireReceiver);
 		}
 	}
 }
