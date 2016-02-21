@@ -17,6 +17,7 @@ public class NewTutorialController : MonoBehaviour {
     [SerializeField] GameObject fakeLog;
     [SerializeField] GameObject realLog;
     [SerializeField] GameObject stickPile;
+    
 
 	[SerializeField]enum Part
 	{
@@ -34,7 +35,8 @@ public class NewTutorialController : MonoBehaviour {
         DONTIDIOT2,
         DONTIDIOT3,
         DONTIDIOT4,
-        DONTIDIOTLOOP
+        DONTIDIOTLOOP,
+        ARCHURASTUFF
 	};
   
 	[SerializeField] Part DialoguePart;
@@ -281,6 +283,10 @@ public class NewTutorialController : MonoBehaviour {
             case Part.DONTIDIOTLOOP:
                 _dialogueName = "dontidiot4";
                 ChangeState(Part.DONTIDIOT4);
+                break;
+            case Part.ARCHURASTUFF:
+                _dialogueName = "firstarchuraencounter";
+
                 break;
         }
 		if(!_dScript.hasDialogueEnd && !textPlay)

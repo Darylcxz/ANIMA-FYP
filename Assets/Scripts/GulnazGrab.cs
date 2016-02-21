@@ -19,6 +19,7 @@ public class GulnazGrab : MonoBehaviour {
 	bool spawnUI;
 	bool spawnUI1;
     bool hasSticked;
+    [SerializeField] Image stickOfLies;
 
 	// Use this for initialization
 	void Start () {
@@ -87,6 +88,7 @@ public class GulnazGrab : MonoBehaviour {
 			{
 				GameObject.FindGameObjectWithTag("stick").GetComponent<MeshRenderer>().enabled = true;
                 hasSticked = true;
+                stickOfLies.enabled = true;
 				Debug.Log("STICKKK");
 			}
 			if (hit.collider.tag == "Torch")

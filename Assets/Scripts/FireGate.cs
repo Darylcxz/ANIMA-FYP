@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class FireGate : MonoBehaviour {
@@ -14,6 +15,7 @@ public class FireGate : MonoBehaviour {
     [SerializeField]
     ParticleSystem OwnFire;
     GameObject stickOfTruth;
+    [SerializeField] Image stickOflies;
 	// Use this for initialization
 	void Start () {
        if(!isGate)
@@ -35,6 +37,11 @@ public class FireGate : MonoBehaviour {
                 if (stickOfTruth.activeInHierarchy)
                 {
                     stickOfTruth.SetActive(false);
+                    
+                }
+                if(stickOflies.isActiveAndEnabled && stickOflies!=null)
+                {
+                    stickOflies.enabled = false;
                 }
                 if (stoneSound != null)
                 {
