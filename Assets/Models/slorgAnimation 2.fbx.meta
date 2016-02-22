@@ -65,11 +65,12 @@ ModelImporter:
     7400000: S_Idle
     7400002: S_Yawn
     7400004: S_Fly
-    7400006: S_Attack
+    7400006: S_Aim
     7400008: S_HitByLight
     7400010: S_Death
     7400012: S_HitByLight2
     7400014: S_IdleFly
+    7400016: S_Shoot
     9500000: //RootNode
     13700000: polySurface68
   materials:
@@ -339,10 +340,10 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: S_Attack
+      name: S_Aim
       takeName: Slog5
       firstFrame: 345
-      lastFrame: 390
+      lastFrame: 372
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -677,6 +678,88 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/Head
+        weight: 1
+      - path: Body/Head/HighJaw1
+        weight: 1
+      - path: Body/Head/HighJaw1/HighJaw2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear1/L_Ear2/joint21
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4
+        weight: 1
+      - path: Body/Head/HighJaw1/L_Ear3/L_Ear4/joint22
+        weight: 1
+      - path: Body/L_Wing1
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2
+        weight: 1
+      - path: Body/L_Wing1/L_Wing_2/joint18
+        weight: 1
+      - path: Body/L_Wing2
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3
+        weight: 1
+      - path: Body/L_Wing2/L_Wing_3/joint23
+        weight: 1
+      - path: Body/LowJaw1
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2
+        weight: 1
+      - path: Body/LowJaw1/LowJaw2/LowJaw3
+        weight: 1
+      - path: Body/Tail1
+        weight: 1
+      - path: Body/Tail1/Tail2
+        weight: 1
+      - path: Body/Tail1/Tail2/joint10
+        weight: 1
+      - path: Body/Tounge1
+        weight: 1
+      - path: Body/Tounge1/Tounge2
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3
+        weight: 1
+      - path: Body/Tounge1/Tounge2/Tounge3/joint14
+        weight: 1
+      - path: polySurface68
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Shoot
+      takeName: Slog5
+      firstFrame: 373
+      lastFrame: 390
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

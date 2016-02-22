@@ -45,7 +45,7 @@ public abstract class NewAIBA : MonoBehaviour {
 
 	//AI Pathfinding variables
 	[SerializeField]sbyte rotationSpeed = 5;	//how fast the AI should rotate
-	short aggroDistance = 10;	//distance before enemy aggro triggers
+	[SerializeField]short aggroDistance = 10;	//distance before enemy aggro triggers
 	[SerializeField]protected Vector3 areaCenter;			//center of the area of roaming
 	[SerializeField]protected Vector3 rectSize;			//defines rect size
 	[SerializeField]protected float rectMagnitude = 2;		//controls Size of rect
@@ -197,7 +197,7 @@ public abstract class NewAIBA : MonoBehaviour {
 
 		return new Vector3(newX, 0, newZ); //gives it back for you to use
 	}
-	float DistanceBetween(Vector3 A, Vector3 B)//Utility function to calculate distance between things
+	protected float DistanceBetween(Vector3 A, Vector3 B)//Utility function to calculate distance between things
 	{
 		return Vector3.Distance(A, B);
 	}
