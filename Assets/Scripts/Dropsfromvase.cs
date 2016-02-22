@@ -8,7 +8,7 @@ public class Dropsfromvase : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        controlstation = GameObject.Find("Directional Light").GetComponent<GameControl>();
+        controlstation = GameObject.Find("GameControlCenter").GetComponent<GameControl>();
 	
 	}
 
