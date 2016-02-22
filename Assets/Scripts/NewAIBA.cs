@@ -25,14 +25,14 @@ public abstract class NewAIBA : MonoBehaviour {
 	RaycastHit possessionRaycastHit;		//Raycast hit info for possession checker
 	[SerializeField]protected StateMachine AIState = StateMachine.IDLE;  //sets the default state to IDLE
 	float stateTimer;			//State timer that runs with the game time
-	float waitTime = 1f;				//Time the state waits before it changes
+	[SerializeField]float waitTime = 1f;				//Time the state waits before it changes
 	float distance;				//distance between AI and things
 	float retreatDistance = 1f;		//distance before AI considers is safe to exit retreat state
 	protected Vector3 spawnPoint;		//place where AI spawned
 
 
 	//AI variables//
-	float healthAI;				//AI Health
+	protected float healthAI;				//AI Health
 	float vMoveAI;				//Horizontal Axis for AI
 	float hMoveAI;				//Vertical Axis for AI
 	[SerializeField]protected float speedAI = 8f;				//Speed for AI
@@ -44,8 +44,8 @@ public abstract class NewAIBA : MonoBehaviour {
     Animator possanim;
 
 	//AI Pathfinding variables
-	sbyte rotationSpeed = 5;	//how fast the AI should rotate
-	short aggroDistance = 10;	//distance before enemy aggro triggers
+	[SerializeField]sbyte rotationSpeed = 5;	//how fast the AI should rotate
+	[SerializeField]short aggroDistance = 10;	//distance before enemy aggro triggers
 	[SerializeField]protected Vector3 areaCenter;			//center of the area of roaming
 	[SerializeField]protected Vector3 rectSize;			//defines rect size
 	[SerializeField]protected float rectMagnitude = 2;		//controls Size of rect
@@ -102,7 +102,7 @@ public abstract class NewAIBA : MonoBehaviour {
 		{
 			case StateMachine.IDLE:
 				//Dizzy animation or whatever
-				ChangeState(10f, StateMachine.WALK);
+				ChangeState(waitTime, StateMachine.WALK);
 				break;
 			case StateMachine.WALK:
 				//Walk or patrolling behaviur. 
@@ -110,6 +110,7 @@ public abstract class NewAIBA : MonoBehaviour {
 				//ChangeState(0, StateMachine.IDLE);
 				break;
 			case StateMachine.PURSUE:
+                ActivateAbility();
 				break;
 			case StateMachine.POSSESSED:
                 isPossessed = true;
@@ -169,6 +170,7 @@ public abstract class NewAIBA : MonoBehaviour {
 				//ChangeState(0, StateMachine.IDLE);
 			}
 		}
+     
 		transform.rotation = Quaternion.Slerp(transform.rotation, endRotation, Time.deltaTime * rotationSpeed);
 		transform.localPosition += transform.forward * Time.deltaTime * _speed;
 	}
@@ -195,7 +197,7 @@ public abstract class NewAIBA : MonoBehaviour {
 
 		return new Vector3(newX, 0, newZ); //gives it back for you to use
 	}
-	float DistanceBetween(Vector3 A, Vector3 B)//Utility function to calculate distance between things
+	protected float DistanceBetween(Vector3 A, Vector3 B)//Utility function to calculate distance between things
 	{
 		return Vector3.Distance(A, B);
 	}
@@ -238,6 +240,7 @@ public abstract class NewAIBA : MonoBehaviour {
         }
     }
 	
+
 	void PlayerTakesControl()//function for when the player is controlling the AI
 	{
  		float h2 = GamepadManager.h1*2;

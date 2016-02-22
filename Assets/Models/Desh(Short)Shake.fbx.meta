@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: db14f1c99587557408c06e7cfe1a9163
+timeCreated: 1455631108
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Belly1
+    100002: //RootNode
+    100004: DeshT2Short
+    100006: Foot
+    100008: Foot 1
+    100010: Head
+    100012: Hip
+    100014: L_EarBot
+    100016: L_EarTop
+    100018: L_Hip
+    100020: L_Leg
+    100022: polySurface38
+    100024: R_EarBot
+    100026: R_EarTop
+    100028: R_Hip
+    100030: R_Reg
+    100032: Spine1
+    100034: Spine2
+    400000: Belly1
+    400002: //RootNode
+    400004: DeshT2Short
+    400006: Foot
+    400008: Foot 1
+    400010: Head
+    400012: Hip
+    400014: L_EarBot
+    400016: L_EarTop
+    400018: L_Hip
+    400020: L_Leg
+    400022: polySurface38
+    400024: R_EarBot
+    400026: R_EarTop
+    400028: R_Hip
+    400030: R_Reg
+    400032: Spine1
+    400034: Spine2
+    4300000: polySurface38
+    7400000: Teir1Shake1.1
+    9500000: //RootNode
+    13700000: polySurface38
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Teir1Shake1.1
+      takeName: Teir1Shake1.1
+      firstFrame: 1
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Belly1
+        weight: 1
+      - path: Belly1/L_Hip
+        weight: 1
+      - path: Belly1/L_Hip/L_Leg
+        weight: 1
+      - path: Belly1/L_Hip/L_Leg/Foot
+        weight: 1
+      - path: Belly1/R_Hip
+        weight: 1
+      - path: Belly1/R_Hip/R_Reg
+        weight: 1
+      - path: Belly1/R_Hip/R_Reg/Foot 1
+        weight: 1
+      - path: Belly1/Spine1
+        weight: 1
+      - path: Belly1/Spine1/Spine2
+        weight: 1
+      - path: Belly1/Spine1/Spine2/Head
+        weight: 1
+      - path: Belly1/Spine1/Spine2/Head/L_EarBot
+        weight: 1
+      - path: Belly1/Spine1/Spine2/Head/L_EarBot/L_EarTop
+        weight: 1
+      - path: Belly1/Spine1/Spine2/Head/R_EarBot
+        weight: 1
+      - path: Belly1/Spine1/Spine2/Head/R_EarBot/R_EarTop
+        weight: 1
+      - path: DeshT2Short
+        weight: 1
+      - path: DeshT2Short/Hip
+        weight: 1
+      - path: polySurface38
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d4a8b2052054c8d4db2e05648838bddc,
+    type: 3}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

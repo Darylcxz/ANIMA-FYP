@@ -1,0 +1,291 @@
+fileFormatVersion: 2
+guid: a70f61526327bb74486cacb4024ea8e9
+timeCreated: 1456055544
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: butt
+    100004: head
+    100006: Horn
+    100008: Horntip
+    100010: joint14
+    100012: joint14s
+    100014: joint15
+    100016: joint15 1
+    100018: joint16
+    100020: joint16 1
+    100022: joint17
+    100024: joint17 1
+    100026: joint19
+    100028: joint19 1
+    100030: joint22
+    100032: joint22 1
+    100034: joint25
+    100036: joint5
+    100038: joint5 1
+    100040: joint7
+    100042: L_FrontFeet
+    100044: L_FrontLeg2
+    100046: L_FrontLeg_1
+    100048: LBacFoot1
+    100050: LBackLeg1
+    100052: LBackLeg2
+    100054: MiddleBod
+    100056: nurbsCircle1
+    100058: nurbsCircle24
+    100060: Pincer_L
+    100062: Pincer_L 1
+    100064: Pincer_R
+    100066: Pincer_R 1
+    100068: polySurface167
+    100070: polySurface177
+    100072: R_FrontFeet
+    100074: R_FrontLeg2
+    100076: R_FrontLeg_1
+    100078: RBacFoot1
+    100080: RBackLeg1
+    100082: RBackLeg2
+    100084: ShellWing_L
+    100086: ShellWing_R
+    100088: Wing_L
+    100090: Wing_R
+    100092: WingTip_L
+    100094: WingTip_R
+    400000: //RootNode
+    400002: butt
+    400004: head
+    400006: Horn
+    400008: Horntip
+    400010: joint14
+    400012: joint14s
+    400014: joint15
+    400016: joint15 1
+    400018: joint16
+    400020: joint16 1
+    400022: joint17
+    400024: joint17 1
+    400026: joint19
+    400028: joint19 1
+    400030: joint22
+    400032: joint22 1
+    400034: joint25
+    400036: joint5
+    400038: joint5 1
+    400040: joint7
+    400042: L_FrontFeet
+    400044: L_FrontLeg2
+    400046: L_FrontLeg_1
+    400048: LBacFoot1
+    400050: LBackLeg1
+    400052: LBackLeg2
+    400054: MiddleBod
+    400056: nurbsCircle1
+    400058: nurbsCircle24
+    400060: Pincer_L
+    400062: Pincer_L 1
+    400064: Pincer_R
+    400066: Pincer_R 1
+    400068: polySurface167
+    400070: polySurface177
+    400072: R_FrontFeet
+    400074: R_FrontLeg2
+    400076: R_FrontLeg_1
+    400078: RBacFoot1
+    400080: RBackLeg1
+    400082: RBackLeg2
+    400084: ShellWing_L
+    400086: ShellWing_R
+    400088: Wing_L
+    400090: Wing_R
+    400092: WingTip_L
+    400094: WingTip_R
+    4300000: polySurface177
+    7400000: Boss_STUNNEDCLOSED
+    9500000: //RootNode
+    13700000: polySurface177
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Boss_STUNNEDCLOSED
+      takeName: bossbeetle5
+      firstFrame: 755
+      lastFrame: 844
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: MiddleBod
+        weight: 1
+      - path: MiddleBod/butt
+        weight: 1
+      - path: MiddleBod/butt/joint7
+        weight: 1
+      - path: MiddleBod/head
+        weight: 1
+      - path: MiddleBod/head/Horn
+        weight: 1
+      - path: MiddleBod/head/Horn/Horntip
+        weight: 1
+      - path: MiddleBod/head/Horn/Horntip/joint25
+        weight: 1
+      - path: MiddleBod/head/Pincer_L
+        weight: 1
+      - path: MiddleBod/head/Pincer_L/Pincer_L 1
+        weight: 1
+      - path: MiddleBod/head/Pincer_L/Pincer_L 1/joint5
+        weight: 1
+      - path: MiddleBod/head/Pincer_R
+        weight: 1
+      - path: MiddleBod/head/Pincer_R/Pincer_R 1
+        weight: 1
+      - path: MiddleBod/head/Pincer_R/Pincer_R 1/joint5 1
+        weight: 1
+      - path: MiddleBod/L_FrontLeg_1
+        weight: 1
+      - path: MiddleBod/L_FrontLeg_1/L_FrontLeg2
+        weight: 1
+      - path: MiddleBod/L_FrontLeg_1/L_FrontLeg2/L_FrontFeet
+        weight: 1
+      - path: MiddleBod/L_FrontLeg_1/L_FrontLeg2/L_FrontFeet/joint16
+        weight: 1
+      - path: MiddleBod/L_FrontLeg_1/L_FrontLeg2/L_FrontFeet/joint17
+        weight: 1
+      - path: MiddleBod/LBackLeg1
+        weight: 1
+      - path: MiddleBod/LBackLeg1/LBackLeg2
+        weight: 1
+      - path: MiddleBod/LBackLeg1/LBackLeg2/LBacFoot1
+        weight: 1
+      - path: MiddleBod/LBackLeg1/LBackLeg2/LBacFoot1/joint14
+        weight: 1
+      - path: MiddleBod/LBackLeg1/LBackLeg2/LBacFoot1/joint15
+        weight: 1
+      - path: MiddleBod/R_FrontLeg_1
+        weight: 1
+      - path: MiddleBod/R_FrontLeg_1/R_FrontLeg2
+        weight: 1
+      - path: MiddleBod/R_FrontLeg_1/R_FrontLeg2/R_FrontFeet
+        weight: 1
+      - path: MiddleBod/R_FrontLeg_1/R_FrontLeg2/R_FrontFeet/joint16 1
+        weight: 1
+      - path: MiddleBod/R_FrontLeg_1/R_FrontLeg2/R_FrontFeet/joint17 1
+        weight: 1
+      - path: MiddleBod/RBackLeg1
+        weight: 1
+      - path: MiddleBod/RBackLeg1/RBackLeg2
+        weight: 1
+      - path: MiddleBod/RBackLeg1/RBackLeg2/RBacFoot1
+        weight: 1
+      - path: MiddleBod/RBackLeg1/RBackLeg2/RBacFoot1/joint14s
+        weight: 1
+      - path: MiddleBod/RBackLeg1/RBackLeg2/RBacFoot1/joint15 1
+        weight: 1
+      - path: MiddleBod/ShellWing_L
+        weight: 1
+      - path: MiddleBod/ShellWing_L/joint19
+        weight: 1
+      - path: MiddleBod/ShellWing_R
+        weight: 1
+      - path: MiddleBod/ShellWing_R/joint19 1
+        weight: 1
+      - path: MiddleBod/Wing_L
+        weight: 1
+      - path: MiddleBod/Wing_L/WingTip_L
+        weight: 1
+      - path: MiddleBod/Wing_L/WingTip_L/joint22
+        weight: 1
+      - path: MiddleBod/Wing_R
+        weight: 1
+      - path: MiddleBod/Wing_R/WingTip_R
+        weight: 1
+      - path: MiddleBod/Wing_R/WingTip_R/joint22 1
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/nurbsCircle24
+        weight: 1
+      - path: polySurface167
+        weight: 1
+      - path: polySurface167/polySurface177
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

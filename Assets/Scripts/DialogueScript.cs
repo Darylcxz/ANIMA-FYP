@@ -230,6 +230,7 @@ public class DialogueScript : MonoBehaviour
             case "GhostSerik":
                 characterpic.sprite = chara6[expression];
                 beepsound.Stop();
+                VoiceSource.PlayOneShot(voices[voice]);
                 //beepsound.PlayOneShot(voices[voice]);
                 showname.text = "Serik";
 				serikAnim.SetBool("bSerikTalk", true);
@@ -239,6 +240,7 @@ public class DialogueScript : MonoBehaviour
             case "Archura":
                 characterpic.sprite = chara7[expression];
                 beepsound.Stop();
+                VoiceSource.PlayOneShot(voices[voice]);
                 //beepsound.PlayOneShot(voices[voice]);
                 showname.text = "Archura";
                 achuraAnim.SetInteger("ArchuraChat", achuraChat);

@@ -7,7 +7,7 @@ public class DeshTutorial : MonoBehaviour {
 	AudioSource dieSound;
     [SerializeField]
     GameObject jumpSequence;
-
+    [SerializeField] Canvas exclamationCanvas;
     [SerializeField]
     Transform Player;
     [SerializeField] float rangeOffset;
@@ -30,6 +30,7 @@ public class DeshTutorial : MonoBehaviour {
         _anim = GetComponent<Animator>();
         deshDead = false;
 		dieSound = GetComponent<AudioSource>();
+        exclamationCanvas.enabled = false;
       //  InvokeRepeating("GetPlayerPos", 0, 2);
 	}
 	
@@ -37,6 +38,8 @@ public class DeshTutorial : MonoBehaviour {
 	void Update () {
         if(_move && !hasRolled) //if the player has yet to unfreeze time by rolling
         {
+            exclamationCanvas.enabled = true;
+            _anim.Play("DeshTallWALK");
             DashToPlayer();
         }
         if (hasRolled) //if the player has resumed time, do normal AI stuff
@@ -50,8 +53,10 @@ public class DeshTutorial : MonoBehaviour {
 	{
 		if (_col.collider.tag == "dagger")
 		{
-			dieSound.Play();
+            _anim.Play("DeshTallHIT");
+            dieSound.Play();
 			deshDead = true;
+            exclamationCanvas.enabled = false;
 			gameObject.transform.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
             jumpSequence.GetComponent<Collider>().isTrigger = true;
 			gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -63,11 +68,12 @@ public class DeshTutorial : MonoBehaviour {
         switch (States)
         {
             case DeshStates.SHAKE:
-                _anim.Play("Tier1Shake");
+                _anim.Play("DeshTallSHAKE");
                 lastPos = Player.transform.position;
                 ChangeState(3f, DeshStates.DESH);
                 break; 
             case DeshStates.DESH:
+                _anim.Play("DeshTallWALK");
                 DashToPlayer(true);
                 ChangeState(2f, DeshStates.SHAKE);
                 break;

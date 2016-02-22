@@ -60,7 +60,65 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Teir1Walk4
+      takeName: Teir1Walk4
+      firstFrame: 1
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Belly
+        weight: 1
+      - path: Belly/L_Hip
+        weight: 1
+      - path: Belly/L_Hip/L_Leg
+        weight: 1
+      - path: Belly/L_Hip/L_Leg/Foot
+        weight: 1
+      - path: Belly/R_Hip
+        weight: 1
+      - path: Belly/R_Hip/R_Reg
+        weight: 1
+      - path: Belly/R_Hip/R_Reg/Foot 1
+        weight: 1
+      - path: Belly/Spine1
+        weight: 1
+      - path: Belly/Spine1/Spine2
+        weight: 1
+      - path: Belly/Spine1/Spine2/Head
+        weight: 1
+      - path: Belly/Spine1/Spine2/Head/L_EarBot
+        weight: 1
+      - path: Belly/Spine1/Spine2/Head/L_EarBot/L_EarTop
+        weight: 1
+      - path: Belly/Spine1/Spine2/Head/R_EarBot
+        weight: 1
+      - path: Belly/Spine1/Spine2/Head/R_EarBot/R_EarTop
+        weight: 1
+      - path: polySurface31
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

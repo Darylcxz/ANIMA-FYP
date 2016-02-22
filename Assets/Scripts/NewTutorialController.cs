@@ -17,6 +17,9 @@ public class NewTutorialController : MonoBehaviour {
     [SerializeField] GameObject fakeLog;
     [SerializeField] GameObject realLog;
     [SerializeField] GameObject stickPile;
+    [SerializeField] GameObject ArchuraHimself;
+    Animator ArchuraAnim;
+
     
 
 	[SerializeField]enum Part
@@ -77,6 +80,9 @@ public class NewTutorialController : MonoBehaviour {
     //Puzzle sequence booleans
     bool hasVineBroke;
     bool hasLogMoved;
+    bool hasLogsFallen;
+    bool archuraTrigger;
+    float archuraTimer;
 
     int dontIdiotCounter;
 
@@ -88,6 +94,7 @@ public class NewTutorialController : MonoBehaviour {
         _movementScript = _movementScript.GetComponent<MovementController>();
         _waterWheel = _waterWheel.GetComponent<Animator>();
         _sawBlade = _sawBlade.GetComponent<Animator>();
+        ArchuraAnim = ArchuraHimself.GetComponent<Animator>();
         jumpSequence.SetActive(false);
         _camera = _camera.GetComponent<Transform>();
         _dScript.hasDialogueEnd = true;
@@ -265,28 +272,73 @@ public class NewTutorialController : MonoBehaviour {
                 ChangeState(Part.DONTIDIOT);
                 break;
             case Part.DONTIDIOT:
-                _dialogueName = "dontidiot";
-                ChangeState(Part.DONTIDIOT2);
+                if (hasLogsFallen)
+                {
+                    _dialogueName = "firstarchuraencounter";
+                    ChangeState(Part.ARCHURASTUFF);
+                }
+                if (!hasLogsFallen)
+                {
+                    _dialogueName = "dontidiot";
+                    ChangeState(Part.DONTIDIOT2);
+                }
                 break;
             case Part.DONTIDIOT2:
-                _dialogueName = "dontidiot2";
-                ChangeState(Part.DONTIDIOT3);
+                if (hasLogsFallen)
+                {
+                    _dialogueName = "firstarchuraencounter";
+                    ChangeState(Part.ARCHURASTUFF);
+                }
+                if (!hasLogsFallen)
+                {
+                    _dialogueName = "dontidiot2";
+                    ChangeState(Part.DONTIDIOT3);
+                }
                 break;
             case Part.DONTIDIOT3:
-                _dialogueName = "dontidiot3";
-                ChangeState(Part.DONTIDIOT4);
+               if(hasLogsFallen)
+                {
+                    _dialogueName = "firstarchuraencounter";
+                    ChangeState(Part.ARCHURASTUFF);
+                }
+               if(!hasLogsFallen)
+                {
+                    _dialogueName = "dontidiot3";
+                    ChangeState(Part.DONTIDIOT4);
+                }
                 break;
             case Part.DONTIDIOT4:
-                _dialogueName = "dontidiot4";
-                ChangeState(Part.DONTIDIOTLOOP);
+                if(hasLogsFallen)
+                {
+                    _dialogueName = "firstarchuraencounter";
+                    ChangeState(Part.ARCHURASTUFF);
+                }
+                else if (!hasLogsFallen)
+                {
+                    _dialogueName = "dontidiot4";
+                    ChangeState(Part.DONTIDIOTLOOP);
+                }
                 break;
             case Part.DONTIDIOTLOOP:
-                _dialogueName = "dontidiot4";
-                ChangeState(Part.DONTIDIOT4);
+                if (hasLogsFallen)
+                {
+                    _dialogueName = "firstarchuraencounter";
+                    ChangeState(Part.ARCHURASTUFF);
+                }
+                else if (!hasLogsFallen)
+                {
+                    _dialogueName = "dontidiot4";
+                    ChangeState(Part.DONTIDIOT4);
+                }
                 break;
             case Part.ARCHURASTUFF:
                 _dialogueName = "firstarchuraencounter";
-
+               if(DialogueScript._seqNum == 7)
+                {
+                    archuraTrigger = false;
+                    ArchuraHimself.GetComponent<Rigidbody>().isKinematic = false;
+                    ArchuraHimself.GetComponent<Collider>().isTrigger = true;
+                }
                 break;
         }
 		if(!_dScript.hasDialogueEnd && !textPlay)
@@ -327,6 +379,16 @@ public class NewTutorialController : MonoBehaviour {
         {
             stickPile.SetActive(true);
         }
+        if(archuraTrigger)
+        {
+            archuraTimer += Time.deltaTime;
+            Vector3 archuraLerp = Vector3.Lerp(ArchuraHimself.transform.position, new Vector3(-7, -0.9f, 33), archuraTimer);
+            ArchuraHimself.transform.position = archuraLerp;
+            if(archuraTimer >1)
+            {
+                archuraTimer = 1;
+            }
+        }
 
     }
    public void DialogueEnd()
@@ -352,6 +414,11 @@ public class NewTutorialController : MonoBehaviour {
     public void OnVineBreak()
     {
         hasVineBroke = true;
+    }
+    public void OnLogsFall()
+    {
+        hasLogsFallen = true;
+        archuraTrigger = true;
     }
 
     IEnumerator SlowTime(float _timeScale)
