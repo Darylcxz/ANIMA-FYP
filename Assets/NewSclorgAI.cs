@@ -27,9 +27,12 @@ public class NewSclorgAI : NewAIBA {
     [SerializeField] float shootRange;
     [SerializeField] Transform shootPos;
     [SerializeField] Rigidbody projectile;
+
+    AudioSource sclorgSound;
     protected override void Start()
     {
         SclorgAnim = GetComponent<Animator>();
+        sclorgSound = GetComponent<AudioSource>();
         base.Start();
     }
     protected override void ActivateAbility()
@@ -41,12 +44,29 @@ public class NewSclorgAI : NewAIBA {
                 SclorgMovement();
                 break;
             case SclorgState.AIM:
-                ChangeState(0.7f, SclorgState.SHOOT);
+                SclorgAnim.Play("S_Aim");
+                SclorgMovement(true);
+                ChangeState(3f, SclorgState.SHOOT);
                 break;
             case SclorgState.SHOOT:
+                SclorgAnim.Play("S_Shoot");
                 Fire();
                 break;
             case SclorgState.DEATH:
+                SclorgAnim.SetTrigger("tDeath");
+                break;
+        }
+    }
+    protected override void AIStateMachine()
+    {
+        base.AIStateMachine();
+        switch(AIState)
+        {
+            case StateMachine.IDLE:
+                SclorgAnim.SetBool("isMoving", false);
+                break;
+            case StateMachine.WALK:
+                SclorgAnim.SetBool("isMoving", true);
                 break;
         }
     }
@@ -85,6 +105,25 @@ public class NewSclorgAI : NewAIBA {
     {
         Rigidbody projectileClone = Instantiate(projectile, shootPos.position, transform.rotation) as Rigidbody;
         projectileClone.velocity = transform.forward * 30;
-        States = SclorgState.PURSUE;
+       if(DistanceBetween(player.position,transform.position)<shootRange)
+        {
+            States = SclorgState.AIM;
+        }
+       else if(DistanceBetween(player.position,transform.position) > shootRange)
+        {
+            SclorgAnim.StopPlayback();
+            States = SclorgState.PURSUE;
+        }
+    }
+    public void DeathByLight()
+    {
+        States = SclorgState.DEATH;
+        Invoke("SinkToGround", 5f);
+    }
+    void SinkToGround()
+    {
+        sclorgSound.Play();
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        gameObject.GetComponent<Collider>().isTrigger = true;
     }
 }

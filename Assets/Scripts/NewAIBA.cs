@@ -172,7 +172,7 @@ public abstract class NewAIBA : MonoBehaviour {
 			if (DistanceBetween(A,B) < minDistance)
 			{
 				FindNewTargetPosition();
-				//ChangeState(0, StateMachine.IDLE);
+				ChangeState(0, StateMachine.IDLE);
 			}
 		}
      
