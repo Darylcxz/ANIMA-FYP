@@ -7,17 +7,20 @@ public class NewLizardScript : NewAIBA {
     Transform tongueStart;
     Vector3 targetdir;
     Vector3 mouth;
+    Animator lizardAnim;
     [SerializeField]float maxTongueLength;
     float tongueforce;
     public LayerMask handlelayer;
     bool lick = false;
     bool returnlick = false;
+    RaycastHit hit;
     // Use this for initialization
     protected override void Start()
     {
         tongue = transform.GetChild(3).GetComponent<LineRenderer>();
         tongueEnd = transform.GetChild(4).gameObject;
         tongueStart = transform.GetChild(5).gameObject.transform;
+        lizardAnim = GetComponent<Animator>();
         Debug.Log(transform.position);
         base.Start();
 	}
@@ -27,25 +30,34 @@ public class NewLizardScript : NewAIBA {
     {
         //Debug.Log("Mirzard tried to use lick!");
         tongueforce = 0;
+        lizardAnim.SetTrigger("sticktongue");
         Collider[] handles = Physics.OverlapSphere(transform.position, 10, handlelayer);
         if (handles.Length > 0 && !lick)
         {
-            Debug.Log("Mirzard used lick!");
-            targetdir = handles[0].transform.position;
-            mouth = tongueStart.transform.position;
-            lick = true;
+            float angle = Vector3.Angle(transform.forward, targetdir - mouth);
+            if(angle < 100)
+            {
+                Debug.Log("Mirzard used lick!");
+                targetdir = handles[0].transform.position;
+                mouth = tongueStart.transform.position;
+                lick = true;
+                immobilize = true;
+            }
+            
         }
 
         else if(lick)
         {
+            Vector3 pulldir = transform.position - targetdir;
+            handles[0].GetComponent<Rigidbody>().AddForce(pulldir * 10, ForceMode.Impulse);
             lick = false;
             returnlick = true;
-            
         }
 	}
 
     protected override void PassiveAbility()
     {
+        lizardAnim.SetFloat("speed", _rbAI.velocity.magnitude);
         tongue.SetPosition(0, tongueStart.transform.position);
         tongue.SetPosition(1, tongueEnd.transform.position);
 
@@ -53,25 +65,31 @@ public class NewLizardScript : NewAIBA {
         {
             tongueforce += Time.deltaTime * 2.0f;
             tongueEnd.transform.position = Vector3.Lerp(mouth, targetdir, tongueforce);
-            _rbAI.velocity = Vector3.zero;
         }
 
         else if(!lick && returnlick)
         {
-            _rbAI.velocity = Vector3.zero;
             tongueforce += Time.deltaTime * 2.0f;
             tongueEnd.transform.position = Vector3.Lerp(targetdir, mouth, tongueforce);
             if(tongueEnd.transform.position == mouth)
             {
                 returnlick = false;
+                immobilize = false;
             }
         }
-
-
-        float distsq = (tongueEnd.transform.position - tongue.gameObject.transform.position).sqrMagnitude;
+        float distsq = (tongueEnd.transform.position - tongueStart.gameObject.transform.position).sqrMagnitude;
         if (distsq > maxTongueLength * maxTongueLength)
         {
-            
+            lick = false;
+            returnlick = true;
+        }
+
+        if(Physics.Raycast(transform.position, Vector3.up, out hit, 20))
+        {
+            if(hit.collider.CompareTag("Lightsource"))
+            {
+
+            }
         }
     }
 }
