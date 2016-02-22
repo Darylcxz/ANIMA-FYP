@@ -81,7 +81,8 @@ public class MovementController : MonoBehaviour {
 	bool _slow;
 	float originalSpeed;
 
-	[SerializeField]GuidedJump guideJump;
+    [SerializeField] bool hasJumpSequence;
+    [SerializeField]NewJumpSequence guideJump;
 
     bool pushing;
     bool pulling = false;
@@ -91,7 +92,10 @@ public class MovementController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//guideJump = gameObject.GetComponent<GuidedJump>();
+		if(hasJumpSequence)
+        {
+            guideJump = guideJump.GetComponent<NewJumpSequence>();
+        }
 		//Dagger stuff, disables and hides the dagger collider and trail renderer so that it doesn't show
 		_dagger = GameObject.FindGameObjectWithTag("dagger").GetComponent<Collider>();
 		_dagger.enabled = false;
@@ -297,14 +301,14 @@ public class MovementController : MonoBehaviour {
                 break;
 
             case States.sequencedjump:
-				if(guideJump.jump== false)
+				if(guideJump.freezeMovement)
 				{
 					RotatingLogic(GamepadManager.h1, GamepadManager.v1);
-					if (((guideJump.wayPoints.Count - 1) == guideJump.jumpIndex ) && !guideJump.starting)
-					{
-						charStates = States.idle;
-					}
 				}
+                else if (!guideJump.freezeMovement)
+                {
+                    charStates = States.idle;
+                }
 				
                 break;
 
