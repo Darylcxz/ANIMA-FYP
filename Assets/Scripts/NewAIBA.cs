@@ -212,10 +212,11 @@ public abstract class NewAIBA : MonoBehaviour {
 		{
 			ChangeState(0f, StateMachine.WAIT);
 			Debug.DrawRay(transform.position, Vector3.up * 2);
-			if (Physics.Raycast(transform.position, Vector3.up, out possessionRaycastHit, 2))
+			if (Physics.Raycast(transform.position, Vector3.up, out possessionRaycastHit, 5))
 			{
 				if (GamepadManager.buttonA && possessionRaycastHit.collider.name == "TargetSerik" || Input.GetKeyDown("i") && possessionRaycastHit.collider.name == "TargetSerik")
 				{
+                    Debug.Log("Foundit");
 					Camerafollow.targetUnit = gameObject;
 					AIState = StateMachine.POSSESSED;
 					stateTimer = 0;

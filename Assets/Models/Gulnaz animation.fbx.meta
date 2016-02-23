@@ -144,6 +144,7 @@ ModelImporter:
     7400016: G_StabAttack
     7400018: G_IdleAttack
     7400020: G_Climbing
+    7400022: G_RunJumping
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -1736,6 +1737,168 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Group
+        weight: 1
+      - path: Group/Hip_Root4
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1/L_Leg2
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1/L_Leg2/L_Feet
+        weight: 1
+      - path: Group/Hip_Root4/L_Leg1/L_Leg2/L_Feet/joint22
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1/R_Reg2
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1/R_Reg2/R_Feet
+        weight: 1
+      - path: Group/Hip_Root4/R_Reg1/R_Reg2/R_Feet/joint22 1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1/Braid1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1/Braid1/Braid2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1/Braid1/Braid2/Braid3
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1/Braid1/Braid2/Braid3/Braid4
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/CollarBone/Head 1/joint7
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1/L_Finger2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1/L_Index2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Finger
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Finger/R_Finger2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Index1
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Index1/R_Index2
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Thumb
+        weight: 1
+      - path: Group/Hip_Root4/Spine1/Spine2/Spine3/R_Solder/R_Elboe/R_Hand/R_Thumb/R_Thumb2
+        weight: 1
+      - path: GulnazBody
+        weight: 1
+      - path: GulnazBody/LowerBody
+        weight: 1
+      - path: GulnazBody/LowerBody/L_Shoes
+        weight: 1
+      - path: GulnazBody/LowerBody/L_Shoes/polySurface16
+        weight: 1
+      - path: GulnazBody/LowerBody/L_Shoes/polySurface16/transform26
+        weight: 1
+      - path: GulnazBody/LowerBody/L_Shoes/transform24
+        weight: 1
+      - path: GulnazBody/LowerBody/R_Shoes
+        weight: 1
+      - path: GulnazBody/LowerBody/R_Shoes/polySurface36
+        weight: 1
+      - path: GulnazBody/LowerBody/R_Shoes/polySurface36/transform25
+        weight: 1
+      - path: GulnazBody/LowerBody/R_Shoes/transform23
+        weight: 1
+      - path: GulnazBody/LowerBody/transform17
+        weight: 1
+      - path: GulnazBody/transform16
+        weight: 1
+      - path: GulnazBody/UpperBody
+        weight: 1
+      - path: GulnazBody/UpperBody/BackBip
+        weight: 1
+      - path: GulnazBody/UpperBody/BackBip/transform22
+        weight: 1
+      - path: GulnazBody/UpperBody/Frontbip
+        weight: 1
+      - path: GulnazBody/UpperBody/Frontbip/transform18
+        weight: 1
+      - path: GulnazBody/UpperBody/Head
+        weight: 1
+      - path: GulnazBody/UpperBody/Head/transform27
+        weight: 1
+      - path: GulnazBody/UpperBody/Necklace
+        weight: 1
+      - path: GulnazBody/UpperBody/Necklace/transform21
+        weight: 1
+      - path: GulnazBody/UpperBody/Necklacetolken
+        weight: 1
+      - path: GulnazBody/UpperBody/Necklacetolken/transform20
+        weight: 1
+      - path: GulnazBody/UpperBody/transform19
+        weight: 1
+      - path: UpperBody_Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: G_RunJumping
+      takeName: gulnazAction(Jump,Push,pull,idle,attack)11
+      firstFrame: 3.71000004
+      lastFrame: 25.2299995
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: .132645711
+        functionName: Jumpimpact
+        data: 
+        objectReferenceParameter: {fileID: 119582, guid: 4f7f227d5739e7e429c6ead9190e6f24,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
