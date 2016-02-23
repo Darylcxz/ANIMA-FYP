@@ -103,16 +103,16 @@ public class NewLizardScript : NewAIBA {
 
             if (shootlight)
             {
-                if (Physics.Raycast(transform.position, transform.right, out hit2, 10))
+                if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.right, out hit2, 10))
                 {
-                    lightend = hit2.point;
+                    lightend = hit2.point + Vector3.up * 1.0f;
                 }
 
                 else
                 {
-                    lightend = transform.position + transform.right * 10;
+                    lightend = transform.position + transform.right * 10 + Vector3.up * 0.5f;
                 }
-                lightray.SetPosition(0, transform.position);
+                lightray.SetPosition(0, transform.position + Vector3.up * 0.5f);
                 lightray.SetPosition(1, lightend);
             }
         }
