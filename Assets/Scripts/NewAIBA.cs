@@ -21,6 +21,7 @@ public abstract class NewAIBA : MonoBehaviour {
 	
 	//GameObject Debugger;
 	[SerializeField]protected bool canPossess;		//checks if the AI can be possessed 
+    protected bool immobilize;                      //disable movement during possession
 
 	RaycastHit possessionRaycastHit;		//Raycast hit info for possession checker
 	[SerializeField]protected StateMachine AIState = StateMachine.IDLE;  //sets the default state to IDLE
@@ -39,9 +40,9 @@ public abstract class NewAIBA : MonoBehaviour {
 	[SerializeField]protected float speedPlayer;			//Speed for when player possesses
 
 	//AI Components
-	[SerializeField]ParticleSystem possessFire;		//particle for when you possess I think
-    GameObject possessExplode;
-    Animator possanim;
+	[SerializeField]ParticleSystem possessFire;		//Serik's spirit - turns off when possessing
+    GameObject possessExplode;                      //Spiritbomb - particle effect when AI is possessed
+    Animator possanim;                              //animator of spiritbomb
 
 	//AI Pathfinding variables
 	[SerializeField]sbyte rotationSpeed = 5;	//how fast the AI should rotate
@@ -116,7 +117,11 @@ public abstract class NewAIBA : MonoBehaviour {
                 isPossessed = true;
 				playerMana.currMana -= Time.deltaTime;
 				CheckInput();
-				PlayerTakesControl();
+                if(!immobilize)
+                {
+    				PlayerTakesControl();
+                }
+
 				if (!GameControl.spiritmode)
 				{
 					ChangeState(0f, StateMachine.IDLE);

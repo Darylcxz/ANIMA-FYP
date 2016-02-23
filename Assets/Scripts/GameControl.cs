@@ -18,8 +18,8 @@ public class GameControl : MonoBehaviour {
     private int enemylayer;
 
     //Collectibles
-    [SerializeField]private Image card;
-    [SerializeField]private Sprite[] cards;
+
+    //[SerializeField]private Image[] cards;
     [SerializeField]private Image cardpanel;
     private bool cardshowing;
     
@@ -49,8 +49,7 @@ public class GameControl : MonoBehaviour {
         Seriksplace = GameObject.Find("Seriksplace").transform;
         enemylayer = 1 << LayerMask.NameToLayer("DetectPossess");
 		flashAlpha = 0;
-        card.enabled = false;
-        cardpanel.enabled = false;
+        cardpanel.gameObject.SetActive(false);
 		fireBall.SetActive(false);
 		possesionmode.enabled = false;
 	}
@@ -102,8 +101,7 @@ public class GameControl : MonoBehaviour {
         {
             if(GamepadManager.buttonBDown)
             {
-                card.enabled = false;
-                cardpanel.enabled = false;
+                cardpanel.gameObject.SetActive(false);
                 cardshowing = false;
             }
         }
@@ -184,9 +182,8 @@ public class GameControl : MonoBehaviour {
     public void ShowCard(int cardnumber)
     {
         cardshowing = true;
-        card.enabled = true;
-        cardpanel.enabled = true;
-        card.sprite = cards[cardnumber];
+        cardpanel.gameObject.SetActive(true);
+        cardpanel.transform.GetChild(cardnumber).gameObject.SetActive(true);
     }
 
 	

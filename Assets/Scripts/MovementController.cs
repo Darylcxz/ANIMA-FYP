@@ -37,8 +37,8 @@ public class MovementController : MonoBehaviour {
 
     float vMoveRight;				//right stick vertical movements
     float hMoveRight;				//right stick horizontal movements
-    [SerializeField] ParticleSystem grounddust;
-    [SerializeField] ParticleSystem jumpdust;
+    [SerializeField] ParticleSystem grounddust;  // particle dust when walking
+    [SerializeField] ParticleSystem jumpdust;    // particle dust when jumping
     [SerializeField] AudioClip footsteps;
     [SerializeField] AudioClip jumpsound;
     AudioSource maincam;
@@ -84,11 +84,16 @@ public class MovementController : MonoBehaviour {
     [SerializeField] bool hasJumpSequence;
     [SerializeField]NewJumpSequence guideJump;
 
+
+    //Push and pull anim stuff
     bool pushing;
     bool pulling = false;
     RaycastHit hitcube;
-    [SerializeField]Transform lefty;
+    [SerializeField]Transform lefty;      //For triple raycasts, because fuck vector3 calculations
     [SerializeField]Transform righty;
+
+    //Climbing
+    Vector3 climbstart;
 
 	// Use this for initialization
 	void Start () {
@@ -290,13 +295,17 @@ public class MovementController : MonoBehaviour {
                 if(Physics.Raycast(transform.position, transform.forward, 1))
                 {
                     ClimbLogic(GamepadManager.v1);
+                    _anim.SetBool("isClimbing", true);
                 }
 
                 else
                 {
+                    _rigidBody.useGravity = true;
                     _rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
-                    _rigidBody.AddForce(transform.forward * 2, ForceMode.Impulse);
+                    _rigidBody.AddForce(transform.forward + transform.up, ForceMode.Impulse);
+                    _anim.SetBool("isClimbing", false);
                     charStates = States.idle;
+                   
                 }
                 break;
 
@@ -479,7 +488,7 @@ public class MovementController : MonoBehaviour {
 
     void CheckClimb()
     {
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 1))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 1) || Physics.Raycast(lefty.position, transform.forward, out hit, 1) || Physics.Raycast(righty.position, transform.forward, out hit, 1))
         {
             if (GamepadManager.buttonBDown && hit.collider.tag == "Climable")
             {
@@ -488,15 +497,25 @@ public class MovementController : MonoBehaviour {
                 _rigidBody.rotation = targetRot;
                 transform.position = new Vector3(hit.transform.position.x - 0.8f, transform.position.y, transform.position.z);
                 _rigidBody.constraints = RigidbodyConstraints.FreezeRotation & RigidbodyConstraints.FreezePositionZ & RigidbodyConstraints.FreezePositionX;
+                _rigidBody.useGravity = false;
             }
         }
     }
 
     void ClimbLogic(float v)
     {
-        Vector3 ClimbForce = Vector3.up * v;
-        ClimbForce.Normalize();
-        _rigidBody.AddForce(ClimbForce * 0.3f, ForceMode.VelocityChange);
+        if(v == 0)
+        {
+            _anim.speed = 0;
+        }
+        else
+        {
+            Vector3 ClimbForce = Vector3.up * v;
+            ClimbForce.Normalize();
+            _rigidBody.velocity = ClimbForce * 4;
+            _anim.speed = 1;
+        }
+        
     }
 
 	void AttackLogic()
