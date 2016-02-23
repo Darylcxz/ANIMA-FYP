@@ -1,50 +1,52 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TootScript : AIbase {
-    Animator anim;
+public class TootScript : NewAIBA {
+    Animator Tootanim;
     AudioSource bounce;
+    Rigidbody shit;
 	// Use this for initialization
 	protected override void Start () {
-
-        _rigidBody = gameObject.GetComponent<Rigidbody>();
-        origin = gameObject.transform.position;
-        anim = gameObject.GetComponent<Animator>();
-        bounce = gameObject.GetComponent<AudioSource>();
-	
+        Tootanim = GetComponent<Animator>();
+        bounce = GetComponent<AudioSource>();
+        shit = GetComponent<Rigidbody>();
+        base.Start();
 	}
 
     protected override void ActivateAbility()
     {
-        //throw new System.NotImplementedException();
+        Debug.Log("Toot used Tackle! but it failed! Cuz he's a worthless piece of shit");
     }
 
     protected override void PassiveAbility()
     {
-        if(AIState == States.walk || AIState == States.retreat)
-        {
-            anim.SetFloat("speed", 1);
-        }
-
-        else if (AIState == States.possessed)
-        {
-            anim.SetFloat("speed", _rigidBody.velocity.magnitude);
-        }
-
-        else
-            anim.SetFloat("speed", 0);
-        //throw new System.NotImplementedException();
+        
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.name == "Character")
+        if(other.collider.CompareTag("Player"))
         {
             Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
             rb.AddForce(Vector3.up * 50, ForceMode.Impulse);
-            anim.SetTrigger("Flip");
+            _rbAI.velocity = Vector3.zero;
+            Tootanim.SetTrigger("Flip");
             bounce.Play();
             print("go up");
+        }
+    }
+
+    protected override void AIStateMachine()
+    {
+        base.AIStateMachine();
+        switch (AIState)
+        {
+            case StateMachine.IDLE:
+                Tootanim.SetInteger("State", 0);
+                break;
+            case StateMachine.WALK:
+                Tootanim.SetInteger("State", 1);
+                break;
         }
     }
 }
