@@ -6,10 +6,11 @@ public class NewHopputAI : NewAIBA {
     [SerializeField] LayerMask _layerMask;
     [SerializeField] Collider col;
     [SerializeField] float attackRange = 3f;
+    [SerializeField] GameObject dustWave;
     Animator HopputAnim;
     AudioSource hopputSound;
     Vector3 lastPos;
-
+    bool hasLanded;
     [SerializeField] enum HopputState
     {
         IDLE,
@@ -60,7 +61,10 @@ public class NewHopputAI : NewAIBA {
                 break;
             case HopputState.LAND:
                 HopputAnim.Play("HOP_LAND");
-                ExplosionForce(transform.position, 5);
+                if(hasLanded)
+                {
+                    ExplosionForce(transform.position, 5);
+                }
                 HopputAnim.StopPlayback();
                 States = HopputState.IDLE;
                 break;
@@ -116,6 +120,10 @@ public class NewHopputAI : NewAIBA {
         }
 
     }
+    public void Landed()
+    {
+        hasLanded = true;
+    }
     void ExplosionForce(Vector3 center,float radius)
     {
         Collider[] hitCol = Physics.OverlapSphere(center, radius, _layerMask);
@@ -127,6 +135,11 @@ public class NewHopputAI : NewAIBA {
                 rb.AddExplosionForce(20, center, radius, 2, ForceMode.Impulse);
             }
         }
+        Vector3 floorPos = center;
+        center.y = -0.9f;
+        dustWave.transform.position = floorPos;
+        dustWave.GetComponent<Animator>().SetTrigger("Explode");
+        hasLanded = false;
     }
     public void SeepIntoGround()
     {
