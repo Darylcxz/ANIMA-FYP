@@ -125,6 +125,10 @@ public class MovementController : MonoBehaviour {
         CheckInput();     //Checks input in the update so it's faster
 		CheckMana();	  //Checks mana to update the slider bar
         //        Debug.Log(_rigidBody.velocity.magnitude);
+        if(isGrounded())
+        {
+
+        }
         _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
        // _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
         _anim.SetBool("isRolling", isRolling);//change param to be the same as bool isRolling
@@ -179,6 +183,8 @@ public class MovementController : MonoBehaviour {
                 }
                 if (jump && isGrounded())
                 {
+                    Invoke("Jump", 0.3f);
+                    //Jump();
 					_anim.SetTrigger("tJump");
 					charStates = States.jump;
                 }
@@ -203,7 +209,9 @@ public class MovementController : MonoBehaviour {
                 }
                 if (jump && isGrounded())
                 {
-					_anim.SetTrigger("tJump");
+                    //Invoke("Jump", 0.3f);
+                    Jump();
+                    _anim.SetTrigger("tJump");
 				//	_rigidBody.velocity = Vector3.zero;
 					charStates = States.jump;
                 }
@@ -215,11 +223,11 @@ public class MovementController : MonoBehaviour {
                 CheckClimb();
                 break;
             case States.jump:
-				
-                _rigidBody.AddForce(Vector3.up*jumpForce,ForceMode.Impulse);
-                if (!isGrounded())
+                MovementLogic(hMove * 0.5f, vMove * 0.5f);
+                //_rigidBody.AddForce(Vector3.up*jumpForce,ForceMode.Impulse);
+                if (isGrounded())
                 {
-					_rigidBody.velocity = Vector3.zero;
+					//_rigidBody.velocity = Vector3.zero;
 					charStates = States.idle;
                 }
                 CheckClimb();
@@ -570,5 +578,10 @@ public class MovementController : MonoBehaviour {
         _anim.SetBool("isPulling", false);
         _anim.SetBool("isPushing", false);
         _anim.speed = 1;
+    }
+
+    void Jump()
+    {
+        _rigidBody.velocity += Vector3.up * jumpForce;
     }
 }
