@@ -106,6 +106,12 @@ public class NewLizardScript : NewAIBA {
                 if (Physics.Raycast(transform.position + Vector3.up * 0.5f, transform.right, out hit2, 10))
                 {
                     lightend = hit2.point + Vector3.up * 1.0f;
+                    if(hit2.collider.CompareTag("Reflecting"))
+                    {
+                        LineRenderer nextlaser = hit2.collider.gameObject.GetComponent<LineRenderer>();
+                        nextlaser.SetPosition(0, hit2.point);
+                        nextlaser.SetPosition(1, hit2.point);
+                    }
                 }
 
                 else
