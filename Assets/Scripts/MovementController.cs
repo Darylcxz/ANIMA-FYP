@@ -38,7 +38,7 @@ public class MovementController : MonoBehaviour {
     float vMoveRight;				//right stick vertical movements
     float hMoveRight;				//right stick horizontal movements
     [SerializeField] ParticleSystem grounddust;  // particle dust when walking
-    [SerializeField] ParticleSystem jumpdust;    // particle dust when jumping
+    [SerializeField] GameObject jumpdust;    // particle dust when jumping
     [SerializeField] AudioClip footsteps;
     [SerializeField] AudioClip jumpsound;
     AudioSource maincam;
@@ -555,7 +555,8 @@ public class MovementController : MonoBehaviour {
     public void Jumpimpact()
     {
         jumpdust.transform.position = transform.position;
-        jumpdust.Play();
+        Animator dustboom = jumpdust.GetComponent<Animator>();
+        dustboom.SetTrigger("Explode");
     }
 
     public void PushorPull()

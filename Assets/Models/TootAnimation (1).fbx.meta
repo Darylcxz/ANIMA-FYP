@@ -374,7 +374,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Tootflip
       takeName: Toot7
-      firstFrame: 150
+      firstFrame: 163
       lastFrame: 192
       wrapMode: 0
       orientationOffsetY: 0
