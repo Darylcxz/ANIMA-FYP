@@ -14,7 +14,7 @@ public class GameControl : MonoBehaviour {
 	[SerializeField]private Image flashImage;
     private Collider[] hitcolliders;
     private int ordernum = 0;
-    private Vector3 heightplus = new Vector3(0, 2.0f, 0);
+    private Vector3 heightplus = new Vector3(0, 1.5f, 0);
     private int enemylayer;
 
     //Collectibles
