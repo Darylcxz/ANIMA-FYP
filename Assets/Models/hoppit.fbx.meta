@@ -52,6 +52,8 @@ ModelImporter:
     7400006: HOP_SHAKE
     7400008: HOP_ATTACK
     7400010: HOP_SHAKEONLY
+    7400012: HOP_JUMP
+    7400014: HOP_LAND
     9500000: //RootNode
     13700000: polySurface57
   materials:
@@ -415,6 +417,138 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hip
+        weight: 1
+      - path: Hip/LLeg
+        weight: 1
+      - path: Hip/LLeg/Knee
+        weight: 1
+      - path: Hip/LLeg/Knee/LFoot
+        weight: 1
+      - path: Hip/LLeg/Knee/LFoot/L_Toe
+        weight: 1
+      - path: Hip/LLeg1
+        weight: 1
+      - path: Hip/LLeg1/Knee1
+        weight: 1
+      - path: Hip/LLeg1/Knee1/LFoot1
+        weight: 1
+      - path: Hip/LLeg1/Knee1/LFoot1/L_Toe1
+        weight: 1
+      - path: Hip/Spine2
+        weight: 1
+      - path: Hip/Spine2/Spine1
+        weight: 1
+      - path: Hip/Spine2/Spine1/Head
+        weight: 1
+      - path: Hip/Spine2/Spine1/Head/Nose
+        weight: 1
+      - path: Hip/Spine2/Spine1/Head/Top2
+        weight: 1
+      - path: Hip/Spine2/Spine1/Head/Top2/Top2 1
+        weight: 1
+      - path: Hip/Tail1
+        weight: 1
+      - path: Hip/Tail1/Tail2
+        weight: 1
+      - path: Hip/Tail1/Tail2/Tail3
+        weight: 1
+      - path: polySurface57
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: HOP_JUMP
+      takeName: Hoppit4
+      firstFrame: 253
+      lastFrame: 273
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hip
+        weight: 1
+      - path: Hip/LLeg
+        weight: 1
+      - path: Hip/LLeg/Knee
+        weight: 1
+      - path: Hip/LLeg/Knee/LFoot
+        weight: 1
+      - path: Hip/LLeg/Knee/LFoot/L_Toe
+        weight: 1
+      - path: Hip/LLeg1
+        weight: 1
+      - path: Hip/LLeg1/Knee1
+        weight: 1
+      - path: Hip/LLeg1/Knee1/LFoot1
+        weight: 1
+      - path: Hip/LLeg1/Knee1/LFoot1/L_Toe1
+        weight: 1
+      - path: Hip/Spine2
+        weight: 1
+      - path: Hip/Spine2/Spine1
+        weight: 1
+      - path: Hip/Spine2/Spine1/Head
+        weight: 1
+      - path: Hip/Spine2/Spine1/Head/Nose
+        weight: 1
+      - path: Hip/Spine2/Spine1/Head/Top2
+        weight: 1
+      - path: Hip/Spine2/Spine1/Head/Top2/Top2 1
+        weight: 1
+      - path: Hip/Tail1
+        weight: 1
+      - path: Hip/Tail1/Tail2
+        weight: 1
+      - path: Hip/Tail1/Tail2/Tail3
+        weight: 1
+      - path: polySurface57
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: HOP_LAND
+      takeName: Hoppit4
+      firstFrame: 273
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
