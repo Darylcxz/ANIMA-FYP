@@ -30,14 +30,13 @@ public class VillageDialogue : DialogueScript {
     public GameObject helpserik1;
     public GameObject helpserik2;
     public GameObject helpserik3;
+    AudioSource bgm;
 
     public override void Start()
     {
         base.Start();
         sword.SetActive(false);
-        NPCname = "Exittent";
-        string textData = dialogue.text;
-        ParseDialogue(textData);
+        bgm = GameObject.Find("BGM").GetComponent<AudioSource>();
         tutImage.enabled = false;
         itemicon.enabled = false;
         exclaim.transform.position = ruslan.transform.position + Vector3.up * 2.0f;
@@ -235,5 +234,14 @@ public class VillageDialogue : DialogueScript {
     void SerikImpressed()
     {
         exclaim.SetActive(true);
+    }
+
+    public void StartDialogue()
+    {
+        NPCname = "Exittent";
+        string textData = dialogue.text;
+        ParseDialogue(textData);
+        bgm.Play();
+        Debug.Log("StartofGame");
     }
 }
