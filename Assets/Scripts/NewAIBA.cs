@@ -53,7 +53,7 @@ public abstract class NewAIBA : MonoBehaviour {
 	[SerializeField]protected Vector3 _waypoint;			//waypoint created where the AI paths to that
 	[SerializeField]float minDistance = 0.1f;		//min distance to the WAYPOINT before AI considers it reached it
 
-
+    [SerializeField] LayerMask possessraycastlayer;
     public Vector3 customWayPoint;
 	//Player's Variables (for player when possessing)
 	[SerializeField]MovementController playerMana;
@@ -211,9 +211,10 @@ public abstract class NewAIBA : MonoBehaviour {
 		if (GameControl.freeze && AIState !=StateMachine.POSSESSED)
 		{
 			ChangeState(0f, StateMachine.WAIT);
-			Debug.DrawRay(transform.position, Vector3.up * 2);
-			if (Physics.Raycast(transform.position, Vector3.up, out possessionRaycastHit, 5))
+			Debug.DrawRay(transform.position, Vector3.up * 5);
+			if (Physics.Raycast(transform.position, Vector3.up, out possessionRaycastHit, 5, possessraycastlayer))
 			{
+                Debug.Log(possessionRaycastHit.collider.gameObject.name);
 				if (GamepadManager.buttonA && possessionRaycastHit.collider.name == "TargetSerik" || Input.GetKeyDown("i") && possessionRaycastHit.collider.name == "TargetSerik")
 				{
                     Debug.Log("Foundit");
