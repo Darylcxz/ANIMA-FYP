@@ -20,7 +20,7 @@ public class MovementController : MonoBehaviour {
 
     public States charStates = States.idle;
     Animator _anim;
-    AudioSource audio;
+    
 
     //input stuff
     public bool bKeyboard = false;     //if this is true, it means you're using keyboard movement
@@ -45,7 +45,7 @@ public class MovementController : MonoBehaviour {
     [SerializeField] GameObject jumpdust;    // particle dust when jumping
     [SerializeField] AudioClip footsteps;
     [SerializeField] AudioClip jumpsound;
-    AudioSource maincam;
+    AudioSource audio;
 
 
     int attackMode = 0; //1: Stab, 2: swing
@@ -108,7 +108,6 @@ public class MovementController : MonoBehaviour {
         //Dagger stuff, disables and hides the dagger collider and trail renderer so that it doesn't show
         _dagger = GameObject.FindGameObjectWithTag("dagger").GetComponent<Collider>();
         _dagger.enabled = false;
-        maincam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
 
 
         _rigidBody = gameObject.GetComponent<Rigidbody>();
