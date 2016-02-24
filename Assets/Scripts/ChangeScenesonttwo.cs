@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ChangeScenesonttwo : MonoBehaviour {
     public int deriguji;
+    public GameObject archuraplace;
 	// Use this for initialization
 	void Start () {
 	
@@ -19,7 +20,7 @@ public class ChangeScenesonttwo : MonoBehaviour {
 
             else if(deriguji == 2)
             {
-                Application.LoadLevel("Caves - 2");
+                other.gameObject.transform.position = archuraplace.transform.position;
             }
         }
     }
