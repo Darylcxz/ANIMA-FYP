@@ -380,7 +380,6 @@ public class MovementController : MonoBehaviour {
             attack = false;
             _rigidBody.velocity = Vector3.zero;
             charStates = States.idle;
-            _dagger.GetComponent<TrailRenderer>().enabled = false;
             _dagger.enabled = false;
 
         }
