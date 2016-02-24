@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class NextLevelTrigger : MonoBehaviour {
-
+    [SerializeField]
+    string levelName;
 	// Use this for initialization
 	void Start () {
 	
@@ -12,7 +13,7 @@ public class NextLevelTrigger : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.P))
 		{
-			Application.LoadLevel(Application.loadedLevel + 1);
+			Application.LoadLevel(levelName);
 		}
 	
 	}
@@ -20,7 +21,7 @@ public class NextLevelTrigger : MonoBehaviour {
     {
         if (_col.gameObject.tag == "Player")
         {
-            Application.LoadLevel(Application.loadedLevel+1);
+            Application.LoadLevel(levelName);
         }
     }
 }
