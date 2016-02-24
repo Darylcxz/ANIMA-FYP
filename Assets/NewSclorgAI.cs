@@ -53,6 +53,7 @@ public class NewSclorgAI : NewAIBA {
                 Fire();
                 break;
             case SclorgState.DEATH:
+                SclorgAnim.SetBool("isMoving", false);
                 SclorgAnim.SetTrigger("tDeath");
                 break;
         }
@@ -118,11 +119,15 @@ public class NewSclorgAI : NewAIBA {
     public void DeathByLight()
     {
         States = SclorgState.DEATH;
+        gameTime = 0;
+        SclorgAnim.Play("S_HitByLight2");
         Invoke("SinkToGround", 5f);
+        Debug.Log("die");
     }
     void SinkToGround()
     {
         sclorgSound.Play();
+        SclorgAnim.Play("S_Death");
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         gameObject.GetComponent<Collider>().isTrigger = true;
     }
