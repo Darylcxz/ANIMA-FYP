@@ -19,9 +19,10 @@ public class SpitFlowerAI : MonoBehaviour {
 	float iterations = 30f;
 	public enum NeptoAI
 	{
- 		SHOOT,
-		IDLE,
-		DEATH
+ 		IDLE,
+		AIM,
+		SHOOT,
+        DEAD
 	}
 	public NeptoAI NeptoState = NeptoAI.IDLE;
 	Animator NeptoController;
@@ -37,80 +38,89 @@ public class SpitFlowerAI : MonoBehaviour {
 	//	Debug.Log(timer);
 		distance = Vector3.Distance(player.transform.position, transform.position);
 		AILogic();
-		timer += Time.deltaTime;
+		
 	}
-	void LookAtPlayer()
+	void LookAtPlayer(bool lockY = false)
 	{
 		target = player.gameObject;
 		targetSpeed = target.GetComponent<Rigidbody>().velocity;
 		futurePos = target.transform.position + (targetSpeed * (distance/iterations));
 		direction = futurePos - transform.position;
-		//direction.y = 0;
+		if(lockY)
+        {
+            direction.y = 0;
+        }
 		Quaternion lookRot = Quaternion.LookRotation(direction);
-		_rb.MoveRotation(lookRot);
+        transform.rotation = lookRot;
 		//transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 2f * Time.deltaTime);
 	}
 	void AILogic()
 	{
-		switch (NeptoState)
+        timer += Time.deltaTime;
+        switch (NeptoState)
 		{
- 			case NeptoAI.IDLE:
-				NeptoController.SetBool("isAttacking", false);
-				if (distance < range && timer > 0 && !NeptoController.GetBool("isAttacking"))
-				{
-//					Debug.Log("IDLE > SHOOT");
-					NeptoController.SetBool("isAttacking", true);
-					shoot = false;
-					timer = 0;
-					NeptoState = NeptoAI.SHOOT;
-				}
-				break;
-			case NeptoAI.SHOOT:
-				NeptoController.SetBool("isAttacking", true);
-				LookAtPlayer();
-				if (timer > 2.4f && !shoot && NeptoController.GetBool("isAttacking"))
-				{
-					Fire();
-				//	Debug.Log("Fire");
-				}
-				if ((timer >= 3.75f || distance > range) && NeptoController.GetBool("isAttacking"))
-				{
-				//	Debug.Log("SHOOT > IDLE");
-					NeptoController.SetBool("isAttacking", false);
-					NeptoState = NeptoAI.IDLE;
-				}
-				break;
-			case NeptoAI.DEATH:
-				gameObject.GetComponent<AudioSource>().Play();
-				Destroy(gameObject, 2f);
-				break;
+            case NeptoAI.IDLE:
+                shoot = false;
+                if (DistanceBetween(player.transform.position, transform.position) < range)
+                {
+                    NeptoController.SetBool("isAttacking", true);
+                    ChangeState(0f, NeptoAI.AIM);
+                }
+                break;
+            case NeptoAI.AIM:
+                LookAtPlayer(true);
+                ChangeState(3f, NeptoAI.SHOOT);
+                break;
+            case NeptoAI.SHOOT:
+                LookAtPlayer();
+                if (!shoot)
+                {
+                    NeptoController.SetTrigger("tAttack");
+                    Fire();
+                }
+                break;
+            case NeptoAI.DEAD:
+                gameObject.GetComponent<Collider>().isTrigger = true;
+                break;
 
-		}
+        }
 	}
-	void Fire()
+    void ChangeState(float timeBeforeStateChange, NeptoAI nextState)
+    {
+        if (timer > timeBeforeStateChange)
+        {
+            NeptoState = nextState;
+            timer = 0;
+        }
+    }
+    void Fire()
 	{
 		Rigidbody projectileClone = Instantiate(projectile, shootPoint.position, transform.rotation) as Rigidbody;
 		projectileClone.SendMessage("OriginPos", transform.position);
 		projectileClone.velocity = transform.forward*20;
-		shoot = true;
+		shoot = true;ChangeState(0f, NeptoAI.IDLE);
 	}
-	void OnCollisionEnter(Collision col)
+    float DistanceBetween(Vector3 A, Vector3 B)
+    {
+        return Vector3.Distance(A, B);
+    }
+    void OnCollisionEnter(Collision col)
 	{
 		if (col.collider.tag == "dagger")
 		{
- 			//play Death2 anim
-			//NeptoController.SetBool("isHit", true);
-			NeptoController.SetBool("isHit", true);
+            //play Death2 anim
+            //NeptoController.SetBool("isHit", true);
+            NeptoController.Play("Death1");
 			_rb.isKinematic = false;
-			NeptoState = NeptoAI.DEATH;
+			NeptoState = NeptoAI.DEAD;
 		}
 		if (col.collider.tag == "Ball")
 		{
  			//play Death1 anim
 			Debug.Log("DEAD");
-			NeptoController.SetBool("isDead", true);
-			_rb.isKinematic = false;
-			NeptoState = NeptoAI.DEATH;
+            NeptoController.Play("Death2");
+            _rb.isKinematic = false;
+			NeptoState = NeptoAI.DEAD;
 			Destroy(col.collider.gameObject, 0.2f);
 		}
 	}

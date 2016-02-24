@@ -49,6 +49,7 @@ public class NewLizardScript : NewAIBA {
             {
                 Debug.Log("Mirzard used lick!");
                 targetdir = handles[0].transform.position;
+                handles[0].gameObject.SendMessage("HandleStuff", SendMessageOptions.DontRequireReceiver);
                 mouth = tongueStart.transform.position;
                 lick = true;
                 immobilize = true;
