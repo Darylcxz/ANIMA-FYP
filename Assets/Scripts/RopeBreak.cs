@@ -3,18 +3,16 @@ using System.Collections;
 
 public class RopeBreak : MonoBehaviour {
     public static short ropebroken = 0;
-    GameObject damBlock;
+    Animator damanim;
     GameObject water;
-    Rigidbody dam;
-    public int triggerbango;
+    [SerializeField] int triggerbango;
     public static bool dropit1 = false;
     public static bool dropit2 = false;
 	// Use this for initialization
 	void Start () {
 
-        damBlock = GameObject.Find("damm_block");
-        dam = damBlock.GetComponent<Rigidbody>();
         water = GameObject.Find("LoweredWater");
+        damanim = GetComponentInParent<Animator>();
 	
 	}
 
@@ -26,11 +24,6 @@ public class RopeBreak : MonoBehaviour {
             {
                 water.transform.position -= new Vector3(0, Time.deltaTime * 0.2f, 0);
             }
-
-            else
-            {
-                
-            }
         }
     }
 
@@ -38,21 +31,30 @@ public class RopeBreak : MonoBehaviour {
     {
         if(other.collider.tag == "dagger")
         {
-            if(triggerbango == 1)
+           if(triggerbango == 1 && !dropit1)
             {
                 dropit1 = true;
-                print("drop1");
+                damanim.SetTrigger("Right");
+                Destroy(gameObject);
             }
 
-            else if(triggerbango == 2)
+           else if(triggerbango == 2 && !dropit1)
+            {
+                dropit1 = true;
+                damanim.SetTrigger("Left");
+                Destroy(gameObject);
+            }
+
+            else if(triggerbango == 1 && !dropit2 && dropit1)
             {
                 dropit2 = true;
-                print("drop2");
+                damanim.SetTrigger("two");
             }
 
-            if(dropit1 && dropit2)
+           else if (triggerbango == 2 && !dropit2 && dropit1)
             {
-                dam.constraints = RigidbodyConstraints.FreezeRotation & RigidbodyConstraints.FreezePositionX & RigidbodyConstraints.FreezePositionZ;
+                dropit2 = true;
+                damanim.SetTrigger("two");
             }
         }
     }
