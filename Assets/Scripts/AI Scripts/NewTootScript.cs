@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TootScript : NewAIBA {
+public class NewTootScript : NewAIBA {
     Animator Tootanim;
     AudioSource bounce;
     Rigidbody shit;
@@ -20,7 +20,7 @@ public class TootScript : NewAIBA {
 
     protected override void PassiveAbility()
     {
-        
+        Tootanim.SetFloat("Speed", shit.velocity.magnitude);
     }
 
     void OnCollisionEnter(Collision other)
@@ -42,10 +42,10 @@ public class TootScript : NewAIBA {
         switch (AIState)
         {
             case StateMachine.IDLE:
-                Tootanim.SetInteger("State", 0);
+                Tootanim.SetFloat("Speed", 0);
                 break;
             case StateMachine.WALK:
-                Tootanim.SetInteger("State", 1);
+                Tootanim.SetFloat("Speed", 1);
                 break;
         }
     }
