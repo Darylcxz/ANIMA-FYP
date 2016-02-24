@@ -284,7 +284,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: .777408659
+        functionName: ShakeCamNow
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: .973421991
+        functionName: StartIdle
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -875,14 +889,14 @@ ModelImporter:
     - serializedVersion: 16
       name: Boss_CHARGEUP
       takeName: bossbeetle5
-      firstFrame: 655
-      lastFrame: 690
+      firstFrame: 660
+      lastFrame: 680
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -997,7 +1011,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Boss_DASHFORWARD
       takeName: bossbeetle5
-      firstFrame: 690
+      firstFrame: 689
       lastFrame: 700
       wrapMode: 0
       orientationOffsetY: 0
@@ -1748,7 +1762,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: .837692797
+        functionName: WingsClosed
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

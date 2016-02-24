@@ -17,6 +17,7 @@ public class CaveExit : MonoBehaviour {
 	{
 		if (col.tag == "Player")
 		{
+            PlayerPrefs.SetInt("Firstime", 1);
 			PlayerPrefs.SetInt("caveExit", caveNum);
 			Application.LoadLevel("1-2 Exterior");
 		}

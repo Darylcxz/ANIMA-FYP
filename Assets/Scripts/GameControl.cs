@@ -39,6 +39,11 @@ public class GameControl : MonoBehaviour {
 	Vector3 currScale = new Vector3(1,1,1);
 	bool bVignette;
 
+    //audio stuff
+    AudioSource sfx;
+    [SerializeField]AudioClip screenflashsound;
+    [SerializeField]AudioClip firereturn;
+
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +53,7 @@ public class GameControl : MonoBehaviour {
         flame = GameObject.Find("TargetSerik");
         Seriksplace = GameObject.Find("Seriksplace").transform;
         enemylayer = 1 << LayerMask.NameToLayer("DetectPossess");
+        sfx = GameObject.Find("SFX").GetComponent<AudioSource>();
 		flashAlpha = 0;
         cardpanel.gameObject.SetActive(false);
 		fireBall.SetActive(false);
@@ -118,11 +124,13 @@ public class GameControl : MonoBehaviour {
             flame.transform.SetParent(null);
             flame.transform.localPosition = hitcolliders[ordernum].transform.position + heightplus;
 			ScreenFlash();
-			fireBall.SetActive(true);
+            sfx.PlayOneShot(screenflashsound);
+            fireBall.SetActive(true);
 			bVignette = true;
 			possesionmode.enabled = true;
 
 		} else if (spiritmode) {
+            sfx.PlayOneShot(firereturn);
             Camerafollow.targetUnit = character;
             Invoke("Firecallback", 0.3f);
             ordernum = 0;
@@ -140,7 +148,8 @@ public class GameControl : MonoBehaviour {
 
     void NextPossessTarget()
     {
-        if(ordernum != hitcolliders.Length - 1)
+        sfx.PlayOneShot(firereturn);
+        if (ordernum != hitcolliders.Length - 1)
         {
             ordernum++;
             flame.transform.position = hitcolliders[ordernum].transform.position + heightplus;
@@ -155,7 +164,8 @@ public class GameControl : MonoBehaviour {
 
     void PrevPossessTarget()
     {
-        if(ordernum - 1 != -1)
+        sfx.PlayOneShot(firereturn);
+        if (ordernum - 1 != -1)
         {
             ordernum -= 1;
             flame.transform.position = hitcolliders[ordernum].transform.position + heightplus;

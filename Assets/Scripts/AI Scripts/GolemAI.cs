@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GolemAI : AIbase {
+public class GolemAI : NewAIBA {
 
 
 	Animator GolemController;
@@ -11,12 +11,8 @@ public class GolemAI : AIbase {
 	// Use this for initialization
 	protected override void Start()
 	{
-		//base.Start();
-		_rigidBody = GetComponent<Rigidbody>();
-		origin = gameObject.transform.position;
 		GolemController = GetComponent<Animator>();
-		speed = 1.5f;
-		AISpeed = 0;
+        base.Start();
 	}
 	protected override void ActivateAbility()
 	{
@@ -33,13 +29,13 @@ public class GolemAI : AIbase {
 	protected override void PassiveAbility()
 	{
 		//throw new System.NotImplementedException();
-		moveSpeed = _rigidBody.velocity.magnitude;
+		moveSpeed = _rbAI.velocity.magnitude;
 		GolemController.SetFloat("moveSpeed", moveSpeed);
 		timer += Time.deltaTime;
 		if (timer > 0.8f)
 		{
 			deflect = false;
 		}
-		//Debug.Log(moveSpeed);
+		Debug.Log(moveSpeed);
 	}
 }
