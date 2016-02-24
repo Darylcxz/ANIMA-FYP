@@ -86,6 +86,8 @@ ModelImporter:
     7400002: Ignore?
     7400004: Death1
     7400006: Death2
+    7400008: Nepto_Aim
+    7400010: Nepto_Shoot
     9500000: //RootNode
     13700000: pCylinder6
   materials:
@@ -419,6 +421,210 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 200
       lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nepto_flower3:Root
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:joint33
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:joint33/nepto_flower3:LeafR1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:joint33/nepto_flower3:LeafR1/nepto_flower3:LEafR2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:joint33/nepto_flower3:LeafR1/nepto_flower3:LEafR2/nepto_flower3:joint36
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:LeafL1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:LeafL1/nepto_flower3:LeafL2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:LeafL1/nepto_flower3:LeafL2/nepto_flower3:joint32
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:joint14
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalA1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalA1/nepto_flower3:PetalA2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalA1/nepto_flower3:PetalA2/nepto_flower3:joint20
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalB1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalB1/nepto_flower3:PetalB2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalB1/nepto_flower3:PetalB2/nepto_flower3:joint23
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalC1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalC1/nepto_flower3:PetalC2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalC1/nepto_flower3:PetalC2/nepto_flower3:joint26
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalD1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalD1/nepto_flower3:PetalD2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalD1/nepto_flower3:PetalD2/nepto_flower3:joint29
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalE1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalE1/nepto_flower3:PetalE2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalE1/nepto_flower3:PetalE2/nepto_flower3:joint17
+        weight: 1
+      - path: pCylinder6
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Nepto_Aim
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 136
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nepto_flower3:Root
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:joint33
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:joint33/nepto_flower3:LeafR1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:joint33/nepto_flower3:LeafR1/nepto_flower3:LEafR2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:joint33/nepto_flower3:LeafR1/nepto_flower3:LEafR2/nepto_flower3:joint36
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:LeafL1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:LeafL1/nepto_flower3:LeafL2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:LeafL1/nepto_flower3:LeafL2/nepto_flower3:joint32
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:joint14
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalA1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalA1/nepto_flower3:PetalA2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalA1/nepto_flower3:PetalA2/nepto_flower3:joint20
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalB1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalB1/nepto_flower3:PetalB2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalB1/nepto_flower3:PetalB2/nepto_flower3:joint23
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalC1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalC1/nepto_flower3:PetalC2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalC1/nepto_flower3:PetalC2/nepto_flower3:joint26
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalD1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalD1/nepto_flower3:PetalD2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalD1/nepto_flower3:PetalD2/nepto_flower3:joint29
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalE1
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalE1/nepto_flower3:PetalE2
+        weight: 1
+      - path: nepto_flower3:Root/nepto_flower3:Stalk1/nepto_flower3:Stalk3/nepto_flower3:Stalk4/nepto_flower3:Stalk5/nepto_flower3:Stalk6/nepto_flower3:Stlk7/nepto_flower3:Stalk8/nepto_flower3:Stalk9/nepto_flower3:Stalk10/nepto_flower3:Stalk11/nepto_flower3:Stalk12/nepto_flower3:Head/nepto_flower3:PetalE1/nepto_flower3:PetalE2/nepto_flower3:joint17
+        weight: 1
+      - path: pCylinder6
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Nepto_Shoot
+      takeName: Take 001
+      firstFrame: 137
+      lastFrame: 180
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
