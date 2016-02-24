@@ -34,26 +34,27 @@ public class NeptoProjectile : MonoBehaviour {
 	{
 		if (col.collider.tag == "Player")
 		{
-			col.gameObject.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 3, 0, ForceMode.Impulse);
+            //col.gameObject.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 3, 0, ForceMode.Impulse);
+            col.gameObject.GetComponent<Rigidbody>().AddForce((transform.position - currentTargetPosition).normalized * 10, ForceMode.Impulse);
 			Destroy(gameObject, 0.5f);
 		}
 		if (col.collider.name.Contains( "Golem"))
 		{
 			_rb.velocity = Vector3.zero;
-			if (col.collider.GetComponent<GolemAI>().deflect)
+			if (col.collider.GetComponent<NewGolemAI>().deflect)
 			{
 				toSender = true;
 			}
 			else
 			{
-				col.gameObject.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 3, 0, ForceMode.Impulse);
-				Destroy(gameObject,0.5f);
+                col.gameObject.GetComponent<Rigidbody>().AddForce((transform.position - currentTargetPosition).normalized * 10, ForceMode.Impulse);
+                Destroy(gameObject,0.5f);
 			}
 		}
 		if (col.collider)
 		{
 			gameObject.GetComponent<AudioSource>().Play();
-			Destroy(gameObject, 2.0f);
+			Destroy(gameObject, 1.0f);
 		}
 	}
 	void BackToSender(int test)
