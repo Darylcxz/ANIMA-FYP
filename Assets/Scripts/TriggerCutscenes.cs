@@ -9,6 +9,13 @@ public class TriggerCutscenes : MonoBehaviour {
         cutscenes = GameObject.Find("MovieTexture").GetComponent<MovieScript>();
         Invoke("PlaythatVid", 0.5f);
 	}
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            cutscenes.PlayCutscene2();
+        }
+    }
 	// Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
