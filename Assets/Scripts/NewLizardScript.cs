@@ -68,7 +68,7 @@ public class NewLizardScript : NewAIBA {
 
     protected override void PassiveAbility()
     {
-        lizardAnim.SetFloat("speed", _rbAI.velocity.magnitude);
+        
         tongue.SetPosition(0, tongueStart.transform.position);
         tongue.SetPosition(1, tongueEnd.transform.position);
 
@@ -128,6 +128,24 @@ public class NewLizardScript : NewAIBA {
         {
             lightray.SetPosition(0, transform.position);
             lightray.SetPosition(1, transform.position);
+        }
+    }
+
+    protected override void AIStateMachine()
+    {
+        base.AIStateMachine();
+        switch (AIState)
+        {
+            case StateMachine.IDLE:
+                lizardAnim.SetFloat("speed", 0);
+                break;
+            case StateMachine.WALK:
+                lizardAnim.SetFloat("speed", 1);
+                break;
+
+            case StateMachine.POSSESSED:
+                lizardAnim.SetFloat("speed", _rbAI.velocity.magnitude);
+                break;
         }
     }
 }
