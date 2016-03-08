@@ -38,6 +38,8 @@ public class MovementController : MonoBehaviour {
     [SerializeField]Image atk2;
     Animator a1;
     Animator a2;
+    bool attack1 = false;
+    bool attack2 = false;
 
     float vMoveRight;				//right stick vertical movements
     float hMoveRight;				//right stick horizontal movements
@@ -132,10 +134,21 @@ public class MovementController : MonoBehaviour {
         //        Debug.Log(_rigidBody.velocity.magnitude);
         if (isGrounded())
         {
-
+            _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
         }
-        _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
-                                                                // _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
+
+        if(attack1)
+        {
+            a1.SetTrigger("Atk");
+            attack1 = false;
+        }
+
+        if(attack2)
+        {
+            a2.SetTrigger("Atk");
+            attack2 = false;
+        }
+                                                       // _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
         _anim.SetBool("isRolling", isRolling);//change param to be the same as bool isRolling
 
         if (charStates == States.idle)
@@ -593,11 +606,11 @@ public class MovementController : MonoBehaviour {
 
     public void Attack1()
     {
-        a1.SetTrigger("Atk");
+        attack1 = true;
     }
 
     public void Attack2()
     {
-        a2.SetTrigger("Atk");
+        attack2 = true;
     }
 }
