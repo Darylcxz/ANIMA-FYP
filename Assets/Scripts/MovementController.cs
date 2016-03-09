@@ -38,6 +38,8 @@ public class MovementController : MonoBehaviour {
     [SerializeField]Image atk2;
     Animator a1;
     Animator a2;
+    bool attack1 = false;
+    bool attack2 = false;
 
     float vMoveRight;				//right stick vertical movements
     float hMoveRight;				//right stick horizontal movements
@@ -132,10 +134,21 @@ public class MovementController : MonoBehaviour {
         //        Debug.Log(_rigidBody.velocity.magnitude);
         if (isGrounded())
         {
-
+            _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
         }
-        _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
-                                                                // _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
+
+        if(attack1)
+        {
+            a1.SetTrigger("Atk");
+            attack1 = false;
+        }
+
+        if(attack2)
+        {
+            a2.SetTrigger("Atk");
+            attack2 = false;
+        }
+                                                       // _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
         _anim.SetBool("isRolling", isRolling);//change param to be the same as bool isRolling
 
         if (charStates == States.idle)
@@ -216,7 +229,6 @@ public class MovementController : MonoBehaviour {
                 }
                 if (jump && isGrounded())
                 {
-                    //Invoke("Jump", 0.3f);
                     Jump();
                     _anim.SetTrigger("tJump");
                     //	_rigidBody.velocity = Vector3.zero;
@@ -564,15 +576,6 @@ public class MovementController : MonoBehaviour {
         audio.PlayOneShot(footsteps);
     }
 
-    public void Jumpimpact()
-    {
-        audio.PlayOneShot(jumpsound);
-        jumpdust.transform.position = transform.position;
-        Animator dustboom = jumpdust.GetComponent<Animator>();
-        dustboom.SetTrigger("Explode");
-        audio.PlayOneShot(jumpsound);
-    }
-
     public void PushorPull()
     {
         charStates = States.pushpull;
@@ -589,15 +592,20 @@ public class MovementController : MonoBehaviour {
     void Jump()
     {
         _rigidBody.velocity += Vector3.up * jumpForce;
+        audio.PlayOneShot(jumpsound);
+        jumpdust.transform.position = transform.position;
+        Animator dustboom = jumpdust.GetComponent<Animator>();
+        dustboom.SetTrigger("Explode");
+        audio.PlayOneShot(jumpsound);
     }
 
     public void Attack1()
     {
-        a1.SetTrigger("Atk");
+        attack1 = true;
     }
 
     public void Attack2()
     {
-        a2.SetTrigger("Atk");
+        attack2 = true;
     }
 }

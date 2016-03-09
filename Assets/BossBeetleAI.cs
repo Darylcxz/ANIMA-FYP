@@ -20,7 +20,7 @@ public class BossBeetleAI : MonoBehaviour {
     float gameTime; //timer for state transitions
     Transform player; //transform to get the players position
     bool bNotInGround;  //one time use boolean to check if the beetle is in the ground or not
-    [SerializeField]int numberOfTimesHit; //how many times the AI has been hit (might work as HP too)
+    public int numberOfTimesHit; //how many times the AI has been hit (might work as HP too)
 
     [SerializeField] enum AttackStates //Attack states for the beetle
     {
@@ -48,6 +48,8 @@ public class BossBeetleAI : MonoBehaviour {
     float pryTimer = 0;
     bool wingsAnimClosed;
     Collider beetleCollider;
+    [SerializeField]
+    SkinnedMeshRenderer BossRenderer;
     // Use this for initialization
     void Start () {
         isWingOpen = true; //beetles wings are open at first
@@ -55,6 +57,7 @@ public class BossBeetleAI : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         _neptoScript = _neptoScript.GetComponent<BossNepto>();
         beetleCollider = GetComponent<Collider>();
+        BossRenderer = BossRenderer.GetComponent<SkinnedMeshRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -115,6 +118,7 @@ public class BossBeetleAI : MonoBehaviour {
                         }
                         break;
                     case 3:
+                        BossRenderer.material.SetColor("_Color", new Color(0.84f, 0, 0));
                         if (attackInt <= 0.3f)
                         {
                             AttackLogic = AttackStates.AIMING;
@@ -125,6 +129,7 @@ public class BossBeetleAI : MonoBehaviour {
                         }
                         break;
                     case 4:
+                        BossRenderer.material.SetColor("_Color", new Color(0.84f, 0, 0));
                         if (attackInt <= 0.3f)
                         {
                             AttackLogic = AttackStates.AIMING;
@@ -332,7 +337,13 @@ public class BossBeetleAI : MonoBehaviour {
 
 
 
-
+    public void KillSwitch()
+    {
+        ResetAnim();
+        BossRenderer.material.SetColor("_Color", new Color(0.84f, 0, 0));
+        numberOfTimesHit = 5;
+        BeetleLogic = BossStates.ATTACK;
+    }
 
 
     public void TrapCardActivated() //nepto was hit by player
