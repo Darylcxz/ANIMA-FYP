@@ -16,6 +16,7 @@ public class GameControl : MonoBehaviour {
     private int ordernum = 0;
     private Vector3 heightplus = new Vector3(0, 1.5f, 0);
     private int enemylayer;
+    [SerializeField]private ColorCorrectionCurves ccc;
 
     //Collectibles
 
@@ -128,6 +129,7 @@ public class GameControl : MonoBehaviour {
             fireBall.SetActive(true);
 			bVignette = true;
 			possesionmode.enabled = true;
+            ccc.saturation = 0;
 
 		} else if (spiritmode) {
             sfx.PlayOneShot(firereturn);
@@ -138,6 +140,7 @@ public class GameControl : MonoBehaviour {
 			fireBall.SetActive(false);
 			bVignette = false;
 			possesionmode.enabled = false;
+            ccc.saturation = 1;
             if(freeze)
             {
                 freeze = false;
