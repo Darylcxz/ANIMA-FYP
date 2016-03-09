@@ -138,7 +138,7 @@ public class BossBeetleAI : MonoBehaviour {
                         //dead
                         BossAnim.Play("Boss_ESCAPE");
                         ResetAnim();
-                        _neptoScript.beetleControl = true;
+                        _neptoScript.enabled = false;
                    
                         break;
                 }
@@ -238,12 +238,12 @@ public class BossBeetleAI : MonoBehaviour {
                     _neptoScript.shootCount = 0; //resets the shot count back to zero
                     BossAnim.SetBool("bIsAttacking", false); //stops attacking animation from playing
                 }
-                else if(_neptoScript.shootCount == 3) //if the nepto has shot thrice, 
+                if(_neptoScript.shootCount == 3 &&!hasDeflected) //if the nepto has shot thrice, 
                 {
                     _neptoScript.range = 5;
                     BossAnim.SetBool("bIsAttacking", false); //stops attacking animation from playing
                     _neptoScript.beetleControl = true;//gives control back to the beetle first
-                    ChangeState(2f, BossStates.IDLE); //go back to idle after 2 seconds (to allow player time to deflect 
+                    ChangeState(3f, BossStates.IDLE); //go back to idle after 2 seconds (to allow player time to deflect 
                 }
                 break;
             case AttackStates.DASH:

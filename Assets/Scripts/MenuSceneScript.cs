@@ -92,8 +92,8 @@ public class MenuSceneScript : MonoBehaviour {
 		butt = buttock;
 	}
 
-    public void loadLevel()
+    public void loadLevel(string levelName)
     {
-        Application.LoadLevel("2-1");
+        Application.LoadLevel(levelName);
     }
 }

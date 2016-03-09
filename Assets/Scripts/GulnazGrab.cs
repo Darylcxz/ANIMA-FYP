@@ -69,15 +69,15 @@ public class GulnazGrab : MonoBehaviour {
                 holding = false;
                 goonas.StopPushPull();
             }
-			if (hit.collider.tag == "lever")
-			{
+			//if (hit.collider.tag == "lever")
+			//{
                 
- 				hit.collider.gameObject.GetComponent<Animator>().SetBool("bLever",true);
-				GameObject.Find("gate").GetComponent<Animator>().SetBool("bLever", true);
-				gateSound.Play();
-				hit.collider.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
-                Debug.Log("playsound");
-			}
+ 		//		hit.collider.gameObject.GetComponent<Animator>().SetBool("bLever",true);
+			//	GameObject.Find("gate").GetComponent<Animator>().SetBool("bLever", true);
+			//	gateSound.Play();
+			//	hit.collider.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
+   //             Debug.Log("playsound");
+			//}
 			if (hit.collider.tag == "log")
 			{
 				hit.collider.gameObject.GetComponent<Animator>().SetBool("bLog", true);
