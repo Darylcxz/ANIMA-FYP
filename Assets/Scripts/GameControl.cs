@@ -199,5 +199,8 @@ public class GameControl : MonoBehaviour {
         cardpanel.transform.GetChild(cardnumber).gameObject.SetActive(true);
     }
 
-	
+	public void RevertSaturation()
+    {
+        ccc.saturation = 1;
+    }
 }

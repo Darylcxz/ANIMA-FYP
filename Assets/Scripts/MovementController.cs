@@ -229,7 +229,6 @@ public class MovementController : MonoBehaviour {
                 }
                 if (jump && isGrounded())
                 {
-                    //Invoke("Jump", 0.3f);
                     Jump();
                     _anim.SetTrigger("tJump");
                     //	_rigidBody.velocity = Vector3.zero;
@@ -577,15 +576,6 @@ public class MovementController : MonoBehaviour {
         audio.PlayOneShot(footsteps);
     }
 
-    public void Jumpimpact()
-    {
-        audio.PlayOneShot(jumpsound);
-        jumpdust.transform.position = transform.position;
-        Animator dustboom = jumpdust.GetComponent<Animator>();
-        dustboom.SetTrigger("Explode");
-        audio.PlayOneShot(jumpsound);
-    }
-
     public void PushorPull()
     {
         charStates = States.pushpull;
@@ -602,6 +592,11 @@ public class MovementController : MonoBehaviour {
     void Jump()
     {
         _rigidBody.velocity += Vector3.up * jumpForce;
+        audio.PlayOneShot(jumpsound);
+        jumpdust.transform.position = transform.position;
+        Animator dustboom = jumpdust.GetComponent<Animator>();
+        dustboom.SetTrigger("Explode");
+        audio.PlayOneShot(jumpsound);
     }
 
     public void Attack1()
