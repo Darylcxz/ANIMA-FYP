@@ -12,6 +12,8 @@ public class GameControl : MonoBehaviour {
     public static bool freeze = false;
     [SerializeField]private Image possesionmode;
 	[SerializeField]private Image flashImage;
+    [SerializeField]private Image backcardspin;
+    [SerializeField]private Image cardfx;
     private Collider[] hitcolliders;
     private int ordernum = 0;
     private Vector3 heightplus = new Vector3(0, 1.5f, 0);
@@ -23,6 +25,7 @@ public class GameControl : MonoBehaviour {
     //[SerializeField]private Image[] cards;
     [SerializeField]private Image cardpanel;
     private bool cardshowing;
+    int mycardnumber;
     
 	//Screen Flash stuff
 	float flashTimer;
@@ -57,7 +60,9 @@ public class GameControl : MonoBehaviour {
         sfx = GameObject.Find("SFX").GetComponent<AudioSource>();
 		flashAlpha = 0;
         cardpanel.gameObject.SetActive(false);
-		fireBall.SetActive(false);
+        backcardspin.gameObject.SetActive(false);
+        cardfx.gameObject.SetActive(false);
+        fireBall.SetActive(false);
 		possesionmode.enabled = false;
 	}
 	
@@ -108,8 +113,11 @@ public class GameControl : MonoBehaviour {
         {
             if(GamepadManager.buttonBDown)
             {
+                cardpanel.transform.GetChild(mycardnumber).gameObject.SetActive(true);
                 cardpanel.gameObject.SetActive(false);
                 cardshowing = false;
+                backcardspin.gameObject.SetActive(false);
+                cardfx.gameObject.SetActive(false);
             }
         }
 	
@@ -197,6 +205,9 @@ public class GameControl : MonoBehaviour {
         cardshowing = true;
         cardpanel.gameObject.SetActive(true);
         cardpanel.transform.GetChild(cardnumber).gameObject.SetActive(true);
+        mycardnumber = cardnumber;
+        backcardspin.gameObject.SetActive(true);
+        cardfx.gameObject.SetActive(true);
     }
 
 	public void RevertSaturation()
