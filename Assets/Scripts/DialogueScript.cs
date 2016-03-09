@@ -19,6 +19,7 @@ public class DialogueScript : MonoBehaviour
     public Sprite[] chara6;
     public Sprite[] chara7;
     public Sprite chara8;
+    public Sprite blankchara;
     public Image textbox;
     private string charaname;
     private RaycastHit hit;
@@ -253,7 +254,8 @@ public class DialogueScript : MonoBehaviour
                 break;
 
             default:
-                characterpic.sprite = null;
+                characterpic.sprite = blankchara;
+                showname.text = null;
                 break;
         }
     }
