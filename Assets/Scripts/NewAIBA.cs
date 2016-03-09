@@ -53,6 +53,7 @@ public abstract class NewAIBA : MonoBehaviour {
 	[SerializeField]protected Vector3 _waypoint;			//waypoint created where the AI paths to that
 	[SerializeField]float minDistance = 0.1f;		//min distance to the WAYPOINT before AI considers it reached it
 
+    GameControl gamecontroller;
     [SerializeField] LayerMask possessraycastlayer;
     public Vector3 customWayPoint;
 	//Player's Variables (for player when possessing)
@@ -77,6 +78,7 @@ public abstract class NewAIBA : MonoBehaviour {
 		playerMana = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
         spawnPoint = transform.position;
         possessExplode = GameObject.Find("SpiritBomb");
+        gamecontroller = GameObject.Find("GameControlCenter").GetComponent<GameControl>();
         possanim = possessExplode.GetComponent<Animator>();
 	}
 	
@@ -228,7 +230,7 @@ public abstract class NewAIBA : MonoBehaviour {
                     possessExplode.transform.position = transform.position;
                     possanim.SetTrigger("Explode");
 					GameControl.freeze = false;
-					
+                    gamecontroller.RevertSaturation();
 				}
 			}
 		}
