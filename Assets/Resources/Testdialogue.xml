@@ -152,12 +152,12 @@
     <D2 character="GhostSerik" expression="1" voice="21">What! What is it!! Is it Bearguar?!!</D2>
     <D3 character="Gulnaz" expression="0" voice="10">What?! No!</D3>
     <D4 character="Gulnaz" expression="0">That thing! Over there!</D4>
-    <D5 character="GhostSerik" expression="1" voice="22">WHAT IS THAT?!</D5>
+    <D5 character="GhostSerik" expression="1" voice="20">WHAT IS THAT?!</D5>
     <D6 character="Gulnaz" expression="1" voice="12">Keep it down! I don't know what it is, but if it's hostile, I'm ready.</D6>
   </desh1-1>
   <Shake1-1>
     <D1 character="GhostSerik" expression="1" voice="22">AAAHHH!!!</D1>
-    <D1 character="GhostSerik" expression="1" voice="22">It's coming for you!</D1>
+    <D1 character="GhostSerik" expression="1">It's coming for you!</D1>
   </Shake1-1>
   <defeated1-1>
     <D1 character="Gulnaz" expression="5" voice="1">And that's how it's done.</D1>
@@ -200,13 +200,14 @@
     <D4 character="Gulnaz" expression="2" voice="7">But...that fiery sneeze seems very helpful.. Hehehehe.</D4>
     <D5 character="GhostSerik" expression="1" voice="14">Uh. I don't like that look you're giving me, Gulnaz..</D5>
     <D6 character="GhostSerik" expression="2" voice="19">I wonder what other creatures I can possess.</D6>
-
- </seriksapig1-1>
+  </seriksapig1-1>
   <secndgate1-1>
     <D1 character="GhostSerik" expression="5" voice="20">Huh. No lever.</D1>
     <D2 character="Gulnaz" expression="0" voice="12">Coznac's security team is at it again.. There's probably a funny mechanism behind this.</D2>
-    <D3 character="GhostSerik" expression="4" voice="19">Something looks different about this gate. Let's take a look around.</D3>
+    <D3 character="GhostSerik" expression="4" voice="19">Something looks different about this gate. </D3>
     <D4 character="Gulnaz" expression="1" voice="7">Uh huh..</D4>
+    <D5 character="Serik" expression="5" voice="15">Those bowls are pretty high up, so the Lava Pig probably can't do anything with it.</D5>
+    <D6 character="Gulnaz" expression="5" voice="6">Hey, maybe we can find some kind of long stick or something. Let's take a look around.</D6>
   </secndgate1-1>
   <dontidiot>
     <D1 character="GhostSerik" expression="0" voice="14">I know you just took on 3 of these guys, but aren't you getting a little cocky?</D1>
