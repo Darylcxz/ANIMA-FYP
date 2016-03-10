@@ -125,7 +125,7 @@ public class VillageDialogue : DialogueScript {
 
         else if(NPCname == "Temir3")
         {
-            serik.transform.position = newpos.position + Vector3.up * 0.7f;
+            serik.transform.position = newpos.position;
             serik.name = "Serik4";
             exclaim.transform.position = newpos.position + Vector3.up * 2.0f;
             cockblock1 = true;

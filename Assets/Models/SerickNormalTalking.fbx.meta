@@ -1,0 +1,447 @@
+fileFormatVersion: 2
+guid: 10489748ebf9eec4c871fb204b77ca24
+timeCreated: 1457584062
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: CollarBone
+    100002: Finger1
+    100004: Finger1 1
+    100006: Head
+    100008: Hip_Root5
+    100010: joint22
+    100012: joint22 1
+    100014: joint7
+    100016: L_Elboe
+    100018: L_Feet
+    100020: L_Finger2
+    100022: L_Index1
+    100024: L_Index2
+    100026: L_Leg1
+    100028: L_Leg2
+    100030: L_Solder
+    100032: L_Thumb1
+    100034: L_Thumb2
+    100036: LHand
+    100038: polySurface117
+    100040: R_Elboe
+    100042: R_Feet
+    100044: R_Finger2
+    100046: R_Index1
+    100048: R_Index2
+    100050: R_Reg1
+    100052: R_Reg2
+    100054: R_Solder
+    100056: R_Thumb1
+    100058: R_Thumb2
+    100060: RHand
+    100062: //RootNode
+    100064: Sherik
+    100066: Spine1
+    100068: Spine2
+    100070: Spine3
+    400000: CollarBone
+    400002: Finger1
+    400004: Finger1 1
+    400006: Head
+    400008: Hip_Root5
+    400010: joint22
+    400012: joint22 1
+    400014: joint7
+    400016: L_Elboe
+    400018: L_Feet
+    400020: L_Finger2
+    400022: L_Index1
+    400024: L_Index2
+    400026: L_Leg1
+    400028: L_Leg2
+    400030: L_Solder
+    400032: L_Thumb1
+    400034: L_Thumb2
+    400036: LHand
+    400038: polySurface117
+    400040: R_Elboe
+    400042: R_Feet
+    400044: R_Finger2
+    400046: R_Index1
+    400048: R_Index2
+    400050: R_Reg1
+    400052: R_Reg2
+    400054: R_Solder
+    400056: R_Thumb1
+    400058: R_Thumb2
+    400060: RHand
+    400062: //RootNode
+    400064: Sherik
+    400066: Spine1
+    400068: Spine2
+    400070: Spine3
+    4300000: polySurface117
+    7400000: Seirk,NPCaction
+    7400002: SerikIdleBreaker
+    7400004: SerikTalking
+    9500000: //RootNode
+    13700000: polySurface117
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Seirk,NPCaction
+      takeName: Seirk,NPCaction
+      firstFrame: 0
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: polySurface117
+        weight: 1
+      - path: Sherik
+        weight: 1
+      - path: Sherik/Hip_Root5
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1/L_Leg2
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1/L_Leg2/L_Feet
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1/L_Leg2/L_Feet/joint22
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1/R_Reg2
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1/R_Reg2/R_Feet
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1/R_Reg2/R_Feet/joint22 1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/CollarBone
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/CollarBone/Head
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/CollarBone/Head/joint7
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1/L_Finger2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1/L_Index2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/Finger1
+          1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/Finger1
+          1/R_Finger2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Index1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Index1/R_Index2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Thumb1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Thumb1/R_Thumb2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SerikIdleBreaker
+      takeName: Seirk,NPCaction
+      firstFrame: 71
+      lastFrame: 140
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: polySurface117
+        weight: 1
+      - path: Sherik
+        weight: 1
+      - path: Sherik/Hip_Root5
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1/L_Leg2
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1/L_Leg2/L_Feet
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1/L_Leg2/L_Feet/joint22
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1/R_Reg2
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1/R_Reg2/R_Feet
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1/R_Reg2/R_Feet/joint22 1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/CollarBone
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/CollarBone/Head
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/CollarBone/Head/joint7
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1/L_Finger2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1/L_Index2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/Finger1
+          1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/Finger1
+          1/R_Finger2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Index1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Index1/R_Index2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Thumb1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Thumb1/R_Thumb2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SerikTalking
+      takeName: Seirk,NPCaction
+      firstFrame: 151
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: polySurface117
+        weight: 1
+      - path: Sherik
+        weight: 1
+      - path: Sherik/Hip_Root5
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1/L_Leg2
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1/L_Leg2/L_Feet
+        weight: 1
+      - path: Sherik/Hip_Root5/L_Leg1/L_Leg2/L_Feet/joint22
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1/R_Reg2
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1/R_Reg2/R_Feet
+        weight: 1
+      - path: Sherik/Hip_Root5/R_Reg1/R_Reg2/R_Feet/joint22 1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/CollarBone
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/CollarBone/Head
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/CollarBone/Head/joint7
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/Finger1/L_Finger2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Index1/L_Index2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/L_Solder/L_Elboe/LHand/L_Thumb1/L_Thumb2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/Finger1
+          1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/Finger1
+          1/R_Finger2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Index1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Index1/R_Index2
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Thumb1
+        weight: 1
+      - path: Sherik/Hip_Root5/Spine1/Spine2/Spine3/R_Solder/R_Elboe/RHand/R_Thumb1/R_Thumb2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
