@@ -60,6 +60,8 @@ public class DeshTutorial : MonoBehaviour {
 			gameObject.transform.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
             jumpSequence.GetComponent<Collider>().isTrigger = true;
 			gameObject.GetComponent<BoxCollider>().enabled = false;
+            Invoke("Hide", 2f);
+           
 		}
 	}
     void StateMachine()
@@ -117,6 +119,11 @@ public class DeshTutorial : MonoBehaviour {
             Time.timeScale = 0;
         }
       
+    }
+    void Hide()
+    {
+        gameObject.SetActive(false);
+        CancelInvoke("Hide");
     }
    //void GetPlayerPos()
    // {

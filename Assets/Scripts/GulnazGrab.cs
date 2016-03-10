@@ -18,6 +18,7 @@ public class GulnazGrab : MonoBehaviour {
     private MovementController goonas;
 	bool spawnUI;
 	bool spawnUI1;
+    bool spawnUI2;
     bool hasSticked;
     [SerializeField] Image stickOfLies;
 
@@ -50,6 +51,11 @@ public class GulnazGrab : MonoBehaviour {
 				hit.collider.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
 				spawnUI1 = true;
 			}
+            if(hit.collider.CompareTag("pile") && !spawnUI2)
+            {
+                hit.collider.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
+                spawnUI2 = false;
+            }
 		}
 
         if (Physics.Raycast(center, transform.forward, out hit, 0.5f) && Input.GetButtonDown("Action") || Physics.Raycast(side1, transform.forward, out hit, 0.5f) && Input.GetButtonDown("Action") || Physics.Raycast(side2, transform.forward, out hit, 0.5f) && Input.GetButtonDown("Action"))
