@@ -17,6 +17,7 @@ public class MovieScript : MonoBehaviour {
     float duration;
     VillageDialogue dialoguescript;
     AudioSource bgm;
+    
 
 	// Use this for initialization
 	void Start () {
