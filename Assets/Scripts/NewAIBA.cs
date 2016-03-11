@@ -230,7 +230,6 @@ public abstract class NewAIBA : MonoBehaviour {
                     possessExplode.transform.position = transform.position;
                     possanim.SetTrigger("Explode");
 					GameControl.freeze = false;
-                    gamecontroller.RevertSaturation();
 				}
 			}
 		}
