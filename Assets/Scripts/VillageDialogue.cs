@@ -129,7 +129,7 @@ public class VillageDialogue : DialogueScript {
             serik.name = "Serik4";
             exclaim.transform.position = newpos.position + Vector3.up * 2.0f;
             cockblock1 = true;
-            serikcalls.transform.position += new Vector3(0, -11.0f, 0);
+            serikcalls.transform.position += new Vector3(0, -6.5f, 0);
         }
 
         else if(NPCname == "Inzhu")

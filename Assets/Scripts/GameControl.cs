@@ -137,7 +137,7 @@ public class GameControl : MonoBehaviour {
             fireBall.SetActive(true);
 			bVignette = true;
 			possesionmode.enabled = true;
-            ccc.saturation = 0;
+            //ccc.saturation = 0;
 
 		} else if (spiritmode) {
             sfx.PlayOneShot(firereturn);
@@ -148,7 +148,7 @@ public class GameControl : MonoBehaviour {
 			fireBall.SetActive(false);
 			bVignette = false;
 			possesionmode.enabled = false;
-            ccc.saturation = 1;
+            //ccc.saturation = 1;
             if(freeze)
             {
                 freeze = false;
@@ -212,6 +212,6 @@ public class GameControl : MonoBehaviour {
 
 	public void RevertSaturation()
     {
-        ccc.saturation = 1;
+        //ccc.saturation = 1;
     }
 }
