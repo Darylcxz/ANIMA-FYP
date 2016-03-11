@@ -86,6 +86,8 @@ public class NewTutorialController : MonoBehaviour {
 
     int dontIdiotCounter;
 
+    [SerializeField] GameObject floatingArrow;
+
 	// Use this for initialization
 	void Start () {
 		_dScript = _dScript.GetComponent<DialogueScript>();
@@ -250,9 +252,12 @@ public class NewTutorialController : MonoBehaviour {
                     hasPossessed = true;
                     if(!hasSneezed)
                     {
+                        ///////////
+                        floatingArrow.SetActive(true);
                         TutorialImages[4].enabled = true;
                         if (GamepadManager.buttonBDown)
                         {
+                            floatingArrow.SetActive(false);
                             TutorialImages[4].enabled = false;
                             hasSneezed = true;
                         }
