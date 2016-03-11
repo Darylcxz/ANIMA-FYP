@@ -14,7 +14,7 @@ public class GameControl : MonoBehaviour {
 	[SerializeField]private Image flashImage;
     [SerializeField]private Image backcardspin;
     [SerializeField]private Image cardfx;
-    private Collider[] hitcolliders;
+    [SerializeField]private Collider[] hitcolliders;
     private int ordernum = 0;
     private Vector3 heightplus = new Vector3(0, 1.5f, 0);
     private int enemylayer;
@@ -47,6 +47,7 @@ public class GameControl : MonoBehaviour {
     AudioSource sfx;
     [SerializeField]AudioClip screenflashsound;
     [SerializeField]AudioClip firereturn;
+    [SerializeField]AudioClip errorSound;
 
 
 	// Use this for initialization
@@ -130,17 +131,34 @@ public class GameControl : MonoBehaviour {
 			spiritmode = true;
             freeze = true;
             hitcolliders = Physics.OverlapSphere(character.transform.position, 5, enemylayer);
-            flame.transform.SetParent(null);
-            if(ordernum >= 0)
+            ScreenFlash();
+            if (hitcolliders.Length ==0)
             {
-                flame.transform.localPosition = hitcolliders[ordernum].transform.position + heightplus;
+                spiritmode = false;
+                freeze = false;
+                sfx.PlayOneShot(errorSound);
             }
+            else
+            {
+                flame.transform.SetParent(null);
+                flame.transform.localPosition = hitcolliders[ordernum].transform.position + heightplus;
+                //if (hitcolliders.Length > 0)
+                //{
+                    
+                //}
+                
+                
+                sfx.PlayOneShot(screenflashsound);
+                fireBall.SetActive(true);
+                bVignette = true;
+                possesionmode.enabled = true;
+            }
+            //if(hitcolliders.Length > 0)
+            //{
+            //    flame.transform.localPosition = hitcolliders[ordernum].transform.position + heightplus;
+            //}
             //flame.transform.localPosition = hitcolliders[ordernum].transform.position + heightplus;
-			ScreenFlash();
-            sfx.PlayOneShot(screenflashsound);
-            fireBall.SetActive(true);
-			bVignette = true;
-			possesionmode.enabled = true;
+			
             //ccc.saturation = 0;
 
 		} else if (spiritmode) {
