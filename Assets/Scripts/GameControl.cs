@@ -131,7 +131,11 @@ public class GameControl : MonoBehaviour {
             freeze = true;
             hitcolliders = Physics.OverlapSphere(character.transform.position, 5, enemylayer);
             flame.transform.SetParent(null);
-            flame.transform.localPosition = hitcolliders[ordernum].transform.position + heightplus;
+            if(ordernum >= 0)
+            {
+                flame.transform.localPosition = hitcolliders[ordernum].transform.position + heightplus;
+            }
+            //flame.transform.localPosition = hitcolliders[ordernum].transform.position + heightplus;
 			ScreenFlash();
             sfx.PlayOneShot(screenflashsound);
             fireBall.SetActive(true);

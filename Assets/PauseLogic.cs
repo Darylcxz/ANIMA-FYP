@@ -62,6 +62,9 @@ public class PauseLogic : MonoBehaviour {
     }
     public void MainMenu()
     {
+        isPaused = false;
+        _t = 0;
+        Time.timeScale = 1;
         Application.LoadLevel("MenuScene");
     }
 }
