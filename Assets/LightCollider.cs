@@ -9,6 +9,7 @@ public class LightCollider : MonoBehaviour {
         {
             col.gameObject.SendMessage("DeathByLight", SendMessageOptions.DontRequireReceiver);
             dialscript.TriggerDialogue();
+            gameObject.SetActive(false);
         }
     }
 }

@@ -50,6 +50,9 @@ public class BossBeetleAI : MonoBehaviour {
     Collider beetleCollider;
     [SerializeField]
     SkinnedMeshRenderer BossRenderer;
+    float lerpTimer =0;
+    Color originalColor = new Color(1f, 1f, 1f);
+    Color redColor = new Color(0.84f, 0f, 0f);
     // Use this for initialization
     void Start () {
         isWingOpen = true; //beetles wings are open at first
@@ -67,6 +70,16 @@ public class BossBeetleAI : MonoBehaviour {
     void StateMachine()
     {
         gameTime += Time.deltaTime;
+        if(numberOfTimesHit == 3)
+        {
+            lerpTimer += Time.deltaTime;
+            Color newCol = (Color.Lerp(originalColor, redColor, lerpTimer));
+            BossRenderer.material.SetColor("_Color", newCol);
+            if(lerpTimer >1)
+            {
+                lerpTimer = 1;
+            }
+        }
         switch (BeetleLogic)
         {
             case BossStates.INGROUND:
@@ -118,7 +131,7 @@ public class BossBeetleAI : MonoBehaviour {
                         }
                         break;
                     case 3:
-                        BossRenderer.material.SetColor("_Color", new Color(0.84f, 0, 0));
+                   //     BossRenderer.material.SetColor("_Color", new Color(0.84f, 0, 0));
                         if (attackInt <= 0.3f)
                         {
                             AttackLogic = AttackStates.AIMING;
@@ -129,7 +142,7 @@ public class BossBeetleAI : MonoBehaviour {
                         }
                         break;
                     case 4:
-                        BossRenderer.material.SetColor("_Color", new Color(0.84f, 0, 0));
+                     //   BossRenderer.material.SetColor("_Color", new Color(0.84f, 0, 0));
                         if (attackInt <= 0.3f)
                         {
                             AttackLogic = AttackStates.AIMING;
@@ -243,7 +256,7 @@ public class BossBeetleAI : MonoBehaviour {
                     _neptoScript.shootCount = 0; //resets the shot count back to zero
                     BossAnim.SetBool("bIsAttacking", false); //stops attacking animation from playing
                 }
-                if(_neptoScript.shootCount == 3 &&!hasDeflected) //if the nepto has shot thrice, 
+                if(_neptoScript.shootCount == 4) //if the nepto has shot thrice, regardless of whether you deflected or not
                 {
                     _neptoScript.range = 5;
                     BossAnim.SetBool("bIsAttacking", false); //stops attacking animation from playing
@@ -398,4 +411,5 @@ public class BossBeetleAI : MonoBehaviour {
             hasHit = true;
         }
     }
+
 }
