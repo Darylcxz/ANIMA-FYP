@@ -2,22 +2,22 @@
 using System.Collections;
 
 public class onetwoStartPos : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-        int gulnazpos = 0;
+    int gulnazpos = 0;
+    Vector3 originalpos;
+    // Use this for initialization
+    void Start () {
+        originalpos = transform.position;
+        
         if(PlayerPrefs.HasKey("caveExit"))
         {
             gulnazpos = PlayerPrefs.GetInt("caveExit");
-            if(gulnazpos == 2)
-            {
-                gameObject.transform.position = new Vector3(-126.31f, 75.45f, -55.32f);
-            }
 
-             else if(gulnazpos == 1)
+            if (gulnazpos == 1)
             {
-                gameObject.transform.position = new Vector3(-242.77f, 63.11f, -28.32f);
+                gameObject.transform.position = new Vector3(-245.7f, 62.64f, -28.97f);
             }
+            else if(gulnazpos == 0)
+                gameObject.transform.position = originalpos;
           
         }
 	}
@@ -26,6 +26,7 @@ public class onetwoStartPos : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.K))
         {
             PlayerPrefs.SetInt("caveExit", 0);
+            PlayerPrefs.DeleteKey("FirstTime");
         } 
     }
 }

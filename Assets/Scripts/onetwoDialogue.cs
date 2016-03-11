@@ -13,14 +13,11 @@ public class onetwoDialogue : DialogueScript {
 
         vines = GameObject.Find("ClimbVines");
         climbUI.enabled = false;
-        if(PlayerPrefs.HasKey("FirstTime"))
+        if(!PlayerPrefs.HasKey("FirstTime"))
         {
-            if(PlayerPrefs.GetInt("FirstTime") > 0)
-            {
-                NPCname = "one2start";
-                string textData = dialogue.text;
-                ParseDialogue(textData);
-            }
+             NPCname = "one2start";
+             string textData = dialogue.text;
+             ParseDialogue(textData);
         }
         
     }
