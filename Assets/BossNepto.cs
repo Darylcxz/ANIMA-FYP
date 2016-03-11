@@ -117,6 +117,7 @@ public class BossNepto : MonoBehaviour {
         if(col.collider.CompareTag("dagger"))
         {
             BossBeetle.SendMessage("TrapCardActivated", SendMessageOptions.DontRequireReceiver);
+        //    gameObject.GetComponent<BoxCollider>().enabled = false;
         }
         if(col.collider.CompareTag("Ball"))
         {

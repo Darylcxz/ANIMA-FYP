@@ -496,7 +496,7 @@ public class MovementController : MonoBehaviour {
             GameControl.spiritmode = false;
             currMana = 0;
             charStates = States.idle;
-            //_mana = true;
+            _mana = false;
         }
         if (currMana > maxMana && _mana == true) // check if mana is maxed
         {
@@ -506,7 +506,7 @@ public class MovementController : MonoBehaviour {
 
         else if (currMana < maxMana && _mana == false)
         {
-            currMana += Time.deltaTime / 5;
+            currMana += Time.deltaTime*5;
         }
     }
 
